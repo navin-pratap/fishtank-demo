@@ -1,24 +1,25 @@
 import React, { Fragment } from 'react';
-import { Box, Typography, Stepper, Step, MobileStepper, StepLabel, Grid, Avatar, Button } from '@material-ui/core';
+import { Box, Typography, Stepper, Step, MobileStepper, StepLabel, Grid } from '@material-ui/core';
 import { useTheme } from '@material-ui/core/styles';
 // import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
 // import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
 import { useStyles } from './styles';
+import { ProductListing } from './ProductListing';
 const mockData = require('./ProductList.json');
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 const tutorialSteps = [
 	{
-		title: 'Tips Tips',
-		label: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr',
-		imgPath: 'https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&w=215&h=170&q=60',
-	},
-	{
 		title: 'Tips for Your Fish',
 		label: 'Provide nutrition for your fish that has similar ingredients to what they would eat in the wild.',
 		imgPath: 'https://images.unsplash.com/photo-1538032746644-0212e812a9e7?auto=format&fit=crop&w=215&h=170&q=60',
+	},
+	{
+		title: 'Tank Tips',
+		label: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr',
+		imgPath: 'https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&w=215&h=170&q=60',
 	},
 	{
 		title: 'Accessories Tips',
@@ -40,57 +41,130 @@ const tutorialSteps = [
 export const Tank = (props) => {
 	const classes = useStyles();
 	const theme = useTheme();
-	const { FishList } = mockData;
-	const [activeStep, setActiveStep] = React.useState(0);
-	const [activeSliderStep, setActiveSliderStep] = React.useState(0);
-	const [selectedProduct, setSelectedProduct] = React.useState(0);
-	const [selectedProducts, setSelectedProducts] = React.useState([
+	const defaultProductSelection = [
 		{
+			id: 1,
 			type: 'Tank',
 			productImage: '',
 			ProductName: '',
 			ProductPrice: 0,
+			fishSelection: {},
 		},
 		{
+			id: 2,
 			type: 'Accessories',
 			productImage: '',
 			ProductName: '',
 			ProductPrice: 0,
 		},
 		{
+			id: 3,
 			type: 'Gravel & Decor',
 			productImage: '',
 			ProductName: '',
 			ProductPrice: 0,
 		},
 		{
+			id: 4,
 			type: 'Care',
 			productImage: '',
 			ProductName: '',
 			ProductPrice: 0,
 		},
-	]);
+	];
+	const { fishList, productsList } = mockData;
+	const [activeStep, setActiveStep] = React.useState(0);
+	const [activeSliderStep, setActiveSliderStep] = React.useState(0);
+	const [selectedProduct, setSelectedProduct] = React.useState(0);
+	const [selectedProducts, setSelectedProducts] = React.useState(defaultProductSelection);
+	const [selectionType, setSelectionType] = React.useState('Fish');
+	const [selectionBasedProductList, setSelectionBasedProductList] = React.useState(fishList);
+	const [titleDetails, setTitleDetails] = React.useState({
+		title: 'Select your favorite fish',
+		subTitle: 'Please select a fish you plan on building a tank for.',
+	});
 	const steps = ['Fish & Tank', 'Accessories', 'Gravel & Decor', 'Care'];
 	const maxSteps = tutorialSteps.length;
 
 	const handleNext = () => {
 		const newState = activeSliderStep + 1;
-		console.log(newState);
 		setActiveSliderStep(newState);
 		setActiveStep(newState === 0 || newState === 1 ? 0 : activeStep + 1);
+		setProductDisplayType(newState);
 	};
 	const handleBack = () => {
 		const newState = activeSliderStep - 1;
-		console.log(newState);
 		setActiveSliderStep(newState);
 		setActiveStep(newState === 0 || newState === 1 ? 0 : activeStep - 1);
+		setProductDisplayType(newState);
 	};
 	const handleStepChange = (step) => {
 		setActiveSliderStep(step);
 	};
 	const handleProductSelection = (event, product) => {
-		console.log(event, product, selectedProduct);
 		selectedProduct === product ? setSelectedProduct(0) : setSelectedProduct(product);
+	};
+	const setProductDisplayType = (newState) => {
+		if (newState === 0) {
+			setSelectionType('Fish');
+			setTitleDetails({
+				title: 'Select your favorite fish',
+				subTitle: 'Please select a fish you plan on building a tank for.',
+			});
+			setSelectedProducts(defaultProductSelection);
+			setSelectedProduct(0);
+			setSelectionBasedProductList(fishList);
+		} else if (newState === 1) {
+			const detailsIndex = selectedProducts.findIndex((item) => item.id === newState);
+			let details = detailsIndex > -1 ? selectedProducts[detailsIndex] : [];
+			details = {
+				...details,
+				fishSelection: selectedProduct,
+			};
+			const finalData = selectedProducts.map((item, index) => {
+				if (index === detailsIndex) return details;
+				else return item;
+			});
+			setSelectedProducts(finalData);
+			setSelectionType('Tank');
+			if (selectedProduct.name === 'Any Fish') {
+				setTitleDetails({
+					title: `Select a tank`,
+					subTitle: 'Choose from a small, medium, or large tank.',
+				});
+				setSelectionBasedProductList(productsList);
+			} else {
+				setTitleDetails({
+					title: `For ${selectedProduct.name}, we recommend these tanks`,
+					subTitle: 'Please select a tank.',
+				});
+				setSelectionBasedProductList(productsList.filter((item) => item.recommendedFofFish === selectedProduct.name));
+			}
+		} else if (newState === 2) {
+			setSelectionType('Accessories');
+			setTitleDetails({
+				title: 'Recommended accessories',
+				subTitle: 'Add accessory item(s) to your tank.',
+			});
+		} else if (newState === 3) {
+			setSelectionType('Gravel & Decor');
+			setTitleDetails({
+				title: 'Recommended gravel & decor',
+				subTitle: 'Add gravel & decor item(s) to your tank.',
+			});
+		} else if (newState === 4) {
+			setSelectionType('Care');
+			setTitleDetails({
+				title: 'Recommended care for your tank',
+				subTitle: 'Add care item(s) to your tank.',
+			});
+		}
+	};
+	const handleProductSelectionClick = (event) => {
+		handleNext();
+	};
+	const handleGoBackClick = (event) => {
+		handleBack();
 	};
 
 	return (
@@ -112,7 +186,6 @@ export const Tank = (props) => {
 							</Stepper>
 						</Box>
 						<Box>
-							{/* style={{ paddingLeft: 115, paddingRight: 115 }} */}
 							<AutoPlaySwipeableViews
 								axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
 								index={activeSliderStep}
@@ -154,76 +227,16 @@ export const Tank = (props) => {
 								// }
 							/>
 						</Box>
-						<Box>
-							<Box>
-								<Typography className={classes.rightPanelHeading} style={{ paddingLeft: 0 }}>
-									Select your favorite fish
-								</Typography>
-								<Typography variant='body2'>Please select a fish you plan on building a tank for.</Typography>
-							</Box>
-							{/* Selected Product List */}
-							<Box
-								style={{
-									display: 'flex',
-									justifyContent: 'space-between',
-									alignItems: 'center',
-									marginTop: 10,
-									paddingRight: 24,
-								}}
-							>
-								{Boolean(FishList) && FishList.length ? (
-									FishList.map((item) => (
-										<Box style={{ cursor: 'pointer' }} onClick={(e) => handleProductSelection(e, item)}>
-											<Box
-												style={{
-													padding: 8,
-													border: `1px solid ${selectedProduct.id === item.id ? '#007DB4' : '#DDDDDD'}`,
-												}}
-											>
-												{item.imageUrl ? (
-													<Avatar style={{ width: 85, height: 85 }} variant='square' src={item.imageUrl} />
-												) : (
-													<Box style={{ width: 85, height: 85, background: 'grey 0% 0% no-repeat padding-box' }}></Box>
-												)}
-											</Box>
-											<Typography variant='body2' style={{ textAlign: 'center', marginTop: 8 }}>
-												{item.name}
-											</Typography>
-										</Box>
-									))
-								) : (
-									<></>
-								)}
-							</Box>
-							{Boolean(selectedProduct) ? (
-								<Box
-									mt={2}
-									mr={2.25}
-									style={{
-										background: '#ECF6FA 0% 0% no-repeat padding-box',
-										border: '1px solid #007DB4',
-										borderRadius: 4,
-										padding: 16,
-									}}
-								>
-									<Typography variant='body1' component='div' style={{ fontWeight: 'bold' }}>
-										{selectedProduct.name}
-									</Typography>
-									<Typography variant='body2' component='div'>
-										{selectedProduct.description}
-									</Typography>
-								</Box>
-							) : (
-								<></>
-							)}
-							<Box display='flex' justifyContent='flex-end' pr={2.25} pt={2}>
-								{Boolean(selectedProduct) ? (
-									<Button style={{ backgroundColor: '#007DB4', color: '#ffffff' }}>Continue</Button>
-								) : (
-									<Button disabled>Continue</Button>
-								)}
-							</Box>
-						</Box>
+						<ProductListing
+							selectionBasedProductList={selectionBasedProductList}
+							handleProductSelection={handleProductSelection}
+							selectedProduct={selectedProduct}
+							handleProductSelectionClick={handleProductSelectionClick}
+							handleGoBackClick={handleGoBackClick}
+							type={selectionType}
+							title={titleDetails.title}
+							subTitle={titleDetails.subTitle}
+						/>
 					</Box>
 				</Grid>
 				<Grid item xs={4}>

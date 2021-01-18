@@ -1,5 +1,5 @@
 {
-	"FishList": [
+	"fishList": [
 		{
 			"id": 101,
 			"name": "Any Fish",
@@ -45,11 +45,13 @@
 	],
 	"productsList": [
 		{
-			"itemId": "1001",
+			"id": "1001",
 			"imageUrl": "https://picsum.photos/200/300",
-			"productTitle": "Prodct1 - 10 Gallon",
+			"name": "Prodct1 - 10 Gallon",
 			"price": 121.0,
+			"oldPrice": 110,
 			"rating": 4,
+			"recommendedFofFish": "Betta",
 			"tankSize": "small",
 			"color": "Black",
 			"size": "10 Gal",
@@ -58,14 +60,17 @@
 				"https://picsum.photos/200/300",
 				"https://picsum.photos/200/300",
 				"https://picsum.photos/200/300"
-			]
+			],
+			"description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam"
 		},
 		{
-			"itemId": "1002",
+			"id": "1002",
 			"imageUrl": "https://picsum.photos/200/300",
-			"productTitle": "Prodct2 - 120 Gallon",
+			"name": "Prodct2 - 120 Gallon",
 			"price": 122.0,
+			"oldPrice": 110,
 			"rating": 5,
+			"recommendedFofFish": "Cichlid",
 			"tankSize": "large",
 			"color": "Black",
 			"size": "120 Gal",
@@ -74,14 +79,17 @@
 				"https://picsum.photos/200/300",
 				"https://picsum.photos/200/300",
 				"https://picsum.photos/200/300"
-			]
+			],
+			"description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam"
 		},
 		{
-			"itemId": "1003",
+			"id": "1003",
 			"imageUrl": "https://picsum.photos/200/300",
-			"productTitle": "Prodct3 - 5 Gallon",
+			"name": "Prodct3 - 5 Gallon",
 			"price": 123.0,
+			"oldPrice": 110,
 			"rating": 2,
+			"recommendedFofFish": "Goldfish",
 			"tankSize": "small",
 			"color": "Black",
 			"size": "5 Gal",
@@ -90,14 +98,17 @@
 				"https://picsum.photos/200/300",
 				"https://picsum.photos/200/300",
 				"https://picsum.photos/200/300"
-			]
+			],
+			"description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam"
 		},
 		{
-			"itemId": "1004",
+			"id": "1004",
 			"imageUrl": "https://picsum.photos/200/300",
-			"productTitle": "Prodct4 - 8 Gallon",
+			"name": "Prodct4 - 8 Gallon",
 			"price": 124.0,
+			"oldPrice": 108,
 			"rating": 5,
+			"recommendedFofFish": "Tetra",
 			"tankSize": "small",
 			"color": "White",
 			"size": "8 Gal",
@@ -106,14 +117,17 @@
 				"https://picsum.photos/200/300",
 				"https://picsum.photos/200/300",
 				"https://picsum.photos/200/300"
-			]
+			],
+			"description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam"
 		},
 		{
-			"itemId": "1005",
+			"id": "1005",
 			"imageUrl": "https://picsum.photos/200/300",
-			"productTitle": "Prodct5 - 115 Gallon",
+			"name": "Prodct5 - 115 Gallon",
 			"price": 125.0,
+			"oldPrice": 110,
 			"rating": 4,
+			"recommendedFofFish": "Snail",
 			"tankSize": "large",
 			"color": "White",
 			"size": "115 Gal",
@@ -122,14 +136,17 @@
 				"https://picsum.photos/200/300",
 				"https://picsum.photos/200/300",
 				"https://picsum.photos/200/300"
-			]
+			],
+			"description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam"
 		},
 		{
-			"itemId": "1006",
+			"id": "1006",
 			"imageUrl": "https://picsum.photos/200/300",
-			"productTitle": "Prodct6 - 50 Gallon",
+			"name": "Prodct6 - 50 Gallon",
 			"price": 126.0,
+			"oldPrice": 104,
 			"rating": 1,
+			"recommendedFofFish": "Snail",
 			"tankSize": "medium",
 			"color": "Red",
 			"size": "50 Gal",
@@ -138,14 +155,17 @@
 				"https://picsum.photos/200/300",
 				"https://picsum.photos/200/300",
 				"https://picsum.photos/200/300"
-			]
+			],
+			"description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam"
 		},
 		{
-			"itemId": "1007",
+			"id": "1007",
 			"imageUrl": "https://picsum.photos/200/300",
-			"productTitle": "Prodct7 - 6 Gallon",
+			"name": "Prodct7 - 6 Gallon",
 			"price": 127.0,
+			"oldPrice": 110,
 			"rating": 3,
+			"recommendedFofFish": "Tetra",
 			"tankSize": "small",
 			"color": "Red",
 			"size": "6 Gal",
@@ -154,14 +174,17 @@
 				"https://picsum.photos/200/300",
 				"https://picsum.photos/200/300",
 				"https://picsum.photos/200/300"
-			]
+			],
+			"description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam"
 		},
 		{
-			"itemId": "1008",
+			"id": "1008",
 			"imageUrl": "https://picsum.photos/200/300",
-			"productTitle": "Prodct8 - 45 Gallon",
+			"name": "Prodct8 - 45 Gallon",
 			"price": 128.0,
+			"oldPrice": 99,
 			"rating": 2,
+			"recommendedFofFish": "Golfish",
 			"tankSize": "medium",
 			"color": "Grey",
 			"size": "45 Gal",
@@ -170,14 +193,17 @@
 				"https://picsum.photos/200/300",
 				"https://picsum.photos/200/300",
 				"https://picsum.photos/200/300"
-			]
+			],
+			"description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam"
 		},
 		{
-			"itemId": "1009",
+			"id": "1009",
 			"imageUrl": "https://picsum.photos/200/300",
-			"productTitle": "Prodct9 - 3 Gallon",
+			"name": "Prodct9 - 3 Gallon",
 			"price": 129.0,
+			"oldPrice": 100,
 			"rating": 4,
+			"recommendedFofFish": "Goldfish",
 			"tankSize": "small",
 			"color": "White",
 			"size": "3 Gal",
@@ -186,14 +212,17 @@
 				"https://picsum.photos/200/300",
 				"https://picsum.photos/200/300",
 				"https://picsum.photos/200/300"
-			]
+			],
+			"description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam"
 		},
 		{
-			"itemId": "1010",
+			"id": "1010",
 			"imageUrl": "https://picsum.photos/200/300",
-			"productTitle": "Prodct10 - 110 Gallon",
+			"name": "Prodct10 - 110 Gallon",
 			"price": 130.0,
+			"oldPrice": 110,
 			"rating": 5,
+			"recommendedFofFish": "Goldfish",
 			"tankSize": "large",
 			"color": "Yellow",
 			"size": "110 Gal",
@@ -202,7 +231,8 @@
 				"https://picsum.photos/200/300",
 				"https://picsum.photos/200/300",
 				"https://picsum.photos/200/300"
-			]
+			],
+			"description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam"
 		}
 	]
 }
