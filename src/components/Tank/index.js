@@ -1,15 +1,10 @@
 import React, { Fragment } from 'react';
-import { Box, Typography, Stepper, Step, MobileStepper, StepLabel, Grid } from '@material-ui/core';
-import { useTheme } from '@material-ui/core/styles';
-// import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
-// import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
-import SwipeableViews from 'react-swipeable-views';
-import { autoPlay } from 'react-swipeable-views-utils';
+import { Box, Typography, Stepper, Step, StepLabel, Grid, Button } from '@material-ui/core';
 import { useStyles } from './styles';
 import { ProductListing } from './ProductListing';
+import { TipsCarousel } from './TipsCarousel';
 const mockData = require('./ProductList.json');
 
-const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 const tutorialSteps = [
 	{
 		title: 'Tips for Your Fish',
@@ -40,7 +35,6 @@ const tutorialSteps = [
 
 export const Tank = (props) => {
 	const classes = useStyles();
-	const theme = useTheme();
 	const defaultProductSelection = [
 		{
 			id: 1,
@@ -75,6 +69,11 @@ export const Tank = (props) => {
 	const { fishList, productsList } = mockData;
 	const [activeStep, setActiveStep] = React.useState(0);
 	const [activeSliderStep, setActiveSliderStep] = React.useState(0);
+	const [selectedFishData, setSelectedFishData] = React.useState(0);
+	const [selectedTankData, setSelectedTankData] = React.useState(0);
+	const [selectedAccessoriesData, setSelectedAccessoriesData] = React.useState(0);
+	const [selectedGravelDecorData, setSelectedGravelDecorData] = React.useState(0);
+	const [selectedCareData, setSelectedCareData] = React.useState(0);
 	const [selectedProduct, setSelectedProduct] = React.useState(0);
 	const [selectedProducts, setSelectedProducts] = React.useState(defaultProductSelection);
 	const [selectionType, setSelectionType] = React.useState('Fish');
@@ -102,32 +101,60 @@ export const Tank = (props) => {
 		setActiveSliderStep(step);
 	};
 	const handleProductSelection = (event, product) => {
-		selectedProduct === product ? setSelectedProduct(0) : setSelectedProduct(product);
+		if (selectedProduct === product) {
+			setSelectedProduct(0);
+			if (selectionType === 'Fish') {
+				setSelectedFishData(0);
+			} else if (selectionType === 'Tank') {
+				setSelectedTankData(0);
+			}
+		} else {
+			setSelectedProduct(product);
+			if (selectionType === 'Fish') {
+				setSelectedFishData(product);
+			} else if (selectionType === 'Tank') {
+				setSelectedTankData(product);
+			}
+		}
+	};
+	const addToCart = (newState, selectedProductData, type) => {
+		const cartIndex = newState; // === 1 || newState === 2 ? 1 : newState - 1;
+		const detailsIndex = selectedProducts.findIndex((item) => item.id === cartIndex);
+		let details = detailsIndex > -1 ? selectedProducts[detailsIndex] : [];
+		if (type === 'Tank') {
+			details = {
+				...details,
+				productImage: selectedProductData.imageUrl,
+				ProductName: selectedProductData.name,
+				ProductPrice: selectedProductData.price,
+				fishSelection: selectedProductData,
+			};
+		}
+		const finalData = selectedProducts.map((item, index) => {
+			if (index === detailsIndex) return details;
+			else return item;
+		});
+		setSelectedProducts(finalData);
 	};
 	const setProductDisplayType = (newState) => {
 		if (newState === 0) {
+			//--------- For Fish
+			const selectedProductData = selectedFishData;
 			setSelectionType('Fish');
 			setTitleDetails({
 				title: 'Select your favorite fish',
 				subTitle: 'Please select a fish you plan on building a tank for.',
 			});
 			setSelectedProducts(defaultProductSelection);
-			setSelectedProduct(0);
+			setSelectedTankData(0);
 			setSelectionBasedProductList(fishList);
+			addToCart(0, selectedProductData, 'Tank'); // Add to Cart
 		} else if (newState === 1) {
-			const detailsIndex = selectedProducts.findIndex((item) => item.id === newState);
-			let details = detailsIndex > -1 ? selectedProducts[detailsIndex] : [];
-			details = {
-				...details,
-				fishSelection: selectedProduct,
-			};
-			const finalData = selectedProducts.map((item, index) => {
-				if (index === detailsIndex) return details;
-				else return item;
-			});
-			setSelectedProducts(finalData);
+			const selectedProductData = selectedFishData;
+			//--------- For Tank
+			addToCart(0, selectedProductData, 'Tank'); // Add to Cart
 			setSelectionType('Tank');
-			if (selectedProduct.name === 'Any Fish') {
+			if (selectedProductData.name === 'Any Fish') {
 				setTitleDetails({
 					title: `Select a tank`,
 					subTitle: 'Choose from a small, medium, or large tank.',
@@ -135,29 +162,14 @@ export const Tank = (props) => {
 				setSelectionBasedProductList(productsList);
 			} else {
 				setTitleDetails({
-					title: `For ${selectedProduct.name}, we recommend these tanks`,
+					title: `For ${selectedProductData.name}, we recommend these tanks`,
 					subTitle: 'Please select a tank.',
 				});
-				setSelectionBasedProductList(productsList.filter((item) => item.recommendedFofFish === selectedProduct.name));
+				setSelectionBasedProductList(
+					productsList.filter((item) => item.recommendedForFish === selectedProductData.name)
+				);
 			}
-		} else if (newState === 2) {
-			setSelectionType('Accessories');
-			setTitleDetails({
-				title: 'Recommended accessories',
-				subTitle: 'Add accessory item(s) to your tank.',
-			});
-		} else if (newState === 3) {
-			setSelectionType('Gravel & Decor');
-			setTitleDetails({
-				title: 'Recommended gravel & decor',
-				subTitle: 'Add gravel & decor item(s) to your tank.',
-			});
-		} else if (newState === 4) {
-			setSelectionType('Care');
-			setTitleDetails({
-				title: 'Recommended care for your tank',
-				subTitle: 'Add care item(s) to your tank.',
-			});
+		} else {
 		}
 	};
 	const handleProductSelectionClick = (event) => {
@@ -185,48 +197,28 @@ export const Tank = (props) => {
 								)}
 							</Stepper>
 						</Box>
-						<Box>
-							<AutoPlaySwipeableViews
-								axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
-								index={activeSliderStep}
-								autoplay={false}
-								onChangeIndex={handleStepChange}
-								enableMouseEvents
-							>
-								{tutorialSteps.map((step, index) => (
-									<Box key={`slider_${index}`} style={{ padding: '16px 24px 16px 16px' }}>
-										{Math.abs(activeSliderStep - index) <= 2 ? (
-											<Box display='flex' alignItems='center' justifyContent='space-between'>
-												<Box>
-													<Typography variant='h4'>{step.title}</Typography>
-													<Typography variant='body1'>{step.label}</Typography>
-												</Box>
-												{step.imgPath ? <img className={classes.img} src={step.imgPath} alt={step.label} /> : ''}
-											</Box>
-										) : null}
-									</Box>
-								))}
-							</AutoPlaySwipeableViews>
-							<MobileStepper
-								variant='dots'
-								steps={maxSteps}
-								position='static'
-								activeStep={activeSliderStep}
-								className={classes.root}
-								// nextButton={
-								// 	<Button size='small' onClick={handleNext} disabled={activeSliderStep === maxSteps - 1}>
-								// 		Next
-								// 		{theme.direction === 'rtl' ? <KeyboardArrowLeft /> : <KeyboardArrowRight />}
-								// 	</Button>
-								// }
-								// backButton={
-								// 	<Button size='small' onClick={handleBack} disabled={activeSliderStep === 0}>
-								// 		{theme.direction === 'rtl' ? <KeyboardArrowRight /> : <KeyboardArrowLeft />}
-								// 		Back
-								// 	</Button>
-								// }
+						{selectionType !== 'Final' ? (
+							<TipsCarousel
+								activeSliderStep={activeSliderStep}
+								handleStepChange={handleStepChange}
+								tutorialSteps={tutorialSteps}
+								maxSteps={maxSteps}
 							/>
-						</Box>
+						) : (
+							<Box>
+								<Typography variant='h5' style={{ fontWeight: 'bold' }}>
+									Your tank is ready to go
+								</Typography>
+								<Typography variant='body1'>
+									Add your items to cart and head to your store to pick out your new fish friend.
+								</Typography>
+								<Box className={classes.heroBanner}>
+									<Typography component='div' style={{ textAlign: 'center' }}>
+										Hero Banner
+									</Typography>
+								</Box>
+							</Box>
+						)}
 						<ProductListing
 							selectionBasedProductList={selectionBasedProductList}
 							handleProductSelection={handleProductSelection}
@@ -236,6 +228,11 @@ export const Tank = (props) => {
 							type={selectionType}
 							title={titleDetails.title}
 							subTitle={titleDetails.subTitle}
+							selectedFishData={selectedFishData}
+							selectedTankData={selectedTankData}
+							selectedAccessoriesData={selectedAccessoriesData}
+							selectedGravelDecorData={selectedGravelDecorData}
+							selectedCareData={selectedCareData}
 						/>
 					</Box>
 				</Grid>
@@ -295,6 +292,34 @@ export const Tank = (props) => {
 							) : (
 								<></>
 							)}
+							<Box
+								display='flex'
+								justifyContent='space-between'
+								alignItems='center'
+								style={{
+									padding: 16,
+									borderTop: '1px solid lightgrey',
+								}}
+							>
+								<Typography variant='body2' style={{ fontWeight: 'bold' }}>
+									Subtotal
+								</Typography>
+								<Typography variant='body2' style={{ fontWeight: 'bold' }}>
+									{`$ ###.##`}
+								</Typography>
+							</Box>
+							<Box
+								style={{
+									display: 'flex',
+									alignItems: 'center',
+									justifyContent: 'center',
+									padding: '0px 16px 16px 16px',
+								}}
+							>
+								<Button fullWidth disabled={selectionType !== 'Final'}>
+									{`Add to cart`}
+								</Button>
+							</Box>
 						</Box>
 					</Box>
 				</Grid>

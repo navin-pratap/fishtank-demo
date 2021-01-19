@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import { Avatar, Box, Button, AppBar, Tab, Tabs, Typography, Select, MenuItem } from '@material-ui/core';
 import Rating from '@material-ui/lab/Rating';
+import { ProductImagesSlider } from './ProductImagesSlider';
 
 const useStyles = makeStyles((theme) => ({
 	paper: {
@@ -29,7 +30,6 @@ export const ProductDetailsModal = (props) => {
 	const { openModal, handleCloseModal, type, selectedProductDetails } = props;
 	const [value, setValue] = React.useState(0);
 	const [quantity, setQuantity] = React.useState(1);
-	console.log(type, selectedProductDetails);
 
 	const handleQuantityChange = (event) => {
 		setQuantity(event.target.value);
@@ -76,23 +76,18 @@ export const ProductDetailsModal = (props) => {
 				<Box display='flex'>
 					<Box>
 						{selectedProductDetails.imageUrl ? (
-							<Avatar style={{ width: 256, height: 256 }} variant='square' src={selectedProductDetails.imageUrl} />
+							<Avatar
+								style={{ width: 256, height: 256, marginLeft: 16 }}
+								variant='square'
+								src={selectedProductDetails.imageUrl}
+							/>
 						) : (
-							<Box style={{ width: 256, height: 256, background: '#B2B2B2 0% 0% no-repeat padding-box' }}></Box>
+							<Box
+								style={{ width: 256, height: 256, marginLeft: 16, background: '#B2B2B2 0% 0% no-repeat padding-box' }}
+							></Box>
 						)}
-						<Box display='flex'>
-							{Boolean(selectedProductDetails) &&
-								selectedProductDetails.productImages &&
-								selectedProductDetails.productImages.length &&
-								selectedProductDetails.productImages.map((item, index) => (
-									<Box pr={1} mt={1} key={`product-images-${index}`}>
-										{item ? (
-											<Avatar style={{ width: 80, height: 80 }} variant='square' src={item} />
-										) : (
-											<Box style={{ width: 80, height: 80, background: '#B2B2B2 0% 0% no-repeat padding-box' }}></Box>
-										)}
-									</Box>
-								))}
+						<Box display='flex' alignItems='center'>
+							<ProductImagesSlider selectedProductDetails={selectedProductDetails} />
 						</Box>
 					</Box>
 					<Box pl={3}>
@@ -136,7 +131,12 @@ export const ProductDetailsModal = (props) => {
 							</Select>
 						</Box>
 						<Box mt={3}>
-							<Button style={{ backgroundColor: '#007DB4', color: '#ffffff', padding: '6px 22px' }}>Select</Button>
+							<Button
+								onClick={handleCloseModal}
+								style={{ backgroundColor: '#007DB4', color: '#ffffff', padding: '6px 22px' }}
+							>
+								Select
+							</Button>
 						</Box>
 					</Box>
 				</Box>

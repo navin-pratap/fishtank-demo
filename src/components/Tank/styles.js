@@ -43,4 +43,13 @@ export const useStyles = makeStyles((theme) => ({
 		color: '#007DB4',
 		cursor: 'pointer',
 	},
+	heroBanner: {
+		height: 200,
+		background: '#F2F2F2 0% 0% no-repeat padding-box',
+		margin: theme.spacing(2, 2, 2, 0),
+		opacity: 1,
+		display: 'flex',
+		alignItems: 'center',
+		justifyContent: 'center',
+	},
 }));
