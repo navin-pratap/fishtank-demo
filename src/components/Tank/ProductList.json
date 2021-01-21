@@ -235,7 +235,184 @@
 			"description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam"
 		}
 	],
-	"accessories": [],
-	"gravelDecor": [],
-	"care": []
+	"accessories": [
+		{
+			"id": "1001",
+			"imageUrl": "https://picsum.photos/200/300",
+			"name": "Recommended Accessory Name Here - 1",
+			"price": 100,
+			"oldPrice": 110,
+			"rating": 4.5,
+			"recommendedForFish": "Betta",
+			"tankSize": "small",
+			"color": "Black",
+			"size": "10 Gal",
+			"owner": "Top Fin",
+			"productImages": [
+				"https://picsum.photos/200/300",
+				"https://picsum.photos/200/300",
+				"https://picsum.photos/200/300"
+			],
+			"description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam"
+		},
+		{
+			"id": "1002",
+			"imageUrl": "https://picsum.photos/200/300",
+			"name": "Recommended Accessory Name Here - 2",
+			"price": 100,
+			"oldPrice": 110,
+			"rating": 4.5,
+			"recommendedForFish": "Betta",
+			"tankSize": "small",
+			"color": "Black",
+			"size": "10 Gal",
+			"owner": "Top Fin",
+			"productImages": [
+				"https://picsum.photos/200/300",
+				"https://picsum.photos/200/300",
+				"https://picsum.photos/200/300"
+			],
+			"description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam"
+		},
+		{
+			"id": "1003",
+			"imageUrl": "https://picsum.photos/200/300",
+			"name": "Recommended Accessory Name Here - 3",
+			"price": 95,
+			"oldPrice": 100,
+			"rating": 3.5,
+			"recommendedForFish": "Betta",
+			"tankSize": "small",
+			"color": "Black",
+			"size": "10 Gal",
+			"owner": "Top Fin",
+			"productImages": [
+				"https://picsum.photos/200/300",
+				"https://picsum.photos/200/300",
+				"https://picsum.photos/200/300"
+			],
+			"description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam"
+		}
+	],
+	"gravelDecor": [
+		{
+			"id": "1001",
+			"imageUrl": "https://picsum.photos/200/300",
+			"name": "Recommended Gravel & Decor item Name Here - 1",
+			"price": 100,
+			"oldPrice": 110,
+			"rating": 4.5,
+			"recommendedForFish": "Betta",
+			"tankSize": "small",
+			"color": "Black",
+			"colorList": ["#00567C", "#06847F", "#FFFFFF", "#B45303"],
+			"size": "10 Gal",
+			"owner": "Top Fin",
+			"productImages": [
+				"https://picsum.photos/200/300",
+				"https://picsum.photos/200/300",
+				"https://picsum.photos/200/300"
+			],
+			"description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam"
+		},
+		{
+			"id": "1002",
+			"imageUrl": "https://picsum.photos/200/300",
+			"name": "Recommended Gravel & Decor item Name Here - 2",
+			"price": 100,
+			"oldPrice": 110,
+			"rating": 4.5,
+			"recommendedForFish": "Betta",
+			"tankSize": "small",
+			"color": "Black",
+			"colorList": ["#00567C", "#06847F", "#FFFFFF", "#B45303"],
+			"size": "10 Gal",
+			"owner": "Top Fin",
+			"productImages": [
+				"https://picsum.photos/200/300",
+				"https://picsum.photos/200/300",
+				"https://picsum.photos/200/300"
+			],
+			"description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam"
+		},
+		{
+			"id": "1003",
+			"imageUrl": "https://picsum.photos/200/300",
+			"name": "Recommended Gravel & Decor item Name Here - 3",
+			"price": 95,
+			"oldPrice": 100,
+			"rating": 3.5,
+			"recommendedForFish": "Betta",
+			"tankSize": "small",
+			"color": "Black",
+			"colorList": ["#00567C", "#06847F", "#FFFFFF", "#B45303"],
+			"size": "10 Gal",
+			"owner": "Top Fin",
+			"productImages": [
+				"https://picsum.photos/200/300",
+				"https://picsum.photos/200/300",
+				"https://picsum.photos/200/300"
+			],
+			"description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam"
+		}
+	],
+	"care": [
+		{
+			"id": "1001",
+			"imageUrl": "https://picsum.photos/200/300",
+			"name": "Recommended Tank Care item Name Here - 1",
+			"price": 100,
+			"oldPrice": 110,
+			"rating": 4.5,
+			"recommendedForFish": "Betta",
+			"tankSize": "small",
+			"color": "Black",
+			"size": "10 Gal",
+			"owner": "Top Fin",
+			"productImages": [
+				"https://picsum.photos/200/300",
+				"https://picsum.photos/200/300",
+				"https://picsum.photos/200/300"
+			],
+			"description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam"
+		},
+		{
+			"id": "1002",
+			"imageUrl": "https://picsum.photos/200/300",
+			"name": "Recommended Tank Care item Name Here - 2",
+			"price": 100,
+			"oldPrice": 110,
+			"rating": 4.5,
+			"recommendedForFish": "Betta",
+			"tankSize": "small",
+			"color": "Black",
+			"size": "10 Gal",
+			"owner": "Top Fin",
+			"productImages": [
+				"https://picsum.photos/200/300",
+				"https://picsum.photos/200/300",
+				"https://picsum.photos/200/300"
+			],
+			"description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam"
+		},
+		{
+			"id": "1003",
+			"imageUrl": "https://picsum.photos/200/300",
+			"name": "Recommended Tank Care item Name Here - 3",
+			"price": 95,
+			"oldPrice": 100,
+			"rating": 3.5,
+			"recommendedForFish": "Betta",
+			"tankSize": "small",
+			"color": "Black",
+			"size": "10 Gal",
+			"owner": "Top Fin",
+			"productImages": [
+				"https://picsum.photos/200/300",
+				"https://picsum.photos/200/300",
+				"https://picsum.photos/200/300"
+			],
+			"description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam"
+		}
+	]
 }

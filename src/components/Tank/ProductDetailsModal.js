@@ -86,7 +86,7 @@ export const ProductDetailsModal = (props) => {
 								style={{ width: 256, height: 256, marginLeft: 16, background: '#B2B2B2 0% 0% no-repeat padding-box' }}
 							></Box>
 						)}
-						<Box display='flex' alignItems='center'>
+						<Box display='flex' alignItems='center' justifyContent='center'>
 							<ProductImagesSlider selectedProductDetails={selectedProductDetails} />
 						</Box>
 					</Box>

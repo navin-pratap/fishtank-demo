@@ -66,7 +66,7 @@ export const Tank = (props) => {
 			ProductPrice: 0,
 		},
 	];
-	const { fishList, productsList } = mockData;
+	const { fishList, productsList, accessories, gravelDecor, care } = mockData;
 	const [activeStep, setActiveStep] = React.useState(0);
 	const [activeSliderStep, setActiveSliderStep] = React.useState(0);
 	const [selectedFishData, setSelectedFishData] = React.useState(0);
@@ -107,6 +107,12 @@ export const Tank = (props) => {
 				setSelectedFishData(0);
 			} else if (selectionType === 'Tank') {
 				setSelectedTankData(0);
+			} else if (selectionType === 'Accessories') {
+				setSelectedAccessoriesData(0);
+			} else if (selectionType === 'Gravel & Decor') {
+				setSelectedGravelDecorData(0);
+			} else if (selectionType === 'Care') {
+				setSelectedCareData(0);
 			}
 		} else {
 			setSelectedProduct(product);
@@ -114,6 +120,12 @@ export const Tank = (props) => {
 				setSelectedFishData(product);
 			} else if (selectionType === 'Tank') {
 				setSelectedTankData(product);
+			} else if (selectionType === 'Accessories') {
+				setSelectedAccessoriesData(product);
+			} else if (selectionType === 'Gravel & Decor') {
+				setSelectedGravelDecorData(product);
+			} else if (selectionType === 'Care') {
+				setSelectedCareData(product);
 			}
 		}
 	};
@@ -128,6 +140,27 @@ export const Tank = (props) => {
 				ProductName: selectedProductData.name,
 				ProductPrice: selectedProductData.price,
 				fishSelection: selectedProductData,
+			};
+		} else if (type === 'Accessories') {
+			details = {
+				...details,
+				productImage: selectedProductData.imageUrl,
+				ProductName: selectedProductData.name,
+				ProductPrice: selectedProductData.price,
+			};
+		} else if (type === 'Gravel & Decor') {
+			details = {
+				...details,
+				productImage: selectedProductData.imageUrl,
+				ProductName: selectedProductData.name,
+				ProductPrice: selectedProductData.price,
+			};
+		} else if (type === 'Care') {
+			details = {
+				...details,
+				productImage: selectedProductData.imageUrl,
+				ProductName: selectedProductData.name,
+				ProductPrice: selectedProductData.price,
 			};
 		}
 		const finalData = selectedProducts.map((item, index) => {
@@ -146,7 +179,12 @@ export const Tank = (props) => {
 				subTitle: 'Please select a fish you plan on building a tank for.',
 			});
 			setSelectedProducts(defaultProductSelection);
+			// setSelectedProduct(0);
+			// setSelectedFishData(0);
 			setSelectedTankData(0);
+			setSelectedAccessoriesData(0);
+			setSelectedGravelDecorData(0);
+			setSelectedCareData(0);
 			setSelectionBasedProductList(fishList);
 			addToCart(0, selectedProductData, 'Tank'); // Add to Cart
 		} else if (newState === 1) {
@@ -169,8 +207,76 @@ export const Tank = (props) => {
 					productsList.filter((item) => item.recommendedForFish === selectedProductData.name)
 				);
 			}
-		} else {
+			// setSelectedProduct(0);
+			// setSelectedFishData(0);
+			// setSelectedTankData(0);
+			setSelectedAccessoriesData(0);
+			setSelectedGravelDecorData(0);
+			setSelectedCareData(0);
+		} else if (newState === 2) {
+			//--------- For Accessories
+			const selectedProductData = selectedTankData;
+			addToCart(1, selectedProductData, 'Accessories'); // Add to Cart
+			setSelectionType('Accessories');
+			setTitleDetails({
+				title: 'Recommended accessories',
+				subTitle: 'Add accessory item(s) to your tank.',
+			});
+			setSelectionBasedProductList(accessories);
+
+			// setSelectedFishData(0);
+			// setSelectedTankData(0);
+			// setSelectedAccessoriesData(0);
+			setSelectedGravelDecorData(0);
+			setSelectedCareData(0);
+		} else if (newState === 3) {
+			//--------- For Gravel & Decor
+			const selectedProductData = selectedAccessoriesData;
+			addToCart(2, selectedProductData, 'Gravel & Decor'); // Add to Cart
+			setSelectionType('Gravel & Decor');
+			setTitleDetails({
+				title: 'Recommended gravel & decor',
+				subTitle: 'Add gravel & decor item(s) to your tank.',
+			});
+			setSelectionBasedProductList(gravelDecor);
+
+			// setSelectedFishData(0);
+			// setSelectedTankData(0);
+			// setSelectedAccessoriesData(0);
+			// setSelectedGravelDecorData(0);
+			setSelectedCareData(0);
+		} else if (newState === 4) {
+			//--------- For Care
+			const selectedProductData = selectedGravelDecorData;
+			addToCart(3, selectedProductData, 'Care'); // Add to Cart
+			setSelectionType('Care');
+			setTitleDetails({
+				title: 'Recommended care for your tank',
+				subTitle: 'Add care item(s) to your tank.',
+			});
+			setSelectionBasedProductList(care);
+
+			// setSelectedFishData(0);
+			// setSelectedTankData(0);
+			// setSelectedAccessoriesData(0);
+			// setSelectedGravelDecorData(0);
+			// setSelectedCareData(0);
+		} else if (newState === 5) {
+			const selectedProductData = selectedCareData;
+			addToCart(4, selectedProductData, 'Care'); // Add to Cart
+			setSelectionType('Final');
+			setTitleDetails({
+				title: 'Do’s and don’ts with your new fish',
+				subTitle: '',
+			});
+			setSelectionBasedProductList([]);
 		}
+		// if (newState === 0 || newState === 1) {
+		// } else if (newState === 2) {
+		// } else if (newState === 3) {
+		// } else if (newState === 4) {
+		// } else if (newState === 5) {
+		// }
 	};
 	const handleProductSelectionClick = (event) => {
 		handleNext();
@@ -316,7 +422,14 @@ export const Tank = (props) => {
 									padding: '0px 16px 16px 16px',
 								}}
 							>
-								<Button fullWidth disabled={selectionType !== 'Final'}>
+								<Button
+									fullWidth
+									style={{
+										backgroundColor: selectionType === 'Final' ? '#007DB4' : '#F2F2F2',
+										color: selectionType === 'Final' ? '#ffffff' : 'lightgray',
+									}}
+									disabled={selectionType !== 'Final'}
+								>
 									{`Add to cart`}
 								</Button>
 							</Box>

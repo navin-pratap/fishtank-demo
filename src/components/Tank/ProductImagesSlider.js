@@ -16,8 +16,10 @@ export const ProductImagesSlider = ({ selectedProductDetails }) => {
 							) : (
 								<Box style={{ width: 80, height: 80, background: '#B2B2B2 0% 0% no-repeat padding-box' }}></Box>
 							)
+						) : item ? (
+							<Avatar style={{ width: 80, height: 80 }} variant='square' src={item} />
 						) : (
-							<></>
+							<Box style={{ width: 80, height: 80, background: '#B2B2B2 0% 0% no-repeat padding-box' }}></Box>
 						)}
 					</Box>
 				))}
