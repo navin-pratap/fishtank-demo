@@ -4,7 +4,6 @@ export const useStyles = makeStyles((theme) => ({
 	root: {
 		flexGrow: 1,
 		padding: theme.spacing(2),
-		paddingTop: theme.spacing(0),
 		backgroundColor: 'transparent',
 		display: 'flex',
 		alignItems: 'center',
@@ -51,5 +50,22 @@ export const useStyles = makeStyles((theme) => ({
 		display: 'flex',
 		alignItems: 'center',
 		justifyContent: 'center',
+	},
+	tipsContainer: {
+		display: 'flex',
+		alignItems: 'center',
+		justifyContent: 'center',
+		backgroundColor: '#F2F2F2',
+		marginRight: theme.spacing(3.75),
+		paddingLeft: theme.spacing(1),
+		paddingRight: theme.spacing(1),
+	},
+	tipsButton: {
+		padding: theme.spacing(0),
+		minWidth: theme.spacing(4),
+		backgroundColor: '#FFFFFF',
+		color: '#007DB4',
+		minHeight: theme.spacing(4),
+		borderRadius: theme.spacing(3.125),
 	},
 }));

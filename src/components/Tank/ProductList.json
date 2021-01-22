@@ -414,5 +414,33 @@
 			],
 			"description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam"
 		}
-	]
+	],
+	"tutorialSteps": [
+		{
+			"title": "Tips for Your Fish",
+			"label": "Provide nutrition for your fish that has similar ingredients to what they would eat in the wild.",
+			"imgPath": "https://images.unsplash.com/photo-1538032746644-0212e812a9e7?auto=format&fit=crop&w=215&h=170&q=60"
+		},
+		{
+			"title": "Tank Tips",
+			"label": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr",
+			"imgPath": "https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&w=215&h=170&q=60"
+		},
+		{
+			"title": "Accessories Tips",
+			"label": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr",
+			"imgPath": "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=215&h=170&q=80"
+		},
+		{
+			"title": "Gravel & Decor Tips",
+			"label": "Use 1 to 1.5 lbs. of gravel per gallon of tank.",
+			"imgPath": "https://images.unsplash.com/photo-1518732714860-b62714ce0c59?auto=format&fit=crop&w=215&h=170&q=60"
+		},
+		{
+			"title": "Tank Care Tips",
+			"label": "Use 1 to 1.5 lbs. of gravel per gallon of tank.",
+			"imgPath": "https://images.unsplash.com/photo-1512341689857-198e7e2f3ca8?auto=format&fit=crop&w=215&h=170&q=60"
+		}
+	],
+	"steps": ["Fish & Tank", "Accessories", "Gravel & Decor", "Care"]
 }

@@ -5,34 +5,6 @@ import { ProductListing } from './ProductListing';
 import { TipsCarousel } from './TipsCarousel';
 const mockData = require('./ProductList.json');
 
-const tutorialSteps = [
-	{
-		title: 'Tips for Your Fish',
-		label: 'Provide nutrition for your fish that has similar ingredients to what they would eat in the wild.',
-		imgPath: 'https://images.unsplash.com/photo-1538032746644-0212e812a9e7?auto=format&fit=crop&w=215&h=170&q=60',
-	},
-	{
-		title: 'Tank Tips',
-		label: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr',
-		imgPath: 'https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&w=215&h=170&q=60',
-	},
-	{
-		title: 'Accessories Tips',
-		label: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr',
-		imgPath: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=215&h=170&q=80',
-	},
-	{
-		title: 'Gravel & Decor Tips',
-		label: 'Use 1 to 1.5 lbs. of gravel per gallon of tank.',
-		imgPath: 'https://images.unsplash.com/photo-1518732714860-b62714ce0c59?auto=format&fit=crop&w=215&h=170&q=60',
-	},
-	{
-		title: 'Tank Care Tips',
-		label: 'Use 1 to 1.5 lbs. of gravel per gallon of tank.',
-		imgPath: 'https://images.unsplash.com/photo-1512341689857-198e7e2f3ca8?auto=format&fit=crop&w=215&h=170&q=60',
-	},
-];
-
 export const Tank = (props) => {
 	const classes = useStyles();
 	const defaultProductSelection = [
@@ -66,7 +38,7 @@ export const Tank = (props) => {
 			ProductPrice: 0,
 		},
 	];
-	const { fishList, productsList, accessories, gravelDecor, care } = mockData;
+	const { fishList, productsList, accessories, gravelDecor, care, tutorialSteps, steps } = mockData;
 	const [activeStep, setActiveStep] = React.useState(0);
 	const [activeSliderStep, setActiveSliderStep] = React.useState(0);
 	const [selectedFishData, setSelectedFishData] = React.useState(0);
@@ -82,20 +54,38 @@ export const Tank = (props) => {
 		title: 'Select your favorite fish',
 		subTitle: 'Please select a fish you plan on building a tank for.',
 	});
-	const steps = ['Fish & Tank', 'Accessories', 'Gravel & Decor', 'Care'];
 	const maxSteps = tutorialSteps.length;
 
-	const handleNext = () => {
-		const newState = activeSliderStep + 1;
-		setActiveSliderStep(newState);
-		setActiveStep(newState === 0 || newState === 1 ? 0 : activeStep + 1);
-		setProductDisplayType(newState);
+	const getNewState = () => {
+		if (selectionType === 'Fish') {
+			return 1;
+		} else if (selectionType === 'Tank') {
+			return 2;
+		} else if (selectionType === 'Accessories') {
+			return 3;
+		} else if (selectionType === 'Gravel & Decor') {
+			return 4;
+		} else if (selectionType === 'Care') {
+			return 5;
+		}
 	};
-	const handleBack = () => {
-		const newState = activeSliderStep - 1;
+	const handleNext = (event, callType) => {
+		let newState = activeSliderStep + 1;
+		if (callType === 1) {
+			newState = getNewState();
+		}
 		setActiveSliderStep(newState);
-		setActiveStep(newState === 0 || newState === 1 ? 0 : activeStep - 1);
-		setProductDisplayType(newState);
+		callType === 1 && setActiveStep(newState === 0 || newState === 1 ? 0 : activeStep + 1);
+		callType === 1 && setProductDisplayType(newState);
+	};
+	const handleBack = (event, callType) => {
+		let newState = activeSliderStep - 1;
+		if (callType === 1) {
+			newState = getNewState();
+		}
+		setActiveSliderStep(newState);
+		callType === 1 && setActiveStep(newState === 0 || newState === 1 ? 0 : activeStep - 1);
+		callType === 1 && setProductDisplayType(newState);
 	};
 	const handleStepChange = (step) => {
 		setActiveSliderStep(step);
@@ -279,10 +269,19 @@ export const Tank = (props) => {
 		// }
 	};
 	const handleProductSelectionClick = (event) => {
-		handleNext();
+		handleNext(event, 1);
 	};
 	const handleGoBackClick = (event) => {
-		handleBack();
+		handleBack(event, 1);
+	};
+	const getSubTotal = () => {
+		let sum = 0;
+		Boolean(selectedProducts) &&
+			selectedProducts.length &&
+			selectedProducts.forEach((item) => {
+				sum = sum + item.ProductPrice;
+			});
+		return sum;
 	};
 
 	return (
@@ -309,6 +308,8 @@ export const Tank = (props) => {
 								handleStepChange={handleStepChange}
 								tutorialSteps={tutorialSteps}
 								maxSteps={maxSteps}
+								handleBack={handleBack}
+								handleNext={handleNext}
 							/>
 						) : (
 							<Box>
@@ -411,7 +412,7 @@ export const Tank = (props) => {
 									Subtotal
 								</Typography>
 								<Typography variant='body2' style={{ fontWeight: 'bold' }}>
-									{`$ ###.##`}
+									{`$ ${selectionType === 'Final' ? getSubTotal() : '###.##'}`}
 								</Typography>
 							</Box>
 							<Box
