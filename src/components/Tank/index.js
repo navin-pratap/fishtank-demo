@@ -1,8 +1,11 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import { Box, Typography, Stepper, Step, StepLabel, Grid, Button } from '@material-ui/core';
 import { useStyles } from './styles';
 import { ProductListing } from './ProductListing';
 import { TipsCarousel } from './TipsCarousel';
+import { configs, SKUList } from '../../config';
+import { getSkuFullDetails } from '../../services/generator';
+
 const mockData = require('./ProductList.json');
 
 export const Tank = (props) => {
@@ -39,23 +42,49 @@ export const Tank = (props) => {
 		},
 	];
 	const { fishList, productsList, accessories, gravelDecor, care, tutorialSteps, steps } = mockData;
-	const [activeStep, setActiveStep] = React.useState(0);
-	const [activeSliderStep, setActiveSliderStep] = React.useState(0);
-	const [selectedFishData, setSelectedFishData] = React.useState(0);
-	const [selectedTankData, setSelectedTankData] = React.useState(0);
-	const [selectedAccessoriesData, setSelectedAccessoriesData] = React.useState(0);
-	const [selectedGravelDecorData, setSelectedGravelDecorData] = React.useState(0);
-	const [selectedCareData, setSelectedCareData] = React.useState(0);
-	const [selectedProduct, setSelectedProduct] = React.useState(0);
-	const [selectedProducts, setSelectedProducts] = React.useState(defaultProductSelection);
-	const [selectionType, setSelectionType] = React.useState('Fish');
-	const [selectionBasedProductList, setSelectionBasedProductList] = React.useState(fishList);
-	const [titleDetails, setTitleDetails] = React.useState({
+	const [activeStep, setActiveStep] = useState(0);
+	const [activeSliderStep, setActiveSliderStep] = useState(0);
+	const [selectedFishData, setSelectedFishData] = useState(0);
+	const [selectedTankData, setSelectedTankData] = useState(0);
+	const [selectedAccessoriesData, setSelectedAccessoriesData] = useState(0);
+	const [selectedGravelDecorData, setSelectedGravelDecorData] = useState(0);
+	const [selectedCareData, setSelectedCareData] = useState(0);
+	const [selectedProduct, setSelectedProduct] = useState(0);
+	const [selectedProducts, setSelectedProducts] = useState(defaultProductSelection);
+	const [selectionType, setSelectionType] = useState('Fish');
+	const [selectionBasedProductList, setSelectionBasedProductList] = useState(fishList);
+	const [titleDetails, setTitleDetails] = useState({
 		title: 'Select your favorite fish',
 		subTitle: 'Please select a fish you plan on building a tank for.',
 	});
 	const maxSteps = tutorialSteps.length;
 
+	useEffect(() => {
+		getAllSkuDetails();
+	}, []);
+
+	const getAllSkuDetails = () => {
+		const bigList = SKUList;
+		let organizedList = {};
+		let n = 0;
+
+		for (let i = 0; i < bigList.length; i += configs.batchSize) {
+			organizedList[`group${n}`] = bigList.slice(i, i + configs.batchSize);
+			n += 1;
+		}
+		const listKeys = Object.keys(organizedList);
+		for (let i = 0; i < listKeys.length; i++) {
+			const data = organizedList[listKeys[i]];
+			getSkuFullDetails(data)
+				.then((response) => {
+					const data = response.data.data;
+					console.log(data);
+				})
+				.catch((error) => {
+					console.error('This was from the axios', error);
+				});
+		}
+	};
 	const getNewState = () => {
 		if (selectionType === 'Fish') {
 			return 1;

@@ -7,7 +7,6 @@ axios.interceptors.response.use(null, (error) => {
 
 const showErrorDialog = (error) => {
 	if (error && error.status === 401) {
-		localStorage.clear();
 		window.location.reload();
 	}
 };
