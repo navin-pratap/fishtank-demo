@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import { Box, Typography, Stepper, Step, StepLabel, Grid, Button } from '@material-ui/core';
 import { useStyles } from './styles';
 import { ProductListing } from './ProductListing';
@@ -59,11 +59,6 @@ export const Tank = (props) => {
 		subTitle: 'Please select a fish you plan on building a tank for.',
 	});
 	const maxSteps = tutorialSteps.length;
-
-	// useEffect(() => {
-	// 	getAllSkuDetails();
-	// 	// eslint-disable-next-line react-hooks/exhaustive-deps
-	// }, []);
 
 	const getAllSkuDetails = async () => {
 		const bigList = SKUList;
