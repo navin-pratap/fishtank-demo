@@ -120,7 +120,12 @@ export const ProductDetailsModal = (props) => {
 						<Box mt={1} display='flex' alignItems='center' className={classes.ratingMain}>
 							<Typography component='span'>Item</Typography>
 							<Typography component='span' style={{ marginRight: 8 }}>{` #${selectedProductDetails.id}`}</Typography>
-							<Rating name='product-rating' value={selectedProductDetails.rating || 0} readOnly precision={0.5} />
+							<Rating
+								name='product-rating'
+								value={type === 'Tank' ? selectedProductDetails.c_bvAverageRating : selectedProductDetails.rating || 0}
+								readOnly
+								precision={0.5}
+							/>
 						</Box>
 						<Box mt={1} display='flex' alignItems='center'>
 							<Typography variant='h6' color='error' style={{ fontWeight: 'bold', marginRight: 8 }}>
