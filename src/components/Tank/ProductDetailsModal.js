@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import { Avatar, Box, Button, AppBar, Tab, Tabs, Typography, Select, MenuItem } from '@material-ui/core';
@@ -17,6 +17,13 @@ const useStyles = makeStyles((theme) => ({
 		'& .MuiRating-root': {
 			color: '#007DB4',
 		},
+	},
+	twoLine: {
+		overflow: 'hidden',
+		textOverflow: 'ellipsis',
+		display: '-webkit-box',
+		WebkitLineClamp: 2,
+		WebkitBoxOrient: 'vertical',
 	},
 }));
 
@@ -75,7 +82,17 @@ export const ProductDetailsModal = (props) => {
 				</Box>
 				<Box display='flex'>
 					<Box>
-						{selectedProductDetails.imageUrl ? (
+						{type === 'Tank' ? (
+							<Avatar
+								style={{ width: 256, height: 256, marginLeft: 16 }}
+								variant='square'
+								src={
+									type === 'Tank'
+										? `https://s7d2.scene7.com/is/image/PetSmart/${selectedProductDetails.id}?$sclp-prd-main_large$`
+										: selectedProductDetails.imageUrl
+								}
+							/>
+						) : selectedProductDetails.imageUrl ? (
 							<Avatar
 								style={{ width: 256, height: 256, marginLeft: 16 }}
 								variant='square'
@@ -91,16 +108,14 @@ export const ProductDetailsModal = (props) => {
 						</Box>
 					</Box>
 					<Box pl={3}>
-						<Typography variant='h5' style={{ fontWeight: 'bold' }}>
+						<Typography variant='h5' className={classes.twoLine} style={{ fontWeight: 'bold' }}>
 							{selectedProductDetails.name}
 						</Typography>
 						<Box mt={1}>
 							<Typography component='span'>By</Typography>
-							<Typography
-								component='span'
-								color='primary'
-								style={{ cursor: 'pointer' }}
-							>{` ${selectedProductDetails.owner}`}</Typography>
+							<Typography component='span' color='primary' style={{ cursor: 'pointer' }}>{` ${
+								type === 'Tank' ? selectedProductDetails.brand : selectedProductDetails.owner
+							}`}</Typography>
 						</Box>
 						<Box mt={1} display='flex' alignItems='center' className={classes.ratingMain}>
 							<Typography component='span'>Item</Typography>
@@ -108,18 +123,26 @@ export const ProductDetailsModal = (props) => {
 							<Rating name='product-rating' value={selectedProductDetails.rating || 0} readOnly precision={0.5} />
 						</Box>
 						<Box mt={1} display='flex' alignItems='center'>
-							<Typography variant='h6' color='error' style={{ fontWeight: 'bold', marginRight: 8 }}>{`$${convertPrice(
-								selectedProductDetails.price
-							)}`}</Typography>
+							<Typography variant='h6' color='error' style={{ fontWeight: 'bold', marginRight: 8 }}>
+								{type === 'Tank'
+									? selectedProductDetails.c_pricing.formattedSale
+									: `$${convertPrice(selectedProductDetails.price)}`}
+							</Typography>
 							<Typography
 								variant='h6'
 								color='textSecondary'
 								style={{ fontWeight: 'bold', textDecoration: 'line-through' }}
-							>{`$${convertPrice(selectedProductDetails.oldPrice)}`}</Typography>
+							>
+								{type === 'Tank'
+									? selectedProductDetails.c_pricing.formattedStandard
+									: `$${convertPrice(selectedProductDetails.oldPrice)}`}
+							</Typography>
 						</Box>
 						<Box mt={1} display='flex' alignItems='center'>
 							<Typography style={{ marginRight: 8 }}>SIze:</Typography>
-							<Typography style={{ fontWeight: 'bold' }}>{selectedProductDetails.size}</Typography>
+							<Typography style={{ fontWeight: 'bold' }}>
+								{type === 'Tank' ? selectedProductDetails.c_size : selectedProductDetails.size}
+							</Typography>
 						</Box>
 						<Box mt={3}>
 							<Select value={quantity} onChange={handleQuantityChange} label='' variant='outlined'>
@@ -140,23 +163,35 @@ export const ProductDetailsModal = (props) => {
 						</Box>
 					</Box>
 				</Box>
-				<Box mt={5}>
-					<AppBar position='static' color='default'>
-						<Tabs
-							value={value}
-							onChange={handleChange}
-							indicatorColor='primary'
-							textColor='primary'
-							variant='scrollable'
-							scrollButtons='auto'
-							aria-label='Product details tabs'
-						>
-							<Tab label='Description' {...a11yProps(0)} />
-						</Tabs>
-					</AppBar>
-					<TabPanel value={value} index={0}>
-						{selectedProductDetails.description}
-					</TabPanel>
+				<Box
+					mt={5}
+					style={{
+						height: 200,
+						overflow: 'auto',
+					}}
+				>
+					{type === 'Tank' ? (
+						<div dangerouslySetInnerHTML={{ __html: selectedProductDetails.long_description }} />
+					) : (
+						<Fragment>
+							<AppBar position='static' color='default'>
+								<Tabs
+									value={value}
+									onChange={handleChange}
+									indicatorColor='primary'
+									textColor='primary'
+									variant='scrollable'
+									scrollButtons='auto'
+									aria-label='Product details tabs'
+								>
+									<Tab label='Description' {...a11yProps(0)} />
+								</Tabs>
+							</AppBar>
+							<TabPanel value={value} index={0}>
+								{selectedProductDetails.description}
+							</TabPanel>
+						</Fragment>
+					)}
 				</Box>
 			</Box>
 		</Modal>

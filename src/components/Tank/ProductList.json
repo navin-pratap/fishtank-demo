@@ -21,7 +21,7 @@
 		{
 			"id": 104,
 			"name": "Goldfish",
-			"imageUrl": "https://picsum.photos/85/85",
+			"imageUrl": "",
 			"description": "Male bettas cannot live together. One betta can live in a tank with other peaceful community fish."
 		},
 		{
@@ -45,7 +45,7 @@
 	],
 	"productsList": [
 		{
-			"id": "1001",
+			"id": "5264615",
 			"imageUrl": "https://picsum.photos/200/300",
 			"name": "Prodct1 - 10 Gallon",
 			"price": 121.0,
@@ -61,10 +61,28 @@
 				"https://picsum.photos/200/300",
 				"https://picsum.photos/200/300"
 			],
-			"description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam"
+			"description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam",
+			"c_pricing": {
+				"showStandardPrice": true,
+				"isPromoPrice": false,
+				"standard": 15.99,
+				"formattedStandard": "$15.99",
+				"sale": 14.99,
+				"formattedSale": "$14.99"
+			},
+			"c_size": "1 Gal",
+			"brand": "Top Fin",
+			"c_brand": {
+				"brandID": "5000270",
+				"brandName": "Top Fin",
+				"url": "/featured-brands/top-fin/"
+			},
+			"short_description": "TF EXCITE KIT BLACK 1G V2             23",
+			"c_customParsedProductDescription": "{\"html\":\"<p><b>DESCRIPTION </b><p><br>The Top Fin Excite Aquarium provides a safe, comfortable and aesthetically pleasing home for your fish. This aquarium makes feeding easy with a convenient feeding door on the hood, and even includes a bright white LED fixture to light up your underwater world. Only at PetSmart. <br><p><b>Features:</b> Bright white LED; Hood with convenient feeding door<br><br><b>Includes:</b><li> 1 Tank<li>Top Fin \\\"Element\\\" filter cartridge<li>Top Fin &quot;Element&quot; filter<br><br><p><b>Intended For:</b> Fish<br><br><b>Material:</b> Plastic<br><br><b>Color:</b> Black<br> <br><b>Size:</b> 1 US GAL (3.7 L); 10.4 in L x 6.9 in W x 8.4 in H (26.4 x 17.5 x 21.3 cm)<br><br><p><b>Instructions: </b><br>Place aquarium on a stable, sturdy surface away from heat, cold and direct sunlight. Use an aquarium heater, if needed, to maintain stable water temperatures.<p>Choose your favorite color gravel, or mix or match.<p>Condition water during set up and each water change. Water testing, water conditioner, and bacteria starter are keys to success. Let water sit for 4 hours before introducing fish.<p>Compliment your personal style and provide shelter for your fish.<p>Feed your fish with the appropriate type and amount of food.<br><br><p><b>Caution:</b> Choose the appropriate quantity of compatible fish. Thoroughly rinse gravel and decor. Do not use soap or detergent as they may harm fish.\",\"tabs\":{\"Description\":[\"<b>DESCRIPTION </b><p><br>The Top Fin Excite Aquarium provides a safe, comfortable and aesthetically pleasing home for your fish. This aquarium makes feeding easy with a convenient feeding door on the hood, and even includes a bright white LED fixture to light up your underwater world. Only at PetSmart. <br><p><b>Features:</b> Bright white LED; Hood with convenient feeding door<br><br><b>Includes:</b><li> 1 Tank<li>Top Fin \\\"Element\\\" filter cartridge<li>Top Fin &quot;Element&quot; filter<br><br><p><b>Intended For:</b> Fish<br><br><b>Material:</b> Plastic<br><br><b>Color:</b> Black<br> <br>\"],\"Directions\":[\"<b>Instructions: </b><br>Place aquarium on a stable, sturdy surface away from heat, cold and direct sunlight. Use an aquarium heater, if needed, to maintain stable water temperatures.<p>Choose your favorite color gravel, or mix or match.<p>Condition water during set up and each water change. Water testing, water conditioner, and bacteria starter are keys to success. Let water sit for 4 hours before introducing fish.<p>Compliment your personal style and provide shelter for your fish.<p>Feed your fish with the appropriate type and amount of food.<br><br><p><b>Caution:</b> Choose the appropriate quantity of compatible fish. Thoroughly rinse gravel and decor. Do not use soap or detergent as they may harm fish.\"],\"Size\":[\"<b>Size:</b> 1 US GAL (3.7 L); 10.4 in L x 6.9 in W x 8.4 in H (26.4 x 17.5 x 21.3 cm)<br><br><p>\"]}}",
+			"long_description": "<p><b>DESCRIPTION </b><p>\r\nThe Top Fin Excite Aquarium provides a safe, comfortable and aesthetically pleasing home for your fish. This aquarium makes feeding easy with a convenient feeding door on the hood, and even includes a bright white LED fixture to light up your underwater world. Only at PetSmart. \r\n<p><b>Features:</b> Bright white LED; Hood with convenient feeding door<br>\r\n<b>Includes:</b><li> 1 Tank<li>Top Fin \"Element\" filter cartridge<li>Top Fin &quot;Element&quot; filter<br>\r\n<p><b>Intended For:</b> Fish<br>\r\n<b>Material:</b> Plastic<br>\r\n<b>Color:</b> Black<br> \r\n<b>Size:</b> 1 US GAL (3.7 L); 10.4 in L x 6.9 in W x 8.4 in H (26.4 x 17.5 x 21.3 cm)<br>\r\n<p><b>Instructions: </b><br>Place aquarium on a stable, sturdy surface away from heat, cold and direct sunlight. Use an aquarium heater, if needed, to maintain stable water temperatures.<p>Choose your favorite color gravel, or mix or match.<p>Condition water during set up and each water change. Water testing, water conditioner, and bacteria starter are keys to success. Let water sit for 4 hours before introducing fish.<p>Compliment your personal style and provide shelter for your fish.<p>Feed your fish with the appropriate type and amount of food.<br>\r\n<p><b>Caution:</b> Choose the appropriate quantity of compatible fish. Thoroughly rinse gravel and decor. Do not use soap or detergent as they may harm fish."
 		},
 		{
-			"id": "1002",
+			"id": "5264603",
 			"imageUrl": "https://picsum.photos/200/300",
 			"name": "Prodct2 - 120 Gallon",
 			"price": 122.0,
@@ -80,10 +98,28 @@
 				"https://picsum.photos/200/300",
 				"https://picsum.photos/200/300"
 			],
-			"description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam"
+			"description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam",
+			"c_pricing": {
+				"showStandardPrice": true,
+				"isPromoPrice": false,
+				"standard": 15.99,
+				"formattedStandard": "$15.99",
+				"sale": 14.99,
+				"formattedSale": "$14.99"
+			},
+			"c_size": "1 Gal",
+			"brand": "Top Fin",
+			"c_brand": {
+				"brandID": "5000270",
+				"brandName": "Top Fin",
+				"url": "/featured-brands/top-fin/"
+			},
+			"short_description": "TF EXCITE KIT BLACK 1G V2             23",
+			"c_customParsedProductDescription": "{\"html\":\"<p><b>DESCRIPTION </b><p><br>The Top Fin Excite Aquarium provides a safe, comfortable and aesthetically pleasing home for your fish. This aquarium makes feeding easy with a convenient feeding door on the hood, and even includes a bright white LED fixture to light up your underwater world. Only at PetSmart. <br><p><b>Features:</b> Bright white LED; Hood with convenient feeding door<br><br><b>Includes:</b><li> 1 Tank<li>Top Fin \\\"Element\\\" filter cartridge<li>Top Fin &quot;Element&quot; filter<br><br><p><b>Intended For:</b> Fish<br><br><b>Material:</b> Plastic<br><br><b>Color:</b> Black<br> <br><b>Size:</b> 1 US GAL (3.7 L); 10.4 in L x 6.9 in W x 8.4 in H (26.4 x 17.5 x 21.3 cm)<br><br><p><b>Instructions: </b><br>Place aquarium on a stable, sturdy surface away from heat, cold and direct sunlight. Use an aquarium heater, if needed, to maintain stable water temperatures.<p>Choose your favorite color gravel, or mix or match.<p>Condition water during set up and each water change. Water testing, water conditioner, and bacteria starter are keys to success. Let water sit for 4 hours before introducing fish.<p>Compliment your personal style and provide shelter for your fish.<p>Feed your fish with the appropriate type and amount of food.<br><br><p><b>Caution:</b> Choose the appropriate quantity of compatible fish. Thoroughly rinse gravel and decor. Do not use soap or detergent as they may harm fish.\",\"tabs\":{\"Description\":[\"<b>DESCRIPTION </b><p><br>The Top Fin Excite Aquarium provides a safe, comfortable and aesthetically pleasing home for your fish. This aquarium makes feeding easy with a convenient feeding door on the hood, and even includes a bright white LED fixture to light up your underwater world. Only at PetSmart. <br><p><b>Features:</b> Bright white LED; Hood with convenient feeding door<br><br><b>Includes:</b><li> 1 Tank<li>Top Fin \\\"Element\\\" filter cartridge<li>Top Fin &quot;Element&quot; filter<br><br><p><b>Intended For:</b> Fish<br><br><b>Material:</b> Plastic<br><br><b>Color:</b> Black<br> <br>\"],\"Directions\":[\"<b>Instructions: </b><br>Place aquarium on a stable, sturdy surface away from heat, cold and direct sunlight. Use an aquarium heater, if needed, to maintain stable water temperatures.<p>Choose your favorite color gravel, or mix or match.<p>Condition water during set up and each water change. Water testing, water conditioner, and bacteria starter are keys to success. Let water sit for 4 hours before introducing fish.<p>Compliment your personal style and provide shelter for your fish.<p>Feed your fish with the appropriate type and amount of food.<br><br><p><b>Caution:</b> Choose the appropriate quantity of compatible fish. Thoroughly rinse gravel and decor. Do not use soap or detergent as they may harm fish.\"],\"Size\":[\"<b>Size:</b> 1 US GAL (3.7 L); 10.4 in L x 6.9 in W x 8.4 in H (26.4 x 17.5 x 21.3 cm)<br><br><p>\"]}}",
+			"long_description": "<p><b>DESCRIPTION </b><p>\r\nThe Top Fin Excite Aquarium provides a safe, comfortable and aesthetically pleasing home for your fish. This aquarium makes feeding easy with a convenient feeding door on the hood, and even includes a bright white LED fixture to light up your underwater world. Only at PetSmart. \r\n<p><b>Features:</b> Bright white LED; Hood with convenient feeding door<br>\r\n<b>Includes:</b><li> 1 Tank<li>Top Fin \"Element\" filter cartridge<li>Top Fin &quot;Element&quot; filter<br>\r\n<p><b>Intended For:</b> Fish<br>\r\n<b>Material:</b> Plastic<br>\r\n<b>Color:</b> Black<br> \r\n<b>Size:</b> 1 US GAL (3.7 L); 10.4 in L x 6.9 in W x 8.4 in H (26.4 x 17.5 x 21.3 cm)<br>\r\n<p><b>Instructions: </b><br>Place aquarium on a stable, sturdy surface away from heat, cold and direct sunlight. Use an aquarium heater, if needed, to maintain stable water temperatures.<p>Choose your favorite color gravel, or mix or match.<p>Condition water during set up and each water change. Water testing, water conditioner, and bacteria starter are keys to success. Let water sit for 4 hours before introducing fish.<p>Compliment your personal style and provide shelter for your fish.<p>Feed your fish with the appropriate type and amount of food.<br>\r\n<p><b>Caution:</b> Choose the appropriate quantity of compatible fish. Thoroughly rinse gravel and decor. Do not use soap or detergent as they may harm fish."
 		},
 		{
-			"id": "1003",
+			"id": "5253512",
 			"imageUrl": "https://picsum.photos/200/300",
 			"name": "Prodct3 - 5 Gallon",
 			"price": 123.0,
@@ -99,10 +135,28 @@
 				"https://picsum.photos/200/300",
 				"https://picsum.photos/200/300"
 			],
-			"description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam"
+			"description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam",
+			"c_pricing": {
+				"showStandardPrice": true,
+				"isPromoPrice": false,
+				"standard": 15.99,
+				"formattedStandard": "$15.99",
+				"sale": 14.99,
+				"formattedSale": "$14.99"
+			},
+			"c_size": "1 Gal",
+			"brand": "Top Fin",
+			"c_brand": {
+				"brandID": "5000270",
+				"brandName": "Top Fin",
+				"url": "/featured-brands/top-fin/"
+			},
+			"short_description": "TF EXCITE KIT BLACK 1G V2             23",
+			"c_customParsedProductDescription": "{\"html\":\"<p><b>DESCRIPTION </b><p><br>The Top Fin Excite Aquarium provides a safe, comfortable and aesthetically pleasing home for your fish. This aquarium makes feeding easy with a convenient feeding door on the hood, and even includes a bright white LED fixture to light up your underwater world. Only at PetSmart. <br><p><b>Features:</b> Bright white LED; Hood with convenient feeding door<br><br><b>Includes:</b><li> 1 Tank<li>Top Fin \\\"Element\\\" filter cartridge<li>Top Fin &quot;Element&quot; filter<br><br><p><b>Intended For:</b> Fish<br><br><b>Material:</b> Plastic<br><br><b>Color:</b> Black<br> <br><b>Size:</b> 1 US GAL (3.7 L); 10.4 in L x 6.9 in W x 8.4 in H (26.4 x 17.5 x 21.3 cm)<br><br><p><b>Instructions: </b><br>Place aquarium on a stable, sturdy surface away from heat, cold and direct sunlight. Use an aquarium heater, if needed, to maintain stable water temperatures.<p>Choose your favorite color gravel, or mix or match.<p>Condition water during set up and each water change. Water testing, water conditioner, and bacteria starter are keys to success. Let water sit for 4 hours before introducing fish.<p>Compliment your personal style and provide shelter for your fish.<p>Feed your fish with the appropriate type and amount of food.<br><br><p><b>Caution:</b> Choose the appropriate quantity of compatible fish. Thoroughly rinse gravel and decor. Do not use soap or detergent as they may harm fish.\",\"tabs\":{\"Description\":[\"<b>DESCRIPTION </b><p><br>The Top Fin Excite Aquarium provides a safe, comfortable and aesthetically pleasing home for your fish. This aquarium makes feeding easy with a convenient feeding door on the hood, and even includes a bright white LED fixture to light up your underwater world. Only at PetSmart. <br><p><b>Features:</b> Bright white LED; Hood with convenient feeding door<br><br><b>Includes:</b><li> 1 Tank<li>Top Fin \\\"Element\\\" filter cartridge<li>Top Fin &quot;Element&quot; filter<br><br><p><b>Intended For:</b> Fish<br><br><b>Material:</b> Plastic<br><br><b>Color:</b> Black<br> <br>\"],\"Directions\":[\"<b>Instructions: </b><br>Place aquarium on a stable, sturdy surface away from heat, cold and direct sunlight. Use an aquarium heater, if needed, to maintain stable water temperatures.<p>Choose your favorite color gravel, or mix or match.<p>Condition water during set up and each water change. Water testing, water conditioner, and bacteria starter are keys to success. Let water sit for 4 hours before introducing fish.<p>Compliment your personal style and provide shelter for your fish.<p>Feed your fish with the appropriate type and amount of food.<br><br><p><b>Caution:</b> Choose the appropriate quantity of compatible fish. Thoroughly rinse gravel and decor. Do not use soap or detergent as they may harm fish.\"],\"Size\":[\"<b>Size:</b> 1 US GAL (3.7 L); 10.4 in L x 6.9 in W x 8.4 in H (26.4 x 17.5 x 21.3 cm)<br><br><p>\"]}}",
+			"long_description": "<p><b>DESCRIPTION </b><p>\r\nThe Top Fin Excite Aquarium provides a safe, comfortable and aesthetically pleasing home for your fish. This aquarium makes feeding easy with a convenient feeding door on the hood, and even includes a bright white LED fixture to light up your underwater world. Only at PetSmart. \r\n<p><b>Features:</b> Bright white LED; Hood with convenient feeding door<br>\r\n<b>Includes:</b><li> 1 Tank<li>Top Fin \"Element\" filter cartridge<li>Top Fin &quot;Element&quot; filter<br>\r\n<p><b>Intended For:</b> Fish<br>\r\n<b>Material:</b> Plastic<br>\r\n<b>Color:</b> Black<br> \r\n<b>Size:</b> 1 US GAL (3.7 L); 10.4 in L x 6.9 in W x 8.4 in H (26.4 x 17.5 x 21.3 cm)<br>\r\n<p><b>Instructions: </b><br>Place aquarium on a stable, sturdy surface away from heat, cold and direct sunlight. Use an aquarium heater, if needed, to maintain stable water temperatures.<p>Choose your favorite color gravel, or mix or match.<p>Condition water during set up and each water change. Water testing, water conditioner, and bacteria starter are keys to success. Let water sit for 4 hours before introducing fish.<p>Compliment your personal style and provide shelter for your fish.<p>Feed your fish with the appropriate type and amount of food.<br>\r\n<p><b>Caution:</b> Choose the appropriate quantity of compatible fish. Thoroughly rinse gravel and decor. Do not use soap or detergent as they may harm fish."
 		},
 		{
-			"id": "1004",
+			"id": "5262075",
 			"imageUrl": "https://picsum.photos/200/300",
 			"name": "Prodct4 - 8 Gallon",
 			"price": 124.0,
@@ -118,10 +172,28 @@
 				"https://picsum.photos/200/300",
 				"https://picsum.photos/200/300"
 			],
-			"description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam"
+			"description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam",
+			"c_pricing": {
+				"showStandardPrice": true,
+				"isPromoPrice": false,
+				"standard": 15.99,
+				"formattedStandard": "$15.99",
+				"sale": 14.99,
+				"formattedSale": "$14.99"
+			},
+			"c_size": "1 Gal",
+			"brand": "Top Fin",
+			"c_brand": {
+				"brandID": "5000270",
+				"brandName": "Top Fin",
+				"url": "/featured-brands/top-fin/"
+			},
+			"short_description": "TF EXCITE KIT BLACK 1G V2             23",
+			"c_customParsedProductDescription": "{\"html\":\"<p><b>DESCRIPTION </b><p><br>The Top Fin Excite Aquarium provides a safe, comfortable and aesthetically pleasing home for your fish. This aquarium makes feeding easy with a convenient feeding door on the hood, and even includes a bright white LED fixture to light up your underwater world. Only at PetSmart. <br><p><b>Features:</b> Bright white LED; Hood with convenient feeding door<br><br><b>Includes:</b><li> 1 Tank<li>Top Fin \\\"Element\\\" filter cartridge<li>Top Fin &quot;Element&quot; filter<br><br><p><b>Intended For:</b> Fish<br><br><b>Material:</b> Plastic<br><br><b>Color:</b> Black<br> <br><b>Size:</b> 1 US GAL (3.7 L); 10.4 in L x 6.9 in W x 8.4 in H (26.4 x 17.5 x 21.3 cm)<br><br><p><b>Instructions: </b><br>Place aquarium on a stable, sturdy surface away from heat, cold and direct sunlight. Use an aquarium heater, if needed, to maintain stable water temperatures.<p>Choose your favorite color gravel, or mix or match.<p>Condition water during set up and each water change. Water testing, water conditioner, and bacteria starter are keys to success. Let water sit for 4 hours before introducing fish.<p>Compliment your personal style and provide shelter for your fish.<p>Feed your fish with the appropriate type and amount of food.<br><br><p><b>Caution:</b> Choose the appropriate quantity of compatible fish. Thoroughly rinse gravel and decor. Do not use soap or detergent as they may harm fish.\",\"tabs\":{\"Description\":[\"<b>DESCRIPTION </b><p><br>The Top Fin Excite Aquarium provides a safe, comfortable and aesthetically pleasing home for your fish. This aquarium makes feeding easy with a convenient feeding door on the hood, and even includes a bright white LED fixture to light up your underwater world. Only at PetSmart. <br><p><b>Features:</b> Bright white LED; Hood with convenient feeding door<br><br><b>Includes:</b><li> 1 Tank<li>Top Fin \\\"Element\\\" filter cartridge<li>Top Fin &quot;Element&quot; filter<br><br><p><b>Intended For:</b> Fish<br><br><b>Material:</b> Plastic<br><br><b>Color:</b> Black<br> <br>\"],\"Directions\":[\"<b>Instructions: </b><br>Place aquarium on a stable, sturdy surface away from heat, cold and direct sunlight. Use an aquarium heater, if needed, to maintain stable water temperatures.<p>Choose your favorite color gravel, or mix or match.<p>Condition water during set up and each water change. Water testing, water conditioner, and bacteria starter are keys to success. Let water sit for 4 hours before introducing fish.<p>Compliment your personal style and provide shelter for your fish.<p>Feed your fish with the appropriate type and amount of food.<br><br><p><b>Caution:</b> Choose the appropriate quantity of compatible fish. Thoroughly rinse gravel and decor. Do not use soap or detergent as they may harm fish.\"],\"Size\":[\"<b>Size:</b> 1 US GAL (3.7 L); 10.4 in L x 6.9 in W x 8.4 in H (26.4 x 17.5 x 21.3 cm)<br><br><p>\"]}}",
+			"long_description": "<p><b>DESCRIPTION </b><p>\r\nThe Top Fin Excite Aquarium provides a safe, comfortable and aesthetically pleasing home for your fish. This aquarium makes feeding easy with a convenient feeding door on the hood, and even includes a bright white LED fixture to light up your underwater world. Only at PetSmart. \r\n<p><b>Features:</b> Bright white LED; Hood with convenient feeding door<br>\r\n<b>Includes:</b><li> 1 Tank<li>Top Fin \"Element\" filter cartridge<li>Top Fin &quot;Element&quot; filter<br>\r\n<p><b>Intended For:</b> Fish<br>\r\n<b>Material:</b> Plastic<br>\r\n<b>Color:</b> Black<br> \r\n<b>Size:</b> 1 US GAL (3.7 L); 10.4 in L x 6.9 in W x 8.4 in H (26.4 x 17.5 x 21.3 cm)<br>\r\n<p><b>Instructions: </b><br>Place aquarium on a stable, sturdy surface away from heat, cold and direct sunlight. Use an aquarium heater, if needed, to maintain stable water temperatures.<p>Choose your favorite color gravel, or mix or match.<p>Condition water during set up and each water change. Water testing, water conditioner, and bacteria starter are keys to success. Let water sit for 4 hours before introducing fish.<p>Compliment your personal style and provide shelter for your fish.<p>Feed your fish with the appropriate type and amount of food.<br>\r\n<p><b>Caution:</b> Choose the appropriate quantity of compatible fish. Thoroughly rinse gravel and decor. Do not use soap or detergent as they may harm fish."
 		},
 		{
-			"id": "1005",
+			"id": "5295338",
 			"imageUrl": "https://picsum.photos/200/300",
 			"name": "Prodct5 - 115 Gallon",
 			"price": 125.0,
@@ -137,10 +209,28 @@
 				"https://picsum.photos/200/300",
 				"https://picsum.photos/200/300"
 			],
-			"description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam"
+			"description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam",
+			"c_pricing": {
+				"showStandardPrice": true,
+				"isPromoPrice": false,
+				"standard": 15.99,
+				"formattedStandard": "$15.99",
+				"sale": 14.99,
+				"formattedSale": "$14.99"
+			},
+			"c_size": "1 Gal",
+			"brand": "Top Fin",
+			"c_brand": {
+				"brandID": "5000270",
+				"brandName": "Top Fin",
+				"url": "/featured-brands/top-fin/"
+			},
+			"short_description": "TF EXCITE KIT BLACK 1G V2             23",
+			"c_customParsedProductDescription": "{\"html\":\"<p><b>DESCRIPTION </b><p><br>The Top Fin Excite Aquarium provides a safe, comfortable and aesthetically pleasing home for your fish. This aquarium makes feeding easy with a convenient feeding door on the hood, and even includes a bright white LED fixture to light up your underwater world. Only at PetSmart. <br><p><b>Features:</b> Bright white LED; Hood with convenient feeding door<br><br><b>Includes:</b><li> 1 Tank<li>Top Fin \\\"Element\\\" filter cartridge<li>Top Fin &quot;Element&quot; filter<br><br><p><b>Intended For:</b> Fish<br><br><b>Material:</b> Plastic<br><br><b>Color:</b> Black<br> <br><b>Size:</b> 1 US GAL (3.7 L); 10.4 in L x 6.9 in W x 8.4 in H (26.4 x 17.5 x 21.3 cm)<br><br><p><b>Instructions: </b><br>Place aquarium on a stable, sturdy surface away from heat, cold and direct sunlight. Use an aquarium heater, if needed, to maintain stable water temperatures.<p>Choose your favorite color gravel, or mix or match.<p>Condition water during set up and each water change. Water testing, water conditioner, and bacteria starter are keys to success. Let water sit for 4 hours before introducing fish.<p>Compliment your personal style and provide shelter for your fish.<p>Feed your fish with the appropriate type and amount of food.<br><br><p><b>Caution:</b> Choose the appropriate quantity of compatible fish. Thoroughly rinse gravel and decor. Do not use soap or detergent as they may harm fish.\",\"tabs\":{\"Description\":[\"<b>DESCRIPTION </b><p><br>The Top Fin Excite Aquarium provides a safe, comfortable and aesthetically pleasing home for your fish. This aquarium makes feeding easy with a convenient feeding door on the hood, and even includes a bright white LED fixture to light up your underwater world. Only at PetSmart. <br><p><b>Features:</b> Bright white LED; Hood with convenient feeding door<br><br><b>Includes:</b><li> 1 Tank<li>Top Fin \\\"Element\\\" filter cartridge<li>Top Fin &quot;Element&quot; filter<br><br><p><b>Intended For:</b> Fish<br><br><b>Material:</b> Plastic<br><br><b>Color:</b> Black<br> <br>\"],\"Directions\":[\"<b>Instructions: </b><br>Place aquarium on a stable, sturdy surface away from heat, cold and direct sunlight. Use an aquarium heater, if needed, to maintain stable water temperatures.<p>Choose your favorite color gravel, or mix or match.<p>Condition water during set up and each water change. Water testing, water conditioner, and bacteria starter are keys to success. Let water sit for 4 hours before introducing fish.<p>Compliment your personal style and provide shelter for your fish.<p>Feed your fish with the appropriate type and amount of food.<br><br><p><b>Caution:</b> Choose the appropriate quantity of compatible fish. Thoroughly rinse gravel and decor. Do not use soap or detergent as they may harm fish.\"],\"Size\":[\"<b>Size:</b> 1 US GAL (3.7 L); 10.4 in L x 6.9 in W x 8.4 in H (26.4 x 17.5 x 21.3 cm)<br><br><p>\"]}}",
+			"long_description": "<p><b>DESCRIPTION </b><p>\r\nThe Top Fin Excite Aquarium provides a safe, comfortable and aesthetically pleasing home for your fish. This aquarium makes feeding easy with a convenient feeding door on the hood, and even includes a bright white LED fixture to light up your underwater world. Only at PetSmart. \r\n<p><b>Features:</b> Bright white LED; Hood with convenient feeding door<br>\r\n<b>Includes:</b><li> 1 Tank<li>Top Fin \"Element\" filter cartridge<li>Top Fin &quot;Element&quot; filter<br>\r\n<p><b>Intended For:</b> Fish<br>\r\n<b>Material:</b> Plastic<br>\r\n<b>Color:</b> Black<br> \r\n<b>Size:</b> 1 US GAL (3.7 L); 10.4 in L x 6.9 in W x 8.4 in H (26.4 x 17.5 x 21.3 cm)<br>\r\n<p><b>Instructions: </b><br>Place aquarium on a stable, sturdy surface away from heat, cold and direct sunlight. Use an aquarium heater, if needed, to maintain stable water temperatures.<p>Choose your favorite color gravel, or mix or match.<p>Condition water during set up and each water change. Water testing, water conditioner, and bacteria starter are keys to success. Let water sit for 4 hours before introducing fish.<p>Compliment your personal style and provide shelter for your fish.<p>Feed your fish with the appropriate type and amount of food.<br>\r\n<p><b>Caution:</b> Choose the appropriate quantity of compatible fish. Thoroughly rinse gravel and decor. Do not use soap or detergent as they may harm fish."
 		},
 		{
-			"id": "1006",
+			"id": "5253506",
 			"imageUrl": "https://picsum.photos/200/300",
 			"name": "Prodct6 - 50 Gallon",
 			"price": 126.0,
@@ -156,10 +246,28 @@
 				"https://picsum.photos/200/300",
 				"https://picsum.photos/200/300"
 			],
-			"description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam"
+			"description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam",
+			"c_pricing": {
+				"showStandardPrice": true,
+				"isPromoPrice": false,
+				"standard": 15.99,
+				"formattedStandard": "$15.99",
+				"sale": 14.99,
+				"formattedSale": "$14.99"
+			},
+			"c_size": "1 Gal",
+			"brand": "Top Fin",
+			"c_brand": {
+				"brandID": "5000270",
+				"brandName": "Top Fin",
+				"url": "/featured-brands/top-fin/"
+			},
+			"short_description": "TF EXCITE KIT BLACK 1G V2             23",
+			"c_customParsedProductDescription": "{\"html\":\"<p><b>DESCRIPTION </b><p><br>The Top Fin Excite Aquarium provides a safe, comfortable and aesthetically pleasing home for your fish. This aquarium makes feeding easy with a convenient feeding door on the hood, and even includes a bright white LED fixture to light up your underwater world. Only at PetSmart. <br><p><b>Features:</b> Bright white LED; Hood with convenient feeding door<br><br><b>Includes:</b><li> 1 Tank<li>Top Fin \\\"Element\\\" filter cartridge<li>Top Fin &quot;Element&quot; filter<br><br><p><b>Intended For:</b> Fish<br><br><b>Material:</b> Plastic<br><br><b>Color:</b> Black<br> <br><b>Size:</b> 1 US GAL (3.7 L); 10.4 in L x 6.9 in W x 8.4 in H (26.4 x 17.5 x 21.3 cm)<br><br><p><b>Instructions: </b><br>Place aquarium on a stable, sturdy surface away from heat, cold and direct sunlight. Use an aquarium heater, if needed, to maintain stable water temperatures.<p>Choose your favorite color gravel, or mix or match.<p>Condition water during set up and each water change. Water testing, water conditioner, and bacteria starter are keys to success. Let water sit for 4 hours before introducing fish.<p>Compliment your personal style and provide shelter for your fish.<p>Feed your fish with the appropriate type and amount of food.<br><br><p><b>Caution:</b> Choose the appropriate quantity of compatible fish. Thoroughly rinse gravel and decor. Do not use soap or detergent as they may harm fish.\",\"tabs\":{\"Description\":[\"<b>DESCRIPTION </b><p><br>The Top Fin Excite Aquarium provides a safe, comfortable and aesthetically pleasing home for your fish. This aquarium makes feeding easy with a convenient feeding door on the hood, and even includes a bright white LED fixture to light up your underwater world. Only at PetSmart. <br><p><b>Features:</b> Bright white LED; Hood with convenient feeding door<br><br><b>Includes:</b><li> 1 Tank<li>Top Fin \\\"Element\\\" filter cartridge<li>Top Fin &quot;Element&quot; filter<br><br><p><b>Intended For:</b> Fish<br><br><b>Material:</b> Plastic<br><br><b>Color:</b> Black<br> <br>\"],\"Directions\":[\"<b>Instructions: </b><br>Place aquarium on a stable, sturdy surface away from heat, cold and direct sunlight. Use an aquarium heater, if needed, to maintain stable water temperatures.<p>Choose your favorite color gravel, or mix or match.<p>Condition water during set up and each water change. Water testing, water conditioner, and bacteria starter are keys to success. Let water sit for 4 hours before introducing fish.<p>Compliment your personal style and provide shelter for your fish.<p>Feed your fish with the appropriate type and amount of food.<br><br><p><b>Caution:</b> Choose the appropriate quantity of compatible fish. Thoroughly rinse gravel and decor. Do not use soap or detergent as they may harm fish.\"],\"Size\":[\"<b>Size:</b> 1 US GAL (3.7 L); 10.4 in L x 6.9 in W x 8.4 in H (26.4 x 17.5 x 21.3 cm)<br><br><p>\"]}}",
+			"long_description": "<p><b>DESCRIPTION </b><p>\r\nThe Top Fin Excite Aquarium provides a safe, comfortable and aesthetically pleasing home for your fish. This aquarium makes feeding easy with a convenient feeding door on the hood, and even includes a bright white LED fixture to light up your underwater world. Only at PetSmart. \r\n<p><b>Features:</b> Bright white LED; Hood with convenient feeding door<br>\r\n<b>Includes:</b><li> 1 Tank<li>Top Fin \"Element\" filter cartridge<li>Top Fin &quot;Element&quot; filter<br>\r\n<p><b>Intended For:</b> Fish<br>\r\n<b>Material:</b> Plastic<br>\r\n<b>Color:</b> Black<br> \r\n<b>Size:</b> 1 US GAL (3.7 L); 10.4 in L x 6.9 in W x 8.4 in H (26.4 x 17.5 x 21.3 cm)<br>\r\n<p><b>Instructions: </b><br>Place aquarium on a stable, sturdy surface away from heat, cold and direct sunlight. Use an aquarium heater, if needed, to maintain stable water temperatures.<p>Choose your favorite color gravel, or mix or match.<p>Condition water during set up and each water change. Water testing, water conditioner, and bacteria starter are keys to success. Let water sit for 4 hours before introducing fish.<p>Compliment your personal style and provide shelter for your fish.<p>Feed your fish with the appropriate type and amount of food.<br>\r\n<p><b>Caution:</b> Choose the appropriate quantity of compatible fish. Thoroughly rinse gravel and decor. Do not use soap or detergent as they may harm fish."
 		},
 		{
-			"id": "1007",
+			"id": "5282474",
 			"imageUrl": "https://picsum.photos/200/300",
 			"name": "Prodct7 - 6 Gallon",
 			"price": 127.0,
@@ -175,10 +283,28 @@
 				"https://picsum.photos/200/300",
 				"https://picsum.photos/200/300"
 			],
-			"description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam"
+			"description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam",
+			"c_pricing": {
+				"showStandardPrice": true,
+				"isPromoPrice": false,
+				"standard": 15.99,
+				"formattedStandard": "$15.99",
+				"sale": 14.99,
+				"formattedSale": "$14.99"
+			},
+			"c_size": "1 Gal",
+			"brand": "Top Fin",
+			"c_brand": {
+				"brandID": "5000270",
+				"brandName": "Top Fin",
+				"url": "/featured-brands/top-fin/"
+			},
+			"short_description": "TF EXCITE KIT BLACK 1G V2             23",
+			"c_customParsedProductDescription": "{\"html\":\"<p><b>DESCRIPTION </b><p><br>The Top Fin Excite Aquarium provides a safe, comfortable and aesthetically pleasing home for your fish. This aquarium makes feeding easy with a convenient feeding door on the hood, and even includes a bright white LED fixture to light up your underwater world. Only at PetSmart. <br><p><b>Features:</b> Bright white LED; Hood with convenient feeding door<br><br><b>Includes:</b><li> 1 Tank<li>Top Fin \\\"Element\\\" filter cartridge<li>Top Fin &quot;Element&quot; filter<br><br><p><b>Intended For:</b> Fish<br><br><b>Material:</b> Plastic<br><br><b>Color:</b> Black<br> <br><b>Size:</b> 1 US GAL (3.7 L); 10.4 in L x 6.9 in W x 8.4 in H (26.4 x 17.5 x 21.3 cm)<br><br><p><b>Instructions: </b><br>Place aquarium on a stable, sturdy surface away from heat, cold and direct sunlight. Use an aquarium heater, if needed, to maintain stable water temperatures.<p>Choose your favorite color gravel, or mix or match.<p>Condition water during set up and each water change. Water testing, water conditioner, and bacteria starter are keys to success. Let water sit for 4 hours before introducing fish.<p>Compliment your personal style and provide shelter for your fish.<p>Feed your fish with the appropriate type and amount of food.<br><br><p><b>Caution:</b> Choose the appropriate quantity of compatible fish. Thoroughly rinse gravel and decor. Do not use soap or detergent as they may harm fish.\",\"tabs\":{\"Description\":[\"<b>DESCRIPTION </b><p><br>The Top Fin Excite Aquarium provides a safe, comfortable and aesthetically pleasing home for your fish. This aquarium makes feeding easy with a convenient feeding door on the hood, and even includes a bright white LED fixture to light up your underwater world. Only at PetSmart. <br><p><b>Features:</b> Bright white LED; Hood with convenient feeding door<br><br><b>Includes:</b><li> 1 Tank<li>Top Fin \\\"Element\\\" filter cartridge<li>Top Fin &quot;Element&quot; filter<br><br><p><b>Intended For:</b> Fish<br><br><b>Material:</b> Plastic<br><br><b>Color:</b> Black<br> <br>\"],\"Directions\":[\"<b>Instructions: </b><br>Place aquarium on a stable, sturdy surface away from heat, cold and direct sunlight. Use an aquarium heater, if needed, to maintain stable water temperatures.<p>Choose your favorite color gravel, or mix or match.<p>Condition water during set up and each water change. Water testing, water conditioner, and bacteria starter are keys to success. Let water sit for 4 hours before introducing fish.<p>Compliment your personal style and provide shelter for your fish.<p>Feed your fish with the appropriate type and amount of food.<br><br><p><b>Caution:</b> Choose the appropriate quantity of compatible fish. Thoroughly rinse gravel and decor. Do not use soap or detergent as they may harm fish.\"],\"Size\":[\"<b>Size:</b> 1 US GAL (3.7 L); 10.4 in L x 6.9 in W x 8.4 in H (26.4 x 17.5 x 21.3 cm)<br><br><p>\"]}}",
+			"long_description": "<p><b>DESCRIPTION </b><p>\r\nThe Top Fin Excite Aquarium provides a safe, comfortable and aesthetically pleasing home for your fish. This aquarium makes feeding easy with a convenient feeding door on the hood, and even includes a bright white LED fixture to light up your underwater world. Only at PetSmart. \r\n<p><b>Features:</b> Bright white LED; Hood with convenient feeding door<br>\r\n<b>Includes:</b><li> 1 Tank<li>Top Fin \"Element\" filter cartridge<li>Top Fin &quot;Element&quot; filter<br>\r\n<p><b>Intended For:</b> Fish<br>\r\n<b>Material:</b> Plastic<br>\r\n<b>Color:</b> Black<br> \r\n<b>Size:</b> 1 US GAL (3.7 L); 10.4 in L x 6.9 in W x 8.4 in H (26.4 x 17.5 x 21.3 cm)<br>\r\n<p><b>Instructions: </b><br>Place aquarium on a stable, sturdy surface away from heat, cold and direct sunlight. Use an aquarium heater, if needed, to maintain stable water temperatures.<p>Choose your favorite color gravel, or mix or match.<p>Condition water during set up and each water change. Water testing, water conditioner, and bacteria starter are keys to success. Let water sit for 4 hours before introducing fish.<p>Compliment your personal style and provide shelter for your fish.<p>Feed your fish with the appropriate type and amount of food.<br>\r\n<p><b>Caution:</b> Choose the appropriate quantity of compatible fish. Thoroughly rinse gravel and decor. Do not use soap or detergent as they may harm fish."
 		},
 		{
-			"id": "1008",
+			"id": "5253508",
 			"imageUrl": "https://picsum.photos/200/300",
 			"name": "Prodct8 - 45 Gallon",
 			"price": 128.0,
@@ -194,10 +320,28 @@
 				"https://picsum.photos/200/300",
 				"https://picsum.photos/200/300"
 			],
-			"description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam"
+			"description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam",
+			"c_pricing": {
+				"showStandardPrice": true,
+				"isPromoPrice": false,
+				"standard": 15.99,
+				"formattedStandard": "$15.99",
+				"sale": 14.99,
+				"formattedSale": "$14.99"
+			},
+			"c_size": "1 Gal",
+			"brand": "Top Fin",
+			"c_brand": {
+				"brandID": "5000270",
+				"brandName": "Top Fin",
+				"url": "/featured-brands/top-fin/"
+			},
+			"short_description": "TF EXCITE KIT BLACK 1G V2             23",
+			"c_customParsedProductDescription": "{\"html\":\"<p><b>DESCRIPTION </b><p><br>The Top Fin Excite Aquarium provides a safe, comfortable and aesthetically pleasing home for your fish. This aquarium makes feeding easy with a convenient feeding door on the hood, and even includes a bright white LED fixture to light up your underwater world. Only at PetSmart. <br><p><b>Features:</b> Bright white LED; Hood with convenient feeding door<br><br><b>Includes:</b><li> 1 Tank<li>Top Fin \\\"Element\\\" filter cartridge<li>Top Fin &quot;Element&quot; filter<br><br><p><b>Intended For:</b> Fish<br><br><b>Material:</b> Plastic<br><br><b>Color:</b> Black<br> <br><b>Size:</b> 1 US GAL (3.7 L); 10.4 in L x 6.9 in W x 8.4 in H (26.4 x 17.5 x 21.3 cm)<br><br><p><b>Instructions: </b><br>Place aquarium on a stable, sturdy surface away from heat, cold and direct sunlight. Use an aquarium heater, if needed, to maintain stable water temperatures.<p>Choose your favorite color gravel, or mix or match.<p>Condition water during set up and each water change. Water testing, water conditioner, and bacteria starter are keys to success. Let water sit for 4 hours before introducing fish.<p>Compliment your personal style and provide shelter for your fish.<p>Feed your fish with the appropriate type and amount of food.<br><br><p><b>Caution:</b> Choose the appropriate quantity of compatible fish. Thoroughly rinse gravel and decor. Do not use soap or detergent as they may harm fish.\",\"tabs\":{\"Description\":[\"<b>DESCRIPTION </b><p><br>The Top Fin Excite Aquarium provides a safe, comfortable and aesthetically pleasing home for your fish. This aquarium makes feeding easy with a convenient feeding door on the hood, and even includes a bright white LED fixture to light up your underwater world. Only at PetSmart. <br><p><b>Features:</b> Bright white LED; Hood with convenient feeding door<br><br><b>Includes:</b><li> 1 Tank<li>Top Fin \\\"Element\\\" filter cartridge<li>Top Fin &quot;Element&quot; filter<br><br><p><b>Intended For:</b> Fish<br><br><b>Material:</b> Plastic<br><br><b>Color:</b> Black<br> <br>\"],\"Directions\":[\"<b>Instructions: </b><br>Place aquarium on a stable, sturdy surface away from heat, cold and direct sunlight. Use an aquarium heater, if needed, to maintain stable water temperatures.<p>Choose your favorite color gravel, or mix or match.<p>Condition water during set up and each water change. Water testing, water conditioner, and bacteria starter are keys to success. Let water sit for 4 hours before introducing fish.<p>Compliment your personal style and provide shelter for your fish.<p>Feed your fish with the appropriate type and amount of food.<br><br><p><b>Caution:</b> Choose the appropriate quantity of compatible fish. Thoroughly rinse gravel and decor. Do not use soap or detergent as they may harm fish.\"],\"Size\":[\"<b>Size:</b> 1 US GAL (3.7 L); 10.4 in L x 6.9 in W x 8.4 in H (26.4 x 17.5 x 21.3 cm)<br><br><p>\"]}}",
+			"long_description": "<p><b>DESCRIPTION </b><p>\r\nThe Top Fin Excite Aquarium provides a safe, comfortable and aesthetically pleasing home for your fish. This aquarium makes feeding easy with a convenient feeding door on the hood, and even includes a bright white LED fixture to light up your underwater world. Only at PetSmart. \r\n<p><b>Features:</b> Bright white LED; Hood with convenient feeding door<br>\r\n<b>Includes:</b><li> 1 Tank<li>Top Fin \"Element\" filter cartridge<li>Top Fin &quot;Element&quot; filter<br>\r\n<p><b>Intended For:</b> Fish<br>\r\n<b>Material:</b> Plastic<br>\r\n<b>Color:</b> Black<br> \r\n<b>Size:</b> 1 US GAL (3.7 L); 10.4 in L x 6.9 in W x 8.4 in H (26.4 x 17.5 x 21.3 cm)<br>\r\n<p><b>Instructions: </b><br>Place aquarium on a stable, sturdy surface away from heat, cold and direct sunlight. Use an aquarium heater, if needed, to maintain stable water temperatures.<p>Choose your favorite color gravel, or mix or match.<p>Condition water during set up and each water change. Water testing, water conditioner, and bacteria starter are keys to success. Let water sit for 4 hours before introducing fish.<p>Compliment your personal style and provide shelter for your fish.<p>Feed your fish with the appropriate type and amount of food.<br>\r\n<p><b>Caution:</b> Choose the appropriate quantity of compatible fish. Thoroughly rinse gravel and decor. Do not use soap or detergent as they may harm fish."
 		},
 		{
-			"id": "1009",
+			"id": "5282473",
 			"imageUrl": "https://picsum.photos/200/300",
 			"name": "Prodct9 - 3 Gallon",
 			"price": 129.0,
@@ -213,10 +357,28 @@
 				"https://picsum.photos/200/300",
 				"https://picsum.photos/200/300"
 			],
-			"description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam"
+			"description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam",
+			"c_pricing": {
+				"showStandardPrice": true,
+				"isPromoPrice": false,
+				"standard": 15.99,
+				"formattedStandard": "$15.99",
+				"sale": 14.99,
+				"formattedSale": "$14.99"
+			},
+			"c_size": "1 Gal",
+			"brand": "Top Fin",
+			"c_brand": {
+				"brandID": "5000270",
+				"brandName": "Top Fin",
+				"url": "/featured-brands/top-fin/"
+			},
+			"short_description": "TF EXCITE KIT BLACK 1G V2             23",
+			"c_customParsedProductDescription": "{\"html\":\"<p><b>DESCRIPTION </b><p><br>The Top Fin Excite Aquarium provides a safe, comfortable and aesthetically pleasing home for your fish. This aquarium makes feeding easy with a convenient feeding door on the hood, and even includes a bright white LED fixture to light up your underwater world. Only at PetSmart. <br><p><b>Features:</b> Bright white LED; Hood with convenient feeding door<br><br><b>Includes:</b><li> 1 Tank<li>Top Fin \\\"Element\\\" filter cartridge<li>Top Fin &quot;Element&quot; filter<br><br><p><b>Intended For:</b> Fish<br><br><b>Material:</b> Plastic<br><br><b>Color:</b> Black<br> <br><b>Size:</b> 1 US GAL (3.7 L); 10.4 in L x 6.9 in W x 8.4 in H (26.4 x 17.5 x 21.3 cm)<br><br><p><b>Instructions: </b><br>Place aquarium on a stable, sturdy surface away from heat, cold and direct sunlight. Use an aquarium heater, if needed, to maintain stable water temperatures.<p>Choose your favorite color gravel, or mix or match.<p>Condition water during set up and each water change. Water testing, water conditioner, and bacteria starter are keys to success. Let water sit for 4 hours before introducing fish.<p>Compliment your personal style and provide shelter for your fish.<p>Feed your fish with the appropriate type and amount of food.<br><br><p><b>Caution:</b> Choose the appropriate quantity of compatible fish. Thoroughly rinse gravel and decor. Do not use soap or detergent as they may harm fish.\",\"tabs\":{\"Description\":[\"<b>DESCRIPTION </b><p><br>The Top Fin Excite Aquarium provides a safe, comfortable and aesthetically pleasing home for your fish. This aquarium makes feeding easy with a convenient feeding door on the hood, and even includes a bright white LED fixture to light up your underwater world. Only at PetSmart. <br><p><b>Features:</b> Bright white LED; Hood with convenient feeding door<br><br><b>Includes:</b><li> 1 Tank<li>Top Fin \\\"Element\\\" filter cartridge<li>Top Fin &quot;Element&quot; filter<br><br><p><b>Intended For:</b> Fish<br><br><b>Material:</b> Plastic<br><br><b>Color:</b> Black<br> <br>\"],\"Directions\":[\"<b>Instructions: </b><br>Place aquarium on a stable, sturdy surface away from heat, cold and direct sunlight. Use an aquarium heater, if needed, to maintain stable water temperatures.<p>Choose your favorite color gravel, or mix or match.<p>Condition water during set up and each water change. Water testing, water conditioner, and bacteria starter are keys to success. Let water sit for 4 hours before introducing fish.<p>Compliment your personal style and provide shelter for your fish.<p>Feed your fish with the appropriate type and amount of food.<br><br><p><b>Caution:</b> Choose the appropriate quantity of compatible fish. Thoroughly rinse gravel and decor. Do not use soap or detergent as they may harm fish.\"],\"Size\":[\"<b>Size:</b> 1 US GAL (3.7 L); 10.4 in L x 6.9 in W x 8.4 in H (26.4 x 17.5 x 21.3 cm)<br><br><p>\"]}}",
+			"long_description": "<p><b>DESCRIPTION </b><p>\r\nThe Top Fin Excite Aquarium provides a safe, comfortable and aesthetically pleasing home for your fish. This aquarium makes feeding easy with a convenient feeding door on the hood, and even includes a bright white LED fixture to light up your underwater world. Only at PetSmart. \r\n<p><b>Features:</b> Bright white LED; Hood with convenient feeding door<br>\r\n<b>Includes:</b><li> 1 Tank<li>Top Fin \"Element\" filter cartridge<li>Top Fin &quot;Element&quot; filter<br>\r\n<p><b>Intended For:</b> Fish<br>\r\n<b>Material:</b> Plastic<br>\r\n<b>Color:</b> Black<br> \r\n<b>Size:</b> 1 US GAL (3.7 L); 10.4 in L x 6.9 in W x 8.4 in H (26.4 x 17.5 x 21.3 cm)<br>\r\n<p><b>Instructions: </b><br>Place aquarium on a stable, sturdy surface away from heat, cold and direct sunlight. Use an aquarium heater, if needed, to maintain stable water temperatures.<p>Choose your favorite color gravel, or mix or match.<p>Condition water during set up and each water change. Water testing, water conditioner, and bacteria starter are keys to success. Let water sit for 4 hours before introducing fish.<p>Compliment your personal style and provide shelter for your fish.<p>Feed your fish with the appropriate type and amount of food.<br>\r\n<p><b>Caution:</b> Choose the appropriate quantity of compatible fish. Thoroughly rinse gravel and decor. Do not use soap or detergent as they may harm fish."
 		},
 		{
-			"id": "1010",
+			"id": "5271255",
 			"imageUrl": "https://picsum.photos/200/300",
 			"name": "Prodct10 - 110 Gallon",
 			"price": 130.0,
@@ -232,7 +394,25 @@
 				"https://picsum.photos/200/300",
 				"https://picsum.photos/200/300"
 			],
-			"description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam"
+			"description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam",
+			"c_pricing": {
+				"showStandardPrice": true,
+				"isPromoPrice": false,
+				"standard": 15.99,
+				"formattedStandard": "$15.99",
+				"sale": 14.99,
+				"formattedSale": "$14.99"
+			},
+			"c_size": "1 Gal",
+			"brand": "Top Fin",
+			"c_brand": {
+				"brandID": "5000270",
+				"brandName": "Top Fin",
+				"url": "/featured-brands/top-fin/"
+			},
+			"short_description": "TF EXCITE KIT BLACK 1G V2             23",
+			"c_customParsedProductDescription": "{\"html\":\"<p><b>DESCRIPTION </b><p><br>The Top Fin Excite Aquarium provides a safe, comfortable and aesthetically pleasing home for your fish. This aquarium makes feeding easy with a convenient feeding door on the hood, and even includes a bright white LED fixture to light up your underwater world. Only at PetSmart. <br><p><b>Features:</b> Bright white LED; Hood with convenient feeding door<br><br><b>Includes:</b><li> 1 Tank<li>Top Fin \\\"Element\\\" filter cartridge<li>Top Fin &quot;Element&quot; filter<br><br><p><b>Intended For:</b> Fish<br><br><b>Material:</b> Plastic<br><br><b>Color:</b> Black<br> <br><b>Size:</b> 1 US GAL (3.7 L); 10.4 in L x 6.9 in W x 8.4 in H (26.4 x 17.5 x 21.3 cm)<br><br><p><b>Instructions: </b><br>Place aquarium on a stable, sturdy surface away from heat, cold and direct sunlight. Use an aquarium heater, if needed, to maintain stable water temperatures.<p>Choose your favorite color gravel, or mix or match.<p>Condition water during set up and each water change. Water testing, water conditioner, and bacteria starter are keys to success. Let water sit for 4 hours before introducing fish.<p>Compliment your personal style and provide shelter for your fish.<p>Feed your fish with the appropriate type and amount of food.<br><br><p><b>Caution:</b> Choose the appropriate quantity of compatible fish. Thoroughly rinse gravel and decor. Do not use soap or detergent as they may harm fish.\",\"tabs\":{\"Description\":[\"<b>DESCRIPTION </b><p><br>The Top Fin Excite Aquarium provides a safe, comfortable and aesthetically pleasing home for your fish. This aquarium makes feeding easy with a convenient feeding door on the hood, and even includes a bright white LED fixture to light up your underwater world. Only at PetSmart. <br><p><b>Features:</b> Bright white LED; Hood with convenient feeding door<br><br><b>Includes:</b><li> 1 Tank<li>Top Fin \\\"Element\\\" filter cartridge<li>Top Fin &quot;Element&quot; filter<br><br><p><b>Intended For:</b> Fish<br><br><b>Material:</b> Plastic<br><br><b>Color:</b> Black<br> <br>\"],\"Directions\":[\"<b>Instructions: </b><br>Place aquarium on a stable, sturdy surface away from heat, cold and direct sunlight. Use an aquarium heater, if needed, to maintain stable water temperatures.<p>Choose your favorite color gravel, or mix or match.<p>Condition water during set up and each water change. Water testing, water conditioner, and bacteria starter are keys to success. Let water sit for 4 hours before introducing fish.<p>Compliment your personal style and provide shelter for your fish.<p>Feed your fish with the appropriate type and amount of food.<br><br><p><b>Caution:</b> Choose the appropriate quantity of compatible fish. Thoroughly rinse gravel and decor. Do not use soap or detergent as they may harm fish.\"],\"Size\":[\"<b>Size:</b> 1 US GAL (3.7 L); 10.4 in L x 6.9 in W x 8.4 in H (26.4 x 17.5 x 21.3 cm)<br><br><p>\"]}}",
+			"long_description": "<p><b>DESCRIPTION </b><p>\r\nThe Top Fin Excite Aquarium provides a safe, comfortable and aesthetically pleasing home for your fish. This aquarium makes feeding easy with a convenient feeding door on the hood, and even includes a bright white LED fixture to light up your underwater world. Only at PetSmart. \r\n<p><b>Features:</b> Bright white LED; Hood with convenient feeding door<br>\r\n<b>Includes:</b><li> 1 Tank<li>Top Fin \"Element\" filter cartridge<li>Top Fin &quot;Element&quot; filter<br>\r\n<p><b>Intended For:</b> Fish<br>\r\n<b>Material:</b> Plastic<br>\r\n<b>Color:</b> Black<br> \r\n<b>Size:</b> 1 US GAL (3.7 L); 10.4 in L x 6.9 in W x 8.4 in H (26.4 x 17.5 x 21.3 cm)<br>\r\n<p><b>Instructions: </b><br>Place aquarium on a stable, sturdy surface away from heat, cold and direct sunlight. Use an aquarium heater, if needed, to maintain stable water temperatures.<p>Choose your favorite color gravel, or mix or match.<p>Condition water during set up and each water change. Water testing, water conditioner, and bacteria starter are keys to success. Let water sit for 4 hours before introducing fish.<p>Compliment your personal style and provide shelter for your fish.<p>Feed your fish with the appropriate type and amount of food.<br>\r\n<p><b>Caution:</b> Choose the appropriate quantity of compatible fish. Thoroughly rinse gravel and decor. Do not use soap or detergent as they may harm fish."
 		}
 	],
 	"accessories": [

@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useState } from 'react';
-import { Box, Typography, Avatar, Button, ButtonGroup } from '@material-ui/core';
+import { Box, Typography, Avatar, Button, ButtonGroup, Tooltip, CircularProgress } from '@material-ui/core';
 import { useStyles } from './styles';
 import { ProductDetailsModal } from './ProductDetailsModal';
 
@@ -22,8 +22,9 @@ export const ProductListing = (props) => {
 	const classes = useStyles();
 	const [openModal, setOpenModal] = useState(false);
 	const [selectedProductDetails, setSelectedProductDetails] = useState(selectedProduct);
-	const [productDetails, setProductDetails] = useState(selectionBasedProductList);
+	const [productDetails, setProductDetails] = useState([]);
 	const [splitButtonClickType, setSplitButtonClickType] = useState(null);
+	const [productType, setProductType] = useState(type);
 	useEffect(() => {
 		setSelectedProductDetails(selectedProduct);
 	}, [selectedProduct]);
@@ -39,6 +40,7 @@ export const ProductListing = (props) => {
 		} else if (type === 'Care') {
 			setSelectedProductDetails(selectedCareData);
 		}
+		type && setProductType(type);
 	}, [type, selectedFishData, selectedTankData, selectedAccessoriesData, selectedGravelDecorData, selectedCareData]);
 	useEffect(() => {
 		setProductDetails(selectionBasedProductList);
@@ -54,7 +56,8 @@ export const ProductListing = (props) => {
 	};
 	const filterTankList = (event, filterType) => {
 		setSplitButtonClickType(filterType);
-		setProductDetails(selectionBasedProductList.filter((item) => item.tankSize === filterType));
+		setProductDetails(selectionBasedProductList);
+		// setProductDetails(selectionBasedProductList.filter((item) => item.tankSize === filterType));
 	};
 	const convertPrice = (price) => {
 		return price ? price.toFixed(2) : 0;
@@ -110,7 +113,7 @@ export const ProductListing = (props) => {
 				<Box
 					style={{
 						display: 'flex',
-						justifyContent: type === 'Fish' ? 'space-between' : 'flex-start',
+						justifyContent: productType === 'Fish' ? 'space-between' : 'flex-start',
 						alignItems: 'center',
 						paddingRight: 24,
 						flexWrap: 'wrap',
@@ -119,61 +122,74 @@ export const ProductListing = (props) => {
 					{Boolean(productDetails) && productDetails.length ? (
 						productDetails.map((item) => (
 							<Box
+								key={item.id}
 								style={{
-									width: type === 'Fish' ? 100 : 180,
+									width: productType === 'Fish' ? 100 : 135,
 									cursor: 'pointer',
 									marginTop: 10,
-									marginRight: type === 'Fish' ? 0 : 30,
-									padding: type === 'Fish' ? 0 : 16,
-									border: `${type === 'Fish' ? '0px' : '1px'} solid ${
+									marginRight: productType === 'Fish' ? 0 : 30,
+									padding: productType === 'Fish' ? 0 : 16,
+									border: `${productType === 'Fish' ? '0px' : '1px'} solid ${
 										selectedProductDetails.id === item.id ? '#007DB4' : '#DDDDDD'
 									}`,
 								}}
 								onClick={(e) => {
-									type === 'Fish' ? handleProductSelection(e, item) : handleOpenModal(e, item);
+									productType === 'Fish' ? handleProductSelection(e, item) : handleOpenModal(e, item);
 								}}
 							>
 								<Box
 									style={{
-										padding: type === 'Fish' ? 8 : 0,
+										padding: productType === 'Fish' ? 8 : 0,
 										display: 'flex',
 										justifyContent: 'center',
-										border: `${type === 'Fish' ? '1px' : '0px'} solid ${
+										border: `${productType === 'Fish' ? '1px' : '0px'} solid ${
 											selectedProductDetails.id === item.id ? '#007DB4' : '#DDDDDD'
 										}`,
 									}}
 								>
-									{item.imageUrl ? (
+									{productType === 'Tank' ? (
 										<Avatar
-											style={type === 'Fish' ? { width: 85, height: 85 } : { width: 145, height: 145 }}
+											style={productType === 'Fish' ? { width: 85, height: 85 } : { width: 145, height: 145 }}
+											variant='square'
+											src={
+												type === 'Tank'
+													? `https://s7d2.scene7.com/is/image/PetSmart/${item.id}?$sclp-prd-main_large$`
+													: item.imageUrl
+											}
+										/>
+									) : item.imageUrl ? (
+										<Avatar
+											style={productType === 'Fish' ? { width: 85, height: 85 } : { width: 145, height: 145 }}
 											variant='square'
 											src={item.imageUrl}
 										/>
 									) : (
 										<Box
 											style={
-												type === 'Fish'
+												productType === 'Fish'
 													? { width: 85, height: 85, background: 'grey 0% 0% no-repeat padding-box' }
 													: { width: 145, height: 145, background: 'grey 0% 0% no-repeat padding-box' }
 											}
 										></Box>
 									)}
 								</Box>
-								<Typography variant='body2' style={{ textAlign: 'center', marginTop: 8 }}>
-									{item.name}
-								</Typography>
-								{type !== 'Fish' ? (
+								<Tooltip title={<div dangerouslySetInnerHTML={{ __html: item.name }} />}>
+									<Typography variant='body2' className={classes.twoLine} style={{ textAlign: 'center', marginTop: 8 }}>
+										<div dangerouslySetInnerHTML={{ __html: item.name }} />
+									</Typography>
+								</Tooltip>
+								{productType !== 'Fish' ? (
 									<Box mt={1} display='flex' alignItems='center' justifyContent='center'>
-										<Typography
-											variant='body2'
-											color='error'
-											style={{ fontWeight: 'bold', marginRight: 8 }}
-										>{`$${convertPrice(item.price)}`}</Typography>
+										<Typography variant='body2' color='error' style={{ fontWeight: 'bold', marginRight: 8 }}>
+											{productType === 'Tank' ? item.c_pricing.formattedSale : `$${convertPrice(item.price)}`}
+										</Typography>
 										<Typography
 											variant='body2'
 											color='textSecondary'
 											style={{ fontWeight: 'bold', textDecoration: 'line-through' }}
-										>{`$${convertPrice(item.oldPrice)}`}</Typography>
+										>
+											{productType === 'Tank' ? item.c_pricing.formattedStandard : `$${convertPrice(item.oldPrice)}`}
+										</Typography>
 									</Box>
 								) : (
 									<></>
@@ -181,10 +197,12 @@ export const ProductListing = (props) => {
 							</Box>
 						))
 					) : (
-						<></>
+						<Box>
+							<CircularProgress />
+						</Box>
 					)}
 				</Box>
-				{Boolean(selectedProductDetails) && type === 'Fish' && selectedProductDetails.name !== 'Any Fish' ? (
+				{Boolean(selectedProductDetails) && productType === 'Fish' && selectedProductDetails.name !== 'Any Fish' ? (
 					<Box
 						mt={2}
 						mr={2.25}
@@ -205,19 +223,19 @@ export const ProductListing = (props) => {
 				) : (
 					<></>
 				)}
-				{Boolean(selectedProductDetails) && type !== 'Fish' ? (
+				{Boolean(selectedProductDetails) && productType !== 'Fish' ? (
 					<ProductDetailsModal
 						openModal={openModal}
-						type={type}
+						type={productType}
 						selectedProductDetails={selectedProductDetails}
 						handleCloseModal={handleCloseModal}
 					/>
 				) : (
 					<></>
 				)}
-				{type !== 'Final' && (
+				{productType !== 'Final' && (
 					<Box display='flex' justifyContent='flex-end' pr={2.25} pt={2}>
-						{type !== 'Fish' ? (
+						{productType !== 'Fish' ? (
 							<Button style={{ color: '#007DB4', marginRight: 20 }} onClick={handleGoBackClick}>
 								Go Back
 							</Button>

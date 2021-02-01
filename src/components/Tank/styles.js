@@ -68,4 +68,11 @@ export const useStyles = makeStyles((theme) => ({
 		minHeight: theme.spacing(4),
 		borderRadius: theme.spacing(3.125),
 	},
+	twoLine: {
+		overflow: 'hidden',
+		textOverflow: 'ellipsis',
+		display: '-webkit-box',
+		WebkitLineClamp: 2,
+		WebkitBoxOrient: 'vertical',
+	},
 }));

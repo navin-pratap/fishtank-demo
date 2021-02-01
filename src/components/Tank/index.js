@@ -41,7 +41,7 @@ export const Tank = (props) => {
 			ProductPrice: 0,
 		},
 	];
-	const { fishList, productsList, accessories, gravelDecor, care, tutorialSteps, steps } = mockData;
+	const { fishList, accessories, gravelDecor, care, tutorialSteps, steps } = mockData;
 	const [activeStep, setActiveStep] = useState(0);
 	const [activeSliderStep, setActiveSliderStep] = useState(0);
 	const [selectedFishData, setSelectedFishData] = useState(0);
@@ -53,17 +53,19 @@ export const Tank = (props) => {
 	const [selectedProducts, setSelectedProducts] = useState(defaultProductSelection);
 	const [selectionType, setSelectionType] = useState('Fish');
 	const [selectionBasedProductList, setSelectionBasedProductList] = useState(fishList);
+	const [productDetailsWithSKU, setProductDetailsWithSKU] = useState([]); // skuMockData.data
 	const [titleDetails, setTitleDetails] = useState({
 		title: 'Select your favorite fish',
 		subTitle: 'Please select a fish you plan on building a tank for.',
 	});
 	const maxSteps = tutorialSteps.length;
 
-	useEffect(() => {
-		getAllSkuDetails();
-	}, []);
+	// useEffect(() => {
+	// 	getAllSkuDetails();
+	// 	// eslint-disable-next-line react-hooks/exhaustive-deps
+	// }, []);
 
-	const getAllSkuDetails = () => {
+	const getAllSkuDetails = async () => {
 		const bigList = SKUList;
 		let organizedList = {};
 		let n = 0;
@@ -73,17 +75,15 @@ export const Tank = (props) => {
 			n += 1;
 		}
 		const listKeys = Object.keys(organizedList);
+		let skuDetails = [];
 		for (let i = 0; i < listKeys.length; i++) {
-			const data = organizedList[listKeys[i]];
-			getSkuFullDetails(data)
-				.then((response) => {
-					const data = response.data.data;
-					console.log(data);
-				})
-				.catch((error) => {
-					console.error('This was from the axios', error);
-				});
+			const skuIds = organizedList[listKeys[i]];
+			const response = await getSkuFullDetails(skuIds);
+			const { data } = response.data;
+			skuDetails.push(...data);
 		}
+		setProductDetailsWithSKU([...skuDetails]);
+		return skuDetails;
 	};
 	const getNewState = () => {
 		if (selectionType === 'Fish') {
@@ -188,7 +188,7 @@ export const Tank = (props) => {
 		});
 		setSelectedProducts(finalData);
 	};
-	const setProductDisplayType = (newState) => {
+	const setProductDisplayType = async (newState) => {
 		if (newState === 0) {
 			//--------- For Fish
 			const selectedProductData = selectedFishData;
@@ -198,8 +198,6 @@ export const Tank = (props) => {
 				subTitle: 'Please select a fish you plan on building a tank for.',
 			});
 			setSelectedProducts(defaultProductSelection);
-			// setSelectedProduct(0);
-			// setSelectedFishData(0);
 			setSelectedTankData(0);
 			setSelectedAccessoriesData(0);
 			setSelectedGravelDecorData(0);
@@ -207,28 +205,29 @@ export const Tank = (props) => {
 			setSelectionBasedProductList(fishList);
 			addToCart(0, selectedProductData, 'Tank'); // Add to Cart
 		} else if (newState === 1) {
+			setSelectionBasedProductList([]);
 			const selectedProductData = selectedFishData;
 			//--------- For Tank
 			addToCart(0, selectedProductData, 'Tank'); // Add to Cart
 			setSelectionType('Tank');
+			const response = await getAllSkuDetails();
 			if (selectedProductData.name === 'Any Fish') {
 				setTitleDetails({
 					title: `Select a tank`,
 					subTitle: 'Choose from a small, medium, or large tank.',
 				});
-				setSelectionBasedProductList(productsList);
+				setSelectionBasedProductList(response); //(productDetailsWithSKU);
 			} else {
 				setTitleDetails({
 					title: `For ${selectedProductData.name}, we recommend these tanks`,
 					subTitle: 'Please select a tank.',
 				});
-				setSelectionBasedProductList(
-					productsList.filter((item) => item.recommendedForFish === selectedProductData.name)
-				);
+
+				setSelectionBasedProductList(response); //(productDetailsWithSKU);
+				// setSelectionBasedProductList(
+				// 	productsList.filter((item) => item.recommendedForFish === selectedProductData.name)
+				// );
 			}
-			// setSelectedProduct(0);
-			// setSelectedFishData(0);
-			// setSelectedTankData(0);
 			setSelectedAccessoriesData(0);
 			setSelectedGravelDecorData(0);
 			setSelectedCareData(0);
@@ -243,9 +242,6 @@ export const Tank = (props) => {
 			});
 			setSelectionBasedProductList(accessories);
 
-			// setSelectedFishData(0);
-			// setSelectedTankData(0);
-			// setSelectedAccessoriesData(0);
 			setSelectedGravelDecorData(0);
 			setSelectedCareData(0);
 		} else if (newState === 3) {
@@ -259,10 +255,6 @@ export const Tank = (props) => {
 			});
 			setSelectionBasedProductList(gravelDecor);
 
-			// setSelectedFishData(0);
-			// setSelectedTankData(0);
-			// setSelectedAccessoriesData(0);
-			// setSelectedGravelDecorData(0);
 			setSelectedCareData(0);
 		} else if (newState === 4) {
 			//--------- For Care
@@ -274,12 +266,6 @@ export const Tank = (props) => {
 				subTitle: 'Add care item(s) to your tank.',
 			});
 			setSelectionBasedProductList(care);
-
-			// setSelectedFishData(0);
-			// setSelectedTankData(0);
-			// setSelectedAccessoriesData(0);
-			// setSelectedGravelDecorData(0);
-			// setSelectedCareData(0);
 		} else if (newState === 5) {
 			const selectedProductData = selectedCareData;
 			addToCart(4, selectedProductData, 'Care'); // Add to Cart
@@ -290,12 +276,6 @@ export const Tank = (props) => {
 			});
 			setSelectionBasedProductList([]);
 		}
-		// if (newState === 0 || newState === 1) {
-		// } else if (newState === 2) {
-		// } else if (newState === 3) {
-		// } else if (newState === 4) {
-		// } else if (newState === 5) {
-		// }
 	};
 	const handleProductSelectionClick = (event) => {
 		handleNext(event, 1);
