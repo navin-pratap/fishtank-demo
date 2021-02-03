@@ -1,7 +1,8 @@
 import React, { Fragment, useEffect, useState } from 'react';
-import { Box, Typography, Avatar, Button, ButtonGroup, Tooltip, CircularProgress } from '@material-ui/core';
+import { Box, Typography, Avatar, ButtonGroup, Tooltip, CircularProgress } from '@material-ui/core';
 import { useStyles } from './styles';
 import { ProductDetailsModal } from './ProductDetailsModal';
+import { CommonButton } from '../Common/CommonButton';
 
 export const ProductListing = (props) => {
 	const {
@@ -76,33 +77,30 @@ export const ProductListing = (props) => {
 					{title === 'Select a tank' ? (
 						<Box pr={3}>
 							<ButtonGroup disableElevation variant='contained'>
-								<Button
-									onClick={(e) => filterTankList(e, 'small')}
+								<CommonButton
+									handleClick={(e) => filterTankList(e, 'small')}
 									style={{
 										backgroundColor: splitButtonClickType === 'small' ? '#007DB4' : '#F2F2F2',
 										color: splitButtonClickType === 'small' ? '#ffffff' : 'lightgray',
 									}}
-								>
-									Small
-								</Button>
-								<Button
-									onClick={(e) => filterTankList(e, 'medium')}
+									text={'Small'}
+								/>
+								<CommonButton
+									handleClick={(e) => filterTankList(e, 'medium')}
 									style={{
 										backgroundColor: splitButtonClickType === 'medium' ? '#007DB4' : '#F2F2F2',
 										color: splitButtonClickType === 'medium' ? '#ffffff' : 'lightgray',
 									}}
-								>
-									Medium
-								</Button>
-								<Button
-									onClick={(e) => filterTankList(e, 'large')}
+									text={'Medium'}
+								/>
+								<CommonButton
+									handleClick={(e) => filterTankList(e, 'large')}
 									style={{
 										backgroundColor: splitButtonClickType === 'large' ? '#007DB4' : '#F2F2F2',
 										color: splitButtonClickType === 'large' ? '#ffffff' : 'lightgray',
 									}}
-								>
-									Large
-								</Button>
+									text={'Large'}
+								/>
 							</ButtonGroup>
 						</Box>
 					) : (
@@ -236,18 +234,22 @@ export const ProductListing = (props) => {
 				{productType !== 'Final' && (
 					<Box display='flex' justifyContent='flex-end' pr={2.25} pt={2}>
 						{productType !== 'Fish' ? (
-							<Button style={{ color: '#007DB4', marginRight: 20 }} onClick={handleGoBackClick}>
-								Go Back
-							</Button>
+							<CommonButton
+								style={{ color: '#007DB4', marginRight: 20 }}
+								handleClick={handleGoBackClick}
+								text={'Go Back'}
+							/>
 						) : (
 							<></>
 						)}
 						{Boolean(selectedProductDetails) ? (
-							<Button style={{ backgroundColor: '#007DB4', color: '#ffffff' }} onClick={handleProductSelectionClick}>
-								Continue
-							</Button>
+							<CommonButton
+								style={{ backgroundColor: '#007DB4', color: '#ffffff' }}
+								handleClick={handleProductSelectionClick}
+								text={'Continue'}
+							/>
 						) : (
-							<Button disabled>Continue</Button>
+							<CommonButton disabled={true} text={'Continue'} />
 						)}
 					</Box>
 				)}

@@ -1,9 +1,10 @@
 import React, { Fragment } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
-import { Avatar, Box, Button, AppBar, Tab, Tabs, Typography, Select, MenuItem } from '@material-ui/core';
+import { Avatar, Box, AppBar, Tab, Tabs, Typography, Select, MenuItem } from '@material-ui/core';
 import Rating from '@material-ui/lab/Rating';
 import { ProductImagesSlider } from './ProductImagesSlider';
+import { CommonButton } from '../Common/CommonButton';
 
 const useStyles = makeStyles((theme) => ({
 	paper: {
@@ -78,7 +79,7 @@ export const ProductDetailsModal = (props) => {
 		>
 			<Box className={classes.paper}>
 				<Box display='flex' justifyContent='flex-end'>
-					<Button onClick={handleCloseModal}>X</Button>
+					<CommonButton handleClick={handleCloseModal} text={'X'} />
 				</Box>
 				<Box display='flex'>
 					<Box>
@@ -159,12 +160,11 @@ export const ProductDetailsModal = (props) => {
 							</Select>
 						</Box>
 						<Box mt={3}>
-							<Button
-								onClick={handleCloseModal}
+							<CommonButton
+								handleClick={handleCloseModal}
 								style={{ backgroundColor: '#007DB4', color: '#ffffff', padding: '6px 22px' }}
-							>
-								Select
-							</Button>
+								text={'Select'}
+							/>
 						</Box>
 					</Box>
 				</Box>

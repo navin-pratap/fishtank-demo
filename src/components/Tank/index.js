@@ -1,11 +1,12 @@
 import React, { Fragment, useState } from 'react';
-import { Box, Typography, Grid, Button } from '@material-ui/core';
+import { Box, Typography, Grid } from '@material-ui/core';
 import { useStyles } from './styles';
 import { ProductListing } from './ProductListing';
 import { TipsCarousel } from './TipsCarousel';
 import { configs, SKUList } from '../../config';
 import { getSkuFullDetails } from '../../services/generator';
 import { ProductStepper } from './ProductStepper';
+import { CommonButton } from '../Common/CommonButton';
 
 const mockData = require('./ProductList.json');
 
@@ -418,16 +419,17 @@ export const Tank = (props) => {
 									padding: '0px 16px 16px 16px',
 								}}
 							>
-								<Button
-									fullWidth
+								<CommonButton
+									variant='contained'
+									className={`${classes.button} ${classes.marginTop}`}
 									style={{
 										backgroundColor: selectionType === 'Final' ? '#007DB4' : '#F2F2F2',
 										color: selectionType === 'Final' ? '#ffffff' : 'lightgray',
 									}}
+									text={'Build your tank'}
+									fullWidth={true}
 									disabled={selectionType !== 'Final'}
-								>
-									{`Add to cart`}
-								</Button>
+								/>
 							</Box>
 						</Box>
 					</Box>

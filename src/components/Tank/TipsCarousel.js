@@ -1,11 +1,12 @@
 import React from 'react';
-import { Box, Typography, MobileStepper, Button } from '@material-ui/core';
+import { Box, Typography, MobileStepper } from '@material-ui/core';
 import { useTheme } from '@material-ui/core/styles';
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
 import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 import { useStyles } from './styles';
+import { CommonButton } from '../Common/CommonButton';
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
@@ -18,15 +19,14 @@ export const TipsCarousel = (props) => {
 		<Box>
 			<Box className={classes.tipsContainer}>
 				<Box>
-					<Button
+					<CommonButton
 						size='small'
 						color='primary'
 						className={classes.tipsButton}
-						onClick={(event) => handleBack(event, 0)}
+						handleClick={(event) => handleBack(event, 0)}
 						disabled={activeSliderStep === 0}
-					>
-						{theme.direction === 'rtl' ? <KeyboardArrowRight /> : <KeyboardArrowLeft />}
-					</Button>
+						icon={theme.direction === 'rtl' ? <KeyboardArrowRight /> : <KeyboardArrowLeft />}
+					/>
 				</Box>
 				<AutoPlaySwipeableViews
 					axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
@@ -50,15 +50,14 @@ export const TipsCarousel = (props) => {
 					))}
 				</AutoPlaySwipeableViews>
 				<Box>
-					<Button
+					<CommonButton
 						size='small'
 						color='primary'
 						className={classes.tipsButton}
-						onClick={(event) => handleNext(event, 0)}
+						handleClick={(event) => handleNext(event, 0)}
 						disabled={activeSliderStep === maxSteps - 1}
-					>
-						{theme.direction === 'rtl' ? <KeyboardArrowLeft /> : <KeyboardArrowRight />}
-					</Button>
+						icon={theme.direction === 'rtl' ? <KeyboardArrowLeft /> : <KeyboardArrowRight />}
+					/>
 				</Box>
 			</Box>
 			<MobileStepper
