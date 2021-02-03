@@ -1,10 +1,11 @@
 import React, { Fragment, useState } from 'react';
-import { Box, Typography, Stepper, Step, StepLabel, Grid, Button } from '@material-ui/core';
+import { Box, Typography, Grid, Button } from '@material-ui/core';
 import { useStyles } from './styles';
 import { ProductListing } from './ProductListing';
 import { TipsCarousel } from './TipsCarousel';
 import { configs, SKUList } from '../../config';
 import { getSkuFullDetails } from '../../services/generator';
+import { ProductStepper } from './ProductStepper';
 
 const mockData = require('./ProductList.json');
 
@@ -294,17 +295,7 @@ export const Tank = (props) => {
 				<Grid item xs={8}>
 					<Box>
 						<Box className={classes.main}>
-							<Stepper alternativeLabel nonLinear activeStep={activeStep}>
-								{Boolean(steps) && steps.length ? (
-									steps.map((label, index) => (
-										<Step key={label} completed={index <= activeStep - 1}>
-											<StepLabel>{label}</StepLabel>
-										</Step>
-									))
-								) : (
-									<></>
-								)}
-							</Stepper>
+							<ProductStepper activeStep={activeStep} steps={steps} />
 						</Box>
 						{selectionType !== 'Final' ? (
 							<TipsCarousel
