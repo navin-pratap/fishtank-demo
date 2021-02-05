@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { useState } from 'react';
 import { Box, Typography, Grid } from '@material-ui/core';
 import { useStyles } from './styles';
 import { ProductListing } from './ProductListing';
@@ -6,7 +6,7 @@ import { TipsCarousel } from './TipsCarousel';
 import { configs, SKUList } from '../../config';
 import { getSkuFullDetails } from '../../services/generator';
 import { ProductStepper } from './ProductStepper';
-import { CommonButton } from '../Common/CommonButton';
+import { CartView } from './CartView';
 
 const mockData = require('./ProductList.json');
 
@@ -55,6 +55,7 @@ export const Tank = (props) => {
 	const [selectedProducts, setSelectedProducts] = useState(defaultProductSelection);
 	const [selectionType, setSelectionType] = useState('Fish');
 	const [selectionBasedProductList, setSelectionBasedProductList] = useState(fishList);
+	// eslint-disable-next-line no-unused-vars
 	const [productDetailsWithSKU, setProductDetailsWithSKU] = useState([]); // skuMockData.data
 	const [titleDetails, setTitleDetails] = useState({
 		title: 'Select your favorite fish',
@@ -340,99 +341,12 @@ export const Tank = (props) => {
 					</Box>
 				</Grid>
 				<Grid item xs={4}>
-					<Box className={classes.rightPanel}>
-						<Typography className={classes.rightPanelHeading}>Build your tank</Typography>
-						<Box>
-							{Boolean(selectedProducts) && selectedProducts.length ? (
-								selectedProducts.map((item, index) => (
-									<Fragment key={`productType_${item.ProductName}_${index}`}>
-										<Box className={classes.productCart}>
-											<Typography variant='body2' style={{ fontWeight: 'bold' }}>
-												{item.type}
-											</Typography>
-											{item.ProductName && item.ProductPrice ? (
-												<Typography variant='body1' className={classes.linkColor}>
-													Edit
-												</Typography>
-											) : (
-												<></>
-											)}
-										</Box>
-										<Box
-											className={classes.productCart}
-											style={{ paddingBottom: selectedProducts.length - 1 === index ? 10 : 0 }}
-										>
-											{item.ProductName && item.ProductPrice ? (
-												<></>
-											) : (
-												<Typography style={{ paddingBottom: 20 }} variant='body2'>
-													No Product Selected
-												</Typography>
-											)}
-											{/* <Avatar variant='square' /> */}
-											{item.productImage ? (
-												<Box style={{ width: 50, height: 50, background: '#F2F2F2 0% 0% no-repeat padding-box' }}></Box>
-											) : (
-												<></>
-											)}
-											{item.ProductName ? (
-												<Typography variant='body1' component='div'>
-													{item.ProductName}
-												</Typography>
-											) : (
-												<></>
-											)}
-											{item.ProductPrice ? (
-												<Typography variant='body2' style={{ fontWeight: 'bold' }} component='div'>
-													{`$ ${item.ProductPrice}`}
-												</Typography>
-											) : (
-												<> </>
-											)}
-										</Box>
-									</Fragment>
-								))
-							) : (
-								<></>
-							)}
-							<Box
-								display='flex'
-								justifyContent='space-between'
-								alignItems='center'
-								style={{
-									padding: 16,
-									borderTop: '1px solid lightgrey',
-								}}
-							>
-								<Typography variant='body2' style={{ fontWeight: 'bold' }}>
-									Subtotal
-								</Typography>
-								<Typography variant='body2' style={{ fontWeight: 'bold' }}>
-									{`$ ${selectionType === 'Final' ? getSubTotal() : '###.##'}`}
-								</Typography>
-							</Box>
-							<Box
-								style={{
-									display: 'flex',
-									alignItems: 'center',
-									justifyContent: 'center',
-									padding: '0px 16px 16px 16px',
-								}}
-							>
-								<CommonButton
-									variant='contained'
-									className={`${classes.button} ${classes.marginTop}`}
-									style={{
-										backgroundColor: selectionType === 'Final' ? '#007DB4' : '#F2F2F2',
-										color: selectionType === 'Final' ? '#ffffff' : 'lightgray',
-									}}
-									text={'Build your tank'}
-									fullWidth={true}
-									disabled={selectionType !== 'Final'}
-								/>
-							</Box>
-						</Box>
-					</Box>
+					<CartView
+						classes={classes}
+						selectedProducts={selectedProducts}
+						selectionType={selectionType}
+						getSubTotal={getSubTotal}
+					/>
 				</Grid>
 			</Grid>
 		</main>

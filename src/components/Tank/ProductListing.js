@@ -1,8 +1,14 @@
 import React, { Fragment, useEffect, useState } from 'react';
-import { Box, Typography, Avatar, ButtonGroup, Tooltip, CircularProgress } from '@material-ui/core';
+import { Box, Typography } from '@material-ui/core';
 import { useStyles } from './styles';
 import { ProductDetailsModal } from './ProductDetailsModal';
 import { CommonButton } from '../Common/CommonButton';
+import { TankFilter } from './TankFilters';
+import { FishDetails } from './FishDetails';
+import { TankDetails } from './TankDetails';
+import { AccessoriesDetails } from './AccessoriesDetails';
+import { GravelDecorDetails } from './GravelDecorDetails';
+import { CareDetails } from './CareDetails';
 
 export const ProductListing = (props) => {
 	const {
@@ -76,32 +82,7 @@ export const ProductListing = (props) => {
 					</Box>
 					{title === 'Select a tank' ? (
 						<Box pr={3}>
-							<ButtonGroup disableElevation variant='contained'>
-								<CommonButton
-									handleClick={(e) => filterTankList(e, 'small')}
-									style={{
-										backgroundColor: splitButtonClickType === 'small' ? '#007DB4' : '#F2F2F2',
-										color: splitButtonClickType === 'small' ? '#ffffff' : 'lightgray',
-									}}
-									text={'Small'}
-								/>
-								<CommonButton
-									handleClick={(e) => filterTankList(e, 'medium')}
-									style={{
-										backgroundColor: splitButtonClickType === 'medium' ? '#007DB4' : '#F2F2F2',
-										color: splitButtonClickType === 'medium' ? '#ffffff' : 'lightgray',
-									}}
-									text={'Medium'}
-								/>
-								<CommonButton
-									handleClick={(e) => filterTankList(e, 'large')}
-									style={{
-										backgroundColor: splitButtonClickType === 'large' ? '#007DB4' : '#F2F2F2',
-										color: splitButtonClickType === 'large' ? '#ffffff' : 'lightgray',
-									}}
-									text={'Large'}
-								/>
-							</ButtonGroup>
+							<TankFilter filterTankList={filterTankList} splitButtonClickType={splitButtonClickType} />
 						</Box>
 					) : (
 						<></>
@@ -117,87 +98,58 @@ export const ProductListing = (props) => {
 						flexWrap: 'wrap',
 					}}
 				>
-					{Boolean(productDetails) && productDetails.length ? (
-						productDetails.map((item) => (
-							<Box
-								key={item.id}
-								style={{
-									width: productType === 'Fish' ? 100 : 135,
-									cursor: 'pointer',
-									marginTop: 10,
-									marginRight: productType === 'Fish' ? 0 : 30,
-									padding: productType === 'Fish' ? 0 : 16,
-									border: `${productType === 'Fish' ? '0px' : '1px'} solid ${
-										selectedProductDetails.id === item.id ? '#007DB4' : '#DDDDDD'
-									}`,
-								}}
-								onClick={(e) => {
-									productType === 'Fish' ? handleProductSelection(e, item) : handleOpenModal(e, item);
-								}}
-							>
-								<Box
-									style={{
-										padding: productType === 'Fish' ? 8 : 0,
-										display: 'flex',
-										justifyContent: 'center',
-										border: `${productType === 'Fish' ? '1px' : '0px'} solid ${
-											selectedProductDetails.id === item.id ? '#007DB4' : '#DDDDDD'
-										}`,
-									}}
-								>
-									{productType === 'Tank' ? (
-										<Avatar
-											style={productType === 'Fish' ? { width: 85, height: 85 } : { width: 145, height: 145 }}
-											variant='square'
-											src={
-												type === 'Tank'
-													? `https://s7d2.scene7.com/is/image/PetSmart/${item.id}?$sclp-prd-main_large$`
-													: item.imageUrl
-											}
-										/>
-									) : item.imageUrl ? (
-										<Avatar
-											style={productType === 'Fish' ? { width: 85, height: 85 } : { width: 145, height: 145 }}
-											variant='square'
-											src={item.imageUrl}
-										/>
-									) : (
-										<Box
-											style={
-												productType === 'Fish'
-													? { width: 85, height: 85, background: 'grey 0% 0% no-repeat padding-box' }
-													: { width: 145, height: 145, background: 'grey 0% 0% no-repeat padding-box' }
-											}
-										></Box>
-									)}
-								</Box>
-								<Tooltip title={<div dangerouslySetInnerHTML={{ __html: item.name }} />}>
-									<Typography variant='body2' className={classes.twoLine} style={{ textAlign: 'center', marginTop: 8 }}>
-										<div dangerouslySetInnerHTML={{ __html: item.name }} />
-									</Typography>
-								</Tooltip>
-								{productType !== 'Fish' ? (
-									<Box mt={1} display='flex' alignItems='center' justifyContent='center'>
-										<Typography variant='body2' color='error' style={{ fontWeight: 'bold', marginRight: 8 }}>
-											{productType === 'Tank' ? item.c_pricing.formattedSale : `$${convertPrice(item.price)}`}
-										</Typography>
-										<Typography
-											variant='body2'
-											color='textSecondary'
-											style={{ fontWeight: 'bold', textDecoration: 'line-through' }}
-										>
-											{productType === 'Tank' ? item.c_pricing.formattedStandard : `$${convertPrice(item.oldPrice)}`}
-										</Typography>
-									</Box>
-								) : (
-									<></>
-								)}
-							</Box>
-						))
+					{productType === 'Fish' ? (
+						<FishDetails
+							productDetails={productDetails}
+							selectedProductDetails={selectedProductDetails}
+							handleProductSelection={handleProductSelection}
+							classes={classes}
+						/>
 					) : (
-						<Box>
-							<CircularProgress />
-						</Box>
+						<></>
+					)}
+					{productType === 'Tank' ? (
+						<TankDetails
+							productDetails={productDetails}
+							selectedProductDetails={selectedProductDetails}
+							classes={classes}
+							handleOpenModal={handleOpenModal}
+						/>
+					) : (
+						<></>
+					)}
+					{productType === 'Accessories' ? (
+						<AccessoriesDetails
+							productDetails={productDetails}
+							selectedProductDetails={selectedProductDetails}
+							handleOpenModal={handleOpenModal}
+							classes={classes}
+							convertPrice={convertPrice}
+						/>
+					) : (
+						<></>
+					)}
+					{productType === 'Gravel & Decor' ? (
+						<GravelDecorDetails
+							productDetails={productDetails}
+							selectedProductDetails={selectedProductDetails}
+							handleOpenModal={handleOpenModal}
+							classes={classes}
+							convertPrice={convertPrice}
+						/>
+					) : (
+						<></>
+					)}
+					{productType === 'Care' ? (
+						<CareDetails
+							productDetails={productDetails}
+							selectedProductDetails={selectedProductDetails}
+							handleOpenModal={handleOpenModal}
+							classes={classes}
+							convertPrice={convertPrice}
+						/>
+					) : (
+						''
 					)}
 				</Box>
 				{Boolean(selectedProductDetails) && productType === 'Fish' && selectedProductDetails.name !== 'Any Fish' ? (

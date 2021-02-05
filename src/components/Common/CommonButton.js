@@ -11,7 +11,7 @@ export const CommonButton = (props) => {
 			fullWidth={fullWidth || false}
 			className={className || ''}
 			onClick={handleClick}
-			variant={variant || 'contained'}
+			variant={variant || ''}
 			style={style || {}}
 			disabled={disabled || false}
 		>
