@@ -43,7 +43,17 @@ export const Tank = (props) => {
 			ProductPrice: 0,
 		},
 	];
-	const { fishList, accessories, gravelDecor, care, tutorialSteps, steps } = mockData;
+	const {
+		fishList,
+		accessories,
+		gravelDecor,
+		care,
+		steps,
+		fishTankTipsSteps,
+		accessoriesTipsSteps,
+		gravelDecorTipsSteps,
+		careTipsSteps,
+	} = mockData;
 	const [activeStep, setActiveStep] = useState(0);
 	const [activeSliderStep, setActiveSliderStep] = useState(0);
 	const [selectedFishData, setSelectedFishData] = useState(0);
@@ -57,11 +67,12 @@ export const Tank = (props) => {
 	const [selectionBasedProductList, setSelectionBasedProductList] = useState(fishList);
 	// eslint-disable-next-line no-unused-vars
 	const [productDetailsWithSKU, setProductDetailsWithSKU] = useState([]); // skuMockData.data
+	const [currentTips, setCurrentTips] = useState(fishTankTipsSteps);
+	const [maxSteps, setMaxSteps] = useState(fishTankTipsSteps.length);
 	const [titleDetails, setTitleDetails] = useState({
 		title: 'Select your favorite fish',
 		subTitle: 'Please select a fish you plan on building a tank for.',
 	});
-	const maxSteps = tutorialSteps.length;
 
 	const getAllSkuDetails = async () => {
 		const bigList = SKUList;
@@ -190,6 +201,9 @@ export const Tank = (props) => {
 		if (newState === 0) {
 			//--------- For Fish
 			const selectedProductData = selectedFishData;
+			setCurrentTips(fishTankTipsSteps);
+			setMaxSteps(fishTankTipsSteps.length);
+			setActiveSliderStep(0);
 			setSelectionType('Fish');
 			setTitleDetails({
 				title: 'Select your favorite fish',
@@ -203,6 +217,9 @@ export const Tank = (props) => {
 			setSelectionBasedProductList(fishList);
 			addToCart(0, selectedProductData, 'Tank'); // Add to Cart
 		} else if (newState === 1) {
+			setCurrentTips(fishTankTipsSteps);
+			setMaxSteps(fishTankTipsSteps.length);
+			setActiveSliderStep(1);
 			setSelectionBasedProductList([]);
 			const selectedProductData = selectedFishData;
 			//--------- For Tank
@@ -231,6 +248,9 @@ export const Tank = (props) => {
 			setSelectedCareData(0);
 		} else if (newState === 2) {
 			//--------- For Accessories
+			setCurrentTips(accessoriesTipsSteps);
+			setMaxSteps(accessoriesTipsSteps.length);
+			setActiveSliderStep(0);
 			const selectedProductData = selectedTankData;
 			addToCart(1, selectedProductData, 'Accessories'); // Add to Cart
 			setSelectionType('Accessories');
@@ -243,6 +263,9 @@ export const Tank = (props) => {
 			setSelectedGravelDecorData(0);
 			setSelectedCareData(0);
 		} else if (newState === 3) {
+			setCurrentTips(gravelDecorTipsSteps);
+			setMaxSteps(gravelDecorTipsSteps.length);
+			setActiveSliderStep(0);
 			//--------- For Gravel & Decor
 			const selectedProductData = selectedAccessoriesData;
 			addToCart(2, selectedProductData, 'Gravel & Decor'); // Add to Cart
@@ -255,6 +278,9 @@ export const Tank = (props) => {
 
 			setSelectedCareData(0);
 		} else if (newState === 4) {
+			setCurrentTips(careTipsSteps);
+			setMaxSteps(careTipsSteps.length);
+			setActiveSliderStep(0);
 			//--------- For Care
 			const selectedProductData = selectedGravelDecorData;
 			addToCart(3, selectedProductData, 'Care'); // Add to Cart
@@ -265,6 +291,9 @@ export const Tank = (props) => {
 			});
 			setSelectionBasedProductList(care);
 		} else if (newState === 5) {
+			setCurrentTips([]);
+			setMaxSteps(0);
+			setActiveSliderStep(0);
 			const selectedProductData = selectedCareData;
 			addToCart(4, selectedProductData, 'Care'); // Add to Cart
 			setSelectionType('Final');
@@ -290,6 +319,9 @@ export const Tank = (props) => {
 			});
 		return sum;
 	};
+	const handleChangeTips = (event, index) => {
+		setActiveSliderStep(index);
+	};
 
 	return (
 		<main>
@@ -303,10 +335,11 @@ export const Tank = (props) => {
 							<TipsCarousel
 								activeSliderStep={activeSliderStep}
 								handleStepChange={handleStepChange}
-								tutorialSteps={tutorialSteps}
+								tutorialSteps={currentTips}
 								maxSteps={maxSteps}
 								handleBack={handleBack}
 								handleNext={handleNext}
+								handleChangeTips={handleChangeTips}
 							/>
 						) : (
 							<Box>

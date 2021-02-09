@@ -11,7 +11,15 @@ import { CommonButton } from '../Common/CommonButton';
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 export const TipsCarousel = (props) => {
-	const { activeSliderStep, handleStepChange, tutorialSteps, maxSteps, handleBack, handleNext } = props;
+	const {
+		activeSliderStep,
+		handleStepChange,
+		tutorialSteps,
+		maxSteps,
+		handleBack,
+		handleNext,
+		handleChangeTips,
+	} = props;
 	const classes = useStyles();
 	const theme = useTheme();
 
@@ -35,19 +43,21 @@ export const TipsCarousel = (props) => {
 					onChangeIndex={handleStepChange}
 					enableMouseEvents
 				>
-					{tutorialSteps.map((step, index) => (
-						<Box key={`slider_${index}`} style={{ padding: 16 }}>
-							{Math.abs(activeSliderStep - index) <= 2 ? (
-								<Box display='flex' alignItems='center' justifyContent='space-between'>
-									<Box>
-										<Typography variant='h4'>{step.title}</Typography>
-										<Typography variant='body1'>{step.label}</Typography>
+					{Boolean(tutorialSteps) &&
+						tutorialSteps.length &&
+						tutorialSteps.map((step, index) => (
+							<Box key={`slider_${index}`} style={{ padding: 16 }}>
+								{Math.abs(activeSliderStep - index) <= 2 ? (
+									<Box display='flex' alignItems='center' justifyContent='space-between'>
+										<Box>
+											<Typography variant='h4'>{step.title}</Typography>
+											<Typography variant='body1'>{step.label}</Typography>
+										</Box>
+										{step.imgPath ? <img className={classes.img} src={step.imgPath} alt={step.label} /> : ''}
 									</Box>
-									{step.imgPath ? <img className={classes.img} src={step.imgPath} alt={step.label} /> : ''}
-								</Box>
-							) : null}
-						</Box>
-					))}
+								) : null}
+							</Box>
+						))}
 				</AutoPlaySwipeableViews>
 				<Box>
 					<CommonButton
@@ -61,11 +71,21 @@ export const TipsCarousel = (props) => {
 				</Box>
 			</Box>
 			<MobileStepper
-				variant='dots'
+				variant=''
 				steps={maxSteps}
 				position='static'
 				activeStep={activeSliderStep}
 				className={classes.root}
+				nextButton={
+					Boolean(tutorialSteps) &&
+					tutorialSteps.length &&
+					tutorialSteps.map((_step, index) => (
+						<Box
+							className={`${classes.mobileStepper} ${activeSliderStep === index ? classes.activeStepper : ''}`}
+							onClick={(event) => handleChangeTips(event, index)}
+						/>
+					))
+				}
 			/>
 		</Box>
 	);

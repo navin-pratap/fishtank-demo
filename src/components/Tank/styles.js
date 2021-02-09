@@ -75,4 +75,15 @@ export const useStyles = makeStyles((theme) => ({
 		WebkitLineClamp: 2,
 		WebkitBoxOrient: 'vertical',
 	},
+	activeStepper: {
+		backgroundColor: '#3f51b5 !important',
+	},
+	mobileStepper: {
+		cursor: 'pointer',
+		backgroundColor: 'grey',
+		width: '8px',
+		height: '8px',
+		margin: '0 2px',
+		borderRadius: '50%',
+	},
 }));
