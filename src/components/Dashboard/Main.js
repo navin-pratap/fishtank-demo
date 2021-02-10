@@ -3,6 +3,7 @@ import { Box, Typography } from '@material-ui/core';
 import ReactPlayer from 'react-player';
 import { useStyles } from './styles';
 import { CommonButton } from '../Common/CommonButton';
+import { HeroBanner } from './HeroBanner';
 
 export const Main = (props) => {
 	const { handleBuildTankClick } = props;
@@ -10,19 +11,12 @@ export const Main = (props) => {
 
 	return (
 		<main>
-			<Box className={classes.heroBanner}>
-				<Box>
-					<Typography component='div' style={{ textAlign: 'center' }}>
-						Hero Banner
-					</Typography>
-					<CommonButton
-						variant='contained'
-						className={classes.button}
-						handleClick={handleBuildTankClick}
-						text={'Build your tank'}
-					/>
-				</Box>
-			</Box>
+			<HeroBanner
+				imagePath={'https://s7d2.scene7.com/is/image/PetSmart/WEB-730007-FEB-21_BYT_HERO_BANNER_1x'}
+				classes={classes}
+				handleBuildTankClick={handleBuildTankClick}
+				isButtonVisible={true}
+			/>
 			<Box className={classes.bannerMain} mt={7}>
 				<Box className={classes.banner}>Banner</Box>
 				<Box className={classes.banner}>Banner</Box>
