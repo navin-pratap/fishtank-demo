@@ -49,7 +49,8 @@ export const Tank = (props) => {
 		gravelDecor,
 		care,
 		steps,
-		fishTankTipsSteps,
+		fishTipsSteps,
+		tankTipsSteps,
 		accessoriesTipsSteps,
 		gravelDecorTipsSteps,
 		careTipsSteps,
@@ -67,8 +68,8 @@ export const Tank = (props) => {
 	const [selectionBasedProductList, setSelectionBasedProductList] = useState(fishList);
 	// eslint-disable-next-line no-unused-vars
 	const [productDetailsWithSKU, setProductDetailsWithSKU] = useState([]); // skuMockData.data
-	const [currentTips, setCurrentTips] = useState(fishTankTipsSteps);
-	const [maxSteps, setMaxSteps] = useState(fishTankTipsSteps.length);
+	const [currentTips, setCurrentTips] = useState(fishTipsSteps);
+	const [maxSteps, setMaxSteps] = useState(fishTipsSteps.length);
 	const [titleDetails, setTitleDetails] = useState({
 		title: 'Select your favorite fish',
 		subTitle: 'Please select a fish you plan on building a tank for.',
@@ -201,8 +202,8 @@ export const Tank = (props) => {
 		if (newState === 0) {
 			//--------- For Fish
 			const selectedProductData = selectedFishData;
-			setCurrentTips(fishTankTipsSteps);
-			setMaxSteps(fishTankTipsSteps.length);
+			setCurrentTips(fishTipsSteps);
+			setMaxSteps(fishTipsSteps.length);
 			setActiveSliderStep(0);
 			setSelectionType('Fish');
 			setTitleDetails({
@@ -217,16 +218,16 @@ export const Tank = (props) => {
 			setSelectionBasedProductList(fishList);
 			addToCart(0, selectedProductData, 'Tank'); // Add to Cart
 		} else if (newState === 1) {
-			setCurrentTips(fishTankTipsSteps);
-			setMaxSteps(fishTankTipsSteps.length);
-			setActiveSliderStep(1);
+			setCurrentTips(tankTipsSteps);
+			setMaxSteps(tankTipsSteps.length);
+			setActiveSliderStep(0);
 			setSelectionBasedProductList([]);
 			const selectedProductData = selectedFishData;
 			//--------- For Tank
 			addToCart(0, selectedProductData, 'Tank'); // Add to Cart
 			setSelectionType('Tank');
 			const response = await getAllSkuDetails();
-			if (selectedProductData.name === 'Any Fish') {
+			if (selectedProductData.name === 'Not Sure') {
 				setTitleDetails({
 					title: `Select a tank`,
 					subTitle: 'Choose from a small, medium, or large tank.',

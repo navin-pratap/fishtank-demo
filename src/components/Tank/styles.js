@@ -55,7 +55,8 @@ export const useStyles = makeStyles((theme) => ({
 		display: 'flex',
 		alignItems: 'center',
 		justifyContent: 'center',
-		backgroundColor: '#F2F2F2',
+		backgroundImage: 'url("https://s7d2.scene7.com/is/image/PetSmart/WEB-730007-FEB-21_BYT_TipsBackground_1x")',
+		// backgroundColor: '#F2F2F2',
 		marginRight: theme.spacing(3.75),
 		paddingLeft: theme.spacing(1),
 		paddingRight: theme.spacing(1),
@@ -85,5 +86,10 @@ export const useStyles = makeStyles((theme) => ({
 		height: '8px',
 		margin: '0 2px',
 		borderRadius: '50%',
+	},
+	img: {
+		width: 150,
+		height: 150,
+		marginTop: 11,
 	},
 }));

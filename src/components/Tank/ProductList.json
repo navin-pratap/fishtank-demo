@@ -2,44 +2,44 @@
 	"fishList": [
 		{
 			"id": 101,
-			"name": "Any Fish",
-			"imageUrl": "",
+			"name": "Not Sure",
+			"imageUrl": "https://s7d2.scene7.com/is/image/PetSmart/WEB-730007-FEB-21_BYT_Fish_Not_Sure",
 			"description": "Male bettas cannot live together. One betta can live in a tank with other peaceful community fish."
 		},
 		{
 			"id": 102,
 			"name": "Betta",
-			"imageUrl": "",
+			"imageUrl": "https://s7d2.scene7.com/is/image/PetSmart/WEB-730007-FEB-21_BYT_Fish_Betta",
 			"description": "Male bettas cannot live together. One betta can live in a tank with other peaceful community fish."
 		},
 		{
 			"id": 103,
 			"name": "Cichlid",
-			"imageUrl": "",
+			"imageUrl": "https://s7d2.scene7.com/is/image/PetSmart/WEB-730007-FEB-21_BYT_Fish_Cichlid",
 			"description": "Male bettas cannot live together. One betta can live in a tank with other peaceful community fish."
 		},
 		{
 			"id": 104,
 			"name": "Goldfish",
-			"imageUrl": "",
+			"imageUrl": "https://s7d2.scene7.com/is/image/PetSmart/WEB-730007-FEB-21_BYT_Fish_Glofish",
 			"description": "Male bettas cannot live together. One betta can live in a tank with other peaceful community fish."
 		},
 		{
 			"id": 105,
 			"name": "Golfish",
-			"imageUrl": "",
+			"imageUrl": "https://s7d2.scene7.com/is/image/PetSmart/WEB-730007-FEB-21_BYT_Fish_Goldfish",
 			"description": "Male bettas cannot live together. One betta can live in a tank with other peaceful community fish."
 		},
 		{
 			"id": 106,
 			"name": "Tetra",
-			"imageUrl": "",
+			"imageUrl": "https://s7d2.scene7.com/is/image/PetSmart/WEB-730007-FEB-21_BYT_Fish_Tetra",
 			"description": "Male bettas cannot live together. One betta can live in a tank with other peaceful community fish."
 		},
 		{
 			"id": 107,
 			"name": "Snail",
-			"imageUrl": "",
+			"imageUrl": "https://s7d2.scene7.com/is/image/PetSmart/WEB-730007-FEB-21_BYT_Fish_Snail",
 			"description": "Male bettas cannot live together. One betta can live in a tank with other peaceful community fish."
 		}
 	],
@@ -595,95 +595,86 @@
 			"description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam"
 		}
 	],
-	"tutorialSteps": [
+	"tutorialSteps": [],
+	"steps": ["Fish & Tank", "Accessories", "Gravel & Decor", "Care"],
+	"fishTipsSteps": [
 		{
 			"title": "Tips for Your Fish",
 			"label": "Provide nutrition for your fish that has similar ingredients to what they would eat in the wild.",
-			"imgPath": "https://images.unsplash.com/photo-1538032746644-0212e812a9e7?auto=format&fit=crop&w=215&h=170&q=60"
+			"imgPath": "https://s7d2.scene7.com/is/image/PetSmart/WEB-730007-FEB-21_BYT_step_1_1x?fmt=png-alpha"
 		},
 		{
-			"title": "Tank Tips",
-			"label": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr",
-			"imgPath": "https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&w=215&h=170&q=60"
+			"title": "Tips for Your Fish",
+			"label": "Ensure the proper water temperature. Some species like goldfish prefer cooler water around 65-70° F while fish likeSouth American tetras prefer 80-83° F.",
+			"imgPath": "https://s7d2.scene7.com/is/image/PetSmart/WEB-730007-FEB-21_BYT_step_1_1x?fmt=png-alpha"
 		},
 		{
-			"title": "Accessories Tips",
-			"label": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr",
-			"imgPath": "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=215&h=170&q=80"
-		},
-		{
-			"title": "Gravel & Decor Tips",
-			"label": "Use 1 to 1.5 lbs. of gravel per gallon of tank.",
-			"imgPath": "https://images.unsplash.com/photo-1518732714860-b62714ce0c59?auto=format&fit=crop&w=215&h=170&q=60"
-		},
-		{
-			"title": "Tank Care Tips",
-			"label": "Use 1 to 1.5 lbs. of gravel per gallon of tank.",
-			"imgPath": "https://images.unsplash.com/photo-1512341689857-198e7e2f3ca8?auto=format&fit=crop&w=215&h=170&q=60"
+			"title": "Tips for Your Fish",
+			"label": "How you decorate your tank matters. For example, some cichlids like to have hiding places while most tetras prefer live or artificial plants.",
+			"imgPath": "https://s7d2.scene7.com/is/image/PetSmart/WEB-730007-FEB-21_BYT_step_1_1x?fmt=png-alpha"
 		}
 	],
-	"steps": ["Fish & Tank", "Accessories", "Gravel & Decor", "Care"],
-	"fishTankTipsSteps": [
+	"tankTipsSteps": [
 		{
-			"title": "Tips for Your Fish",
-			"label": "Provide nutrition for your fish that has similar ingredients to what they would eat in the wild.",
-			"imgPath": "https://images.unsplash.com/photo-1538032746644-0212e812a9e7?auto=format&fit=crop&w=215&h=170&q=60"
+			"title": "Choosing Your Tank",
+			"label": "Remember: water is heavy! Small desktop aquariums are great for countertops and sturdy tables, while bigger tanks require stands.",
+			"imgPath": "https://s7d2.scene7.com/is/image/PetSmart/WEB-730007-FEB-21_BYT_step_2_1x?fmt=png-alpha"
 		},
 		{
-			"title": "Tank Tips",
-			"label": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr",
-			"imgPath": "https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&w=215&h=170&q=60"
+			"title": "Choosing Your Tank",
+			"label": "Place your tank in a roomtemperature, shaded space away from direct sunlight to reduce the chances of algae growth or temperature fluctuations.",
+			"imgPath": "https://s7d2.scene7.com/is/image/PetSmart/WEB-730007-FEB-21_BYT_step_2_1x?fmt=png-alpha"
 		},
 		{
-			"title": "Tank Tips 1",
-			"label": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr",
-			"imgPath": "https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&w=215&h=170&q=60"
+			"title": "Choosing Your Tank",
+			"label": "As a general rule, you need 1 gallon of water for every 1 inch of fish. Also, keep in mind the potential growth of your fish.",
+			"imgPath": "https://s7d2.scene7.com/is/image/PetSmart/WEB-730007-FEB-21_BYT_step_2_1x?fmt=png-alpha"
 		}
 	],
 	"accessoriesTipsSteps": [
 		{
-			"title": "Accessories Tips 1",
-			"label": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr",
-			"imgPath": "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=215&h=170&q=80"
+			"title": "Tips for Aquarium Accessories",
+			"label": "Fish also enjoy lights out when they rest. Ideal light cycles are 12 hours on, 12 hours off in order to support fish health.",
+			"imgPath": "https://s7d2.scene7.com/is/image/PetSmart/WEB-730007-FEB-21_BYT_step_3_1x?fmt=png-alpha"
 		},
 		{
-			"title": "Accessories Tips 2",
-			"label": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr",
-			"imgPath": "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=215&h=170&q=80"
+			"title": "Tips for Aquarium Accessories",
+			"label": "Replacing filter cartridges every 3-4 weeks helps your tank maintain optimal water quality.",
+			"imgPath": "https://s7d2.scene7.com/is/image/PetSmart/WEB-730007-FEB-21_BYT_step_3_1x?fmt=png-alpha"
 		},
 		{
-			"title": "Accessories Tips 3",
-			"label": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr",
-			"imgPath": "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=215&h=170&q=80"
+			"title": "Tips for Aquarium Accessories",
+			"label": "Check your thermometer daily to ensure your tank is at the optimal temperature for your fish.",
+			"imgPath": "https://s7d2.scene7.com/is/image/PetSmart/WEB-730007-FEB-21_BYT_step_3_1x?fmt=png-alpha"
 		}
 	],
 	"gravelDecorTipsSteps": [
 		{
-			"title": "Gravel & Decor Tips 1",
-			"label": "Use 1 to 1.5 lbs. of gravel per gallon of tank.",
-			"imgPath": "https://images.unsplash.com/photo-1518732714860-b62714ce0c59?auto=format&fit=crop&w=215&h=170&q=60"
+			"title": "Gravel & Décor Tips",
+			"label": "Have fun customizing the décor in your fish’s home! We recommend having 2-3 items in each tank.",
+			"imgPath": "https://s7d2.scene7.com/is/image/PetSmart/WEB-730007-FEB-21_BYT_step_4_1x?fmt=png-alpha"
 		},
 		{
-			"title": "Gravel & Decor Tips 2",
-			"label": "Use 1 to 1.5 lbs. of gravel per gallon of tank.",
-			"imgPath": "https://images.unsplash.com/photo-1518732714860-b62714ce0c59?auto=format&fit=crop&w=215&h=170&q=60"
+			"title": "Gravel & Décor Tips",
+			"label": "Make sure the décor is compatible. For example, bettas love to hide, so add a cave or plants. Cichlids prefer rock or slate ornaments.",
+			"imgPath": "https://s7d2.scene7.com/is/image/PetSmart/WEB-730007-FEB-21_BYT_step_4_1x?fmt=png-alpha"
 		},
 		{
-			"title": "Gravel & Decor Tips 3",
-			"label": "Use 1 to 1.5 lbs. of gravel per gallon of tank.",
-			"imgPath": "https://images.unsplash.com/photo-1518732714860-b62714ce0c59?auto=format&fit=crop&w=215&h=170&q=60"
+			"title": "Gravel & Décor Tips",
+			"label": "Rinse off gravel and décor in water before placing in your tank.",
+			"imgPath": "https://s7d2.scene7.com/is/image/PetSmart/WEB-730007-FEB-21_BYT_step_4_1x?fmt=png-alpha"
 		}
 	],
 	"careTipsSteps": [
 		{
-			"title": "Tank Care Tips 1",
-			"label": "Use 1 to 1.5 lbs. of gravel per gallon of tank.",
-			"imgPath": "https://images.unsplash.com/photo-1512341689857-198e7e2f3ca8?auto=format&fit=crop&w=215&h=170&q=60"
+			"title": "Water Care Tips",
+			"label": "Add water conditioner to tap water 24-48 hours before adding fish to stablize temperatures. Add bacteria starter only when adding fish, not before. ",
+			"imgPath": "https://s7d2.scene7.com/is/image/PetSmart/WEB-730007-FEB-21_BYT_step_5_1x?fmt=png-alpha"
 		},
 		{
-			"title": "Tank Care Tips 2",
-			"label": "Use 1 to 1.5 lbs. of gravel per gallon of tank.",
-			"imgPath": "https://images.unsplash.com/photo-1512341689857-198e7e2f3ca8?auto=format&fit=crop&w=215&h=170&q=60"
+			"title": "Water Care Tips",
+			"label": "Tank scrubbers clean surfaces such as the glass, while gravel vacuums can be used for organic debris and waste at the bottom of your tank.",
+			"imgPath": "https://s7d2.scene7.com/is/image/PetSmart/WEB-730007-FEB-21_BYT_step_5_1x?fmt=png-alpha"
 		}
 	]
 }

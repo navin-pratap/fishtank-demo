@@ -152,7 +152,7 @@ export const ProductListing = (props) => {
 						''
 					)}
 				</Box>
-				{Boolean(selectedProductDetails) && productType === 'Fish' && selectedProductDetails.name !== 'Any Fish' ? (
+				{Boolean(selectedProductDetails) && productType === 'Fish' && selectedProductDetails.name !== 'Not Sure' ? (
 					<Box
 						mt={2}
 						mr={2.25}
