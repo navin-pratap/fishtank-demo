@@ -49,8 +49,11 @@ export const TipsCarousel = (props) => {
 							<Box key={`slider_${index}`} style={{ padding: 16 }}>
 								{Math.abs(activeSliderStep - index) <= 2 ? (
 									<Box display='flex' alignItems='center' justifyContent='space-between'>
-										<Box display='flex' style={{ textAlign: 'left' }}>
-											<Typography component='div' style={{ color: '#ffffff', fontWeight: 'bold', fontSize: 16 }}>
+										<Box display='flex' alignItems='center' style={{ textAlign: 'left' }}>
+											<Typography
+												component='div'
+												style={{ width: 'calc(100% - 350px)', color: '#ffffff', fontWeight: 'bold', fontSize: 16 }}
+											>
 												{step.title}
 											</Typography>
 											<Typography component='div' variant='body1' style={{ marginLeft: 50, color: '#ffffff' }}>

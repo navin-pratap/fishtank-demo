@@ -1,7 +1,8 @@
 import React from 'react';
-import { Box, Container, Grid, Paper, Typography } from '@material-ui/core';
+import { Box, Container, Grid, Link, Paper, Typography } from '@material-ui/core';
 import { useStyles } from './styles';
 import { ArticlesDetails } from './ArticlesDetails';
+import { configs } from '../../config';
 
 export const Footer = (props) => {
 	const { articlesData } = props;
@@ -13,7 +14,14 @@ export const Footer = (props) => {
 				<Container fixed>
 					<Box display='flex' justifyContent='space-between' mb={2}>
 						<Typography>Featured articles</Typography>
-						<Typography style={{ color: '#007DB5', cursor: 'pointer' }}>View all</Typography>
+						<Link
+							style={{ color: '#007DB5', cursor: 'pointer' }}
+							href={configs.readAllArticleLink}
+							component='a'
+							target='_blank'
+						>
+							View all
+						</Link>
 					</Box>
 					<Grid item xs={12}>
 						<Grid container justify='center' spacing={2}>

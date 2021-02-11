@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import { Avatar, Box, CircularProgress, Tooltip, Typography } from '@material-ui/core';
+import { getTankImage } from '../../config';
 
 export const TankDetails = (props) => {
 	const { productDetails, selectedProductDetails, handleOpenModal, classes } = props;
@@ -28,11 +29,7 @@ export const TankDetails = (props) => {
 								border: 'none',
 							}}
 						>
-							<Avatar
-								style={{ width: 145, height: 145 }}
-								variant='square'
-								src={`https://s7d2.scene7.com/is/image/PetSmart/${item.id}?$sclp-prd-main_large$`}
-							/>
+							<Avatar style={{ width: 145, height: 145 }} variant='square' src={getTankImage(item.id, 'List')} />
 						</Box>
 						<Tooltip title={<div dangerouslySetInnerHTML={{ __html: item.name }} />}>
 							<Typography variant='body2' className={classes.twoLine} style={{ textAlign: 'center', marginTop: 8 }}>

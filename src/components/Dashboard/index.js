@@ -4,25 +4,11 @@ import { Main } from './Main';
 import { Footer } from './Footer';
 import { useStyles } from './styles';
 import { Tank } from '../Tank';
+import { articlesData } from '../../config';
 
 export const Dashboard = (props) => {
 	const classes = useStyles();
 	const [isDashboard, setIsDashboard] = useState(true);
-
-	const articlesData = [
-		{
-			id: 1,
-			content: 'Healthy Aquarium Water',
-		},
-		{
-			id: 2,
-			content: 'The right food to feed your fish',
-		},
-		{
-			id: 3,
-			content: 'Setup aquarium for multiple fish',
-		},
-	];
 	const handleBuildTankClick = (event) => {
 		setIsDashboard(false);
 	};

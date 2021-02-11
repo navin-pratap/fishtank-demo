@@ -1,4 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles';
+import { configs } from '../../config';
 
 export const useStyles = makeStyles((theme) => ({
 	root: {
@@ -55,8 +56,7 @@ export const useStyles = makeStyles((theme) => ({
 		display: 'flex',
 		alignItems: 'center',
 		justifyContent: 'center',
-		backgroundImage: 'url("https://s7d2.scene7.com/is/image/PetSmart/WEB-730007-FEB-21_BYT_TipsBackground_1x")',
-		// backgroundColor: '#F2F2F2',
+		backgroundImage: `url(${configs.tipsBackgroundImage})`,
 		marginRight: theme.spacing(3.75),
 		paddingLeft: theme.spacing(1),
 		paddingRight: theme.spacing(1),

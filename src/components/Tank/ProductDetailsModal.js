@@ -5,6 +5,7 @@ import { Avatar, Box, AppBar, Tab, Tabs, Typography, Select, MenuItem } from '@m
 import Rating from '@material-ui/lab/Rating';
 import { ProductImagesSlider } from './ProductImagesSlider';
 import { CommonButton } from '../Common/CommonButton';
+import { getTankImage } from '../../config';
 
 const useStyles = makeStyles((theme) => ({
 	paper: {
@@ -88,9 +89,7 @@ export const ProductDetailsModal = (props) => {
 								style={{ width: 256, height: 256, marginLeft: 16 }}
 								variant='square'
 								src={
-									type === 'Tank'
-										? `https://s7d2.scene7.com/is/image/PetSmart/${selectedProductDetails.id}?$sclp-prd-main_large$`
-										: selectedProductDetails.imageUrl
+									type === 'Tank' ? getTankImage(selectedProductDetails.id, 'Modal') : selectedProductDetails.imageUrl
 								}
 							/>
 						) : selectedProductDetails.imageUrl ? (

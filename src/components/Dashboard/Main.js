@@ -3,7 +3,8 @@ import { Box, Typography } from '@material-ui/core';
 import ReactPlayer from 'react-player';
 import { useStyles } from './styles';
 import { CommonButton } from '../Common/CommonButton';
-import { HeroBanner } from './HeroBanner';
+import { HeroBanner, SmallHeroBanner } from './HeroBanner';
+import { configs } from '../../config';
 
 export const Main = (props) => {
 	const { handleBuildTankClick } = props;
@@ -12,15 +13,19 @@ export const Main = (props) => {
 	return (
 		<main>
 			<HeroBanner
-				imagePath={'https://s7d2.scene7.com/is/image/PetSmart/WEB-730007-FEB-21_BYT_HERO_BANNER_1x'}
+				imagePath={configs.dashboardMainHeroBanner}
 				classes={classes}
 				handleBuildTankClick={handleBuildTankClick}
 				isButtonVisible={true}
 			/>
-			<Box className={classes.bannerMain} mt={7}>
-				<Box className={classes.banner}>Banner</Box>
-				<Box className={classes.banner}>Banner</Box>
-			</Box>
+			{configs.isSmallBannerVisible ? (
+				<Box className={classes.bannerMain} mt={7}>
+					<SmallHeroBanner classes={classes} text={'Banner'} isVisible={true} imagePath={''} />
+					<SmallHeroBanner classes={classes} text={'Banner'} isVisible={true} imagePath={''} />
+				</Box>
+			) : (
+				<></>
+			)}
 			<Box display='flex' mt={7}>
 				<Box className={classes.secondBanner}>
 					<Box>
@@ -50,7 +55,7 @@ export const Main = (props) => {
 					</Box>
 				</Box>
 				<Box className={classes.secondBannerVideoPlayer}>
-					<ReactPlayer className={classes.videoPlayer} url='https://youtu.be/0vYb9TcUo0Q' />
+					<ReactPlayer className={classes.videoPlayer} url={configs.videoLink} />
 				</Box>
 			</Box>
 		</main>

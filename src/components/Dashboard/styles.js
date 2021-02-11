@@ -9,6 +9,9 @@ export const useStyles = makeStyles((theme) => ({
 		textAlign: 'center',
 		color: theme.palette.text.secondary,
 		background: '#EDF6FA 0% 0% no-repeat padding-box',
+		'& .MuiLink-underlineHover:hover': {
+			textDecoration: 'none',
+		},
 	},
 	header: {
 		padding: theme.spacing(2),
@@ -37,7 +40,6 @@ export const useStyles = makeStyles((theme) => ({
 	banner: {
 		width: 600,
 		height: 300,
-		background: '#F2F2F2 0% 0% no-repeat padding-box',
 		opacity: 1,
 		display: 'flex',
 		alignItems: 'center',
@@ -90,6 +92,10 @@ export const useStyles = makeStyles((theme) => ({
 		background: '#FFFFFF 0% 0% no-repeat padding-box',
 		borderRadius: '0px 0px 4px 4px',
 		paddingLeft: theme.spacing(2),
+		textAlign: 'left',
+		'& .MuiLink-underlineHover:hover': {
+			textDecoration: 'none',
+		},
 	},
 	articlesContentText: {
 		textAlign: 'left',

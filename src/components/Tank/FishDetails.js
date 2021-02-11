@@ -25,6 +25,8 @@ export const FishDetails = (props) => {
 								padding: 8,
 								display: 'flex',
 								justifyContent: 'center',
+								backgroundColor: 'lightblue',
+								borderRadius: 16,
 								border: `1px solid ${selectedProductDetails.id === item.id ? '#007DB4' : '#DDDDDD'}`,
 							}}
 						>

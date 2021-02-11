@@ -2,12 +2,39 @@ export const configs = {
 	baseURL: 'https://staging.pilot.petsmart.com/s/PetSmart/dw/shop/v18_8/products/',
 	secret: 'client_id=eb284deb-2825-4522-be76-9509cee181a4',
 	batchSize: 20, // Cannot exceed 24 products per call
-	output: 'csv',
-	entryDir: './import',
-	reportDir: './export',
-	filename: 'skuList',
-	format: 'csv',
+	isSmallBannerVisible: false,
+	dashboardMainHeroBanner: 'https://s7d2.scene7.com/is/image/PetSmart/WEB-730007-FEB-21_BYT_HERO_BANNER_1x',
+	readAllArticleLink:
+		'https://www.petsmart.com/learning-center/fish-care/?isrefinedbyspecies=true#page_name=flyout&link_section=&link_name=fish_care&template_type=services',
+	videoLink: 'https://youtu.be/0vYb9TcUo0Q',
+	tipsBackgroundImage: 'https://s7d2.scene7.com/is/image/PetSmart/WEB-730007-FEB-21_BYT_TipsBackground_1x',
 };
+export const getTankImage = (skuId, type) => {
+	return `https://s7d2.scene7.com/is/image/PetSmart/${skuId}?$sclp-prd-main_large$`;
+};
+export const articlesData = [
+	{
+		id: 1,
+		title: 'How Do I Set Up My Aquarium for Multiple Fish?',
+		url: 'https://www.petsmart.com/learning-center/fish-care/how-do-i-set-up-my-aquarium-for-multiple-fish/A0086.html',
+		imagePath:
+			'https://s7d2.scene7.com/is/image/PetSmart/WEB-20-564714-March_20_Aquatic_EXP_HowtoSetUp_Article?fmt=png-alpha',
+	},
+	{
+		id: 2,
+		title: 'Healthy Aquarium Water',
+		url: 'https://www.petsmart.com/learning-center/fish-care/healthy-aquarium-water/A0083.html',
+		imagePath:
+			'https://s7d2.scene7.com/is/image/PetSmart/WEB-20-564714-March_20_Aquatic_EXP_HealthyWater_Article?fmt=png-alpha',
+	},
+	{
+		id: 3,
+		title: 'The Right Food to Feed your Fish',
+		url: 'https://www.petsmart.com/learning-center/fish-care/the-right-food-to-feed-your-fish/A0009.html',
+		imagePath:
+			'https://s7d2.scene7.com/is/image/PetSmart/WEB-20-564714-March_20_Aquatic_EXP_TheRightFood_Article?fmt=png-alpha',
+	},
+];
 export const SmallSKUList = [
 	5264615,
 	5264603,

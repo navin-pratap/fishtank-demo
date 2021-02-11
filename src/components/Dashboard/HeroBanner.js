@@ -25,3 +25,19 @@ export const HeroBanner = (props) => {
 		</Box>
 	);
 };
+
+export const SmallHeroBanner = (props) => {
+	const { classes, isVisible, imagePath, text } = props;
+	return isVisible ? (
+		<Box
+			className={classes.banner}
+			style={
+				imagePath ? { backgroundImage: `url(${imagePath})` } : { background: '#F2F2F2 0% 0% no-repeat padding-box' }
+			}
+		>
+			{text || ''}
+		</Box>
+	) : (
+		<></>
+	);
+};
