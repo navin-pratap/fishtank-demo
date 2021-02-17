@@ -4,6 +4,7 @@ export const configs = {
 	batchSize: 20, // Cannot exceed 24 products per call
 	isSmallBannerVisible: false,
 	dashboardMainHeroBanner: 'https://s7d2.scene7.com/is/image/PetSmart/WEB-730007-FEB-21_BYT_HERO_BANNER_1x',
+	dashboardMainHeroBannerMobile: 'https://s7d2.scene7.com/is/image/PetSmart/WEB-730007-FEB-21_BYT_HERO_BANNER_1x',
 	readAllArticleLink:
 		'https://www.petsmart.com/learning-center/fish-care/?isrefinedbyspecies=true#page_name=flyout&link_section=&link_name=fish_care&template_type=services',
 	videoLink: 'https://youtu.be/0vYb9TcUo0Q',

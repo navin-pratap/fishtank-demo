@@ -53,7 +53,7 @@ export const useStyles = makeStyles((theme) => ({
 		opacity: 1,
 	},
 	secondBanner: {
-		width: 700,
+		// width: 700,
 		height: 400,
 		background: '#00567C 0% 0% no-repeat padding-box',
 		color: '#ffffff',
@@ -64,7 +64,7 @@ export const useStyles = makeStyles((theme) => ({
 		paddingLeft: theme.spacing(5),
 	},
 	secondBannerVideoPlayer: {
-		width: 700,
+		// width: 700,
 		height: 400,
 		opacity: 1,
 		display: 'flex',
@@ -72,7 +72,7 @@ export const useStyles = makeStyles((theme) => ({
 		justifyContent: 'center',
 	},
 	videoPlayer: {
-		width: '700px !important',
+		// width: '700px !important',
 		height: '400px !important',
 	},
 	marginTop: {
