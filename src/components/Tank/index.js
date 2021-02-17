@@ -329,7 +329,7 @@ export const Tank = (props) => {
 		<main>
 			<Grid container spacing={0}>
 				<Grid item xs={12} md={8} lg={8}>
-					<Box className='tips-carousel-min'>
+					<Box className='tips-carousel-main'>
 						<Box className={classes.main}>
 							<ProductStepper activeStep={activeStep} steps={steps} />
 						</Box>
