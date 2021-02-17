@@ -1,17 +1,19 @@
-$small: 420px;
-$medium: 900px;
+$small: 550px;
+$medium: 768px;
+$large: 900px;
 
 .main-banner {
-	color: red;
-	//some CSS
 	@media screen and (max-width: $small) {
-		//do main-banner
 		.banner-height {
 			height: 100px;
 		}
 	}
 	@media screen and (min-width: $medium) {
-		//do main-banner
+		.banner-height {
+			height: 155px;
+		}
+	}
+	@media screen and (min-width: $large) {
 		.banner-height {
 			height: 325px;
 		}
