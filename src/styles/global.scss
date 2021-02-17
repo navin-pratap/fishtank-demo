@@ -19,3 +19,53 @@ $large: 900px;
 		}
 	}
 }
+.tips-carousel-min {
+	@media screen and (max-width: $small) {
+		.tips-title {
+			width: 100%;
+		}
+		.tips-label {
+			margin-left: 0px;
+		}
+		.img {
+			width: 80px;
+			height: 80px;
+			margin-top: 0px;
+		}
+		.tank-filters {
+			display: none;
+		}
+	}
+	@media screen and (min-width: $medium) {
+		.tips-title {
+			width: calc(100% - 350px);
+		}
+		.tips-label {
+			margin-left: 50px;
+		}
+		.img {
+			width: 150px;
+			height: 150px;
+			margin-top: 11px;
+		}
+		.tank-filters {
+			display: block;
+		}
+	}
+	@media screen and (min-width: $large) {
+		.tips-title {
+			width: calc(100% - 350px);
+		}
+		.tips-label {
+			margin-left: 50px;
+		}
+		.img {
+			width: 150px;
+			height: 150px;
+			margin-top: 11px;
+		}
+		.tank-filters {
+			display: block;
+		}
+	}
+}

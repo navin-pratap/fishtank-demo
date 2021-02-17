@@ -7,6 +7,7 @@ import { configs, SKUList } from '../../config';
 import { getSkuFullDetails } from '../../services/generator';
 import { ProductStepper } from './ProductStepper';
 import { CartView } from './CartView';
+import '../../styles/global.scss';
 
 const mockData = require('./ProductList.json');
 
@@ -327,8 +328,8 @@ export const Tank = (props) => {
 	return (
 		<main>
 			<Grid container spacing={0}>
-				<Grid item xs={8}>
-					<Box>
+				<Grid item xs={12} md={8} lg={8}>
+					<Box className='tips-carousel-min'>
 						<Box className={classes.main}>
 							<ProductStepper activeStep={activeStep} steps={steps} />
 						</Box>
@@ -374,7 +375,7 @@ export const Tank = (props) => {
 						/>
 					</Box>
 				</Grid>
-				<Grid item xs={4}>
+				<Grid item xs={12} md={4} lg={4}>
 					<CartView
 						classes={classes}
 						selectedProducts={selectedProducts}

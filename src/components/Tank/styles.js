@@ -88,9 +88,4 @@ export const useStyles = makeStyles((theme) => ({
 		margin: '0 2px',
 		borderRadius: '50%',
 	},
-	img: {
-		width: 150,
-		height: 150,
-		marginTop: 11,
-	},
 }));

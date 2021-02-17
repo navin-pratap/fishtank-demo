@@ -52,29 +52,53 @@ export const TipsCarousel = (props) => {
 									<Fragment>
 										<Grid item xs={12}>
 											<Grid container justify='center' spacing={2}>
-												<Grid item xs={12} md={6} lg={6}>
-													<Box display='flex' alignItems='center' justifyContent='space-between'>
-														<Box display='flex' alignItems='center' style={{ textAlign: 'left' }}>
-															<Typography
-																component='div'
-																style={{
-																	width: 'calc(100% - 350px)',
-																	color: '#ffffff',
-																	fontWeight: 'bold',
-																	fontSize: 16,
-																}}
-															>
-																{step.title}
-															</Typography>
-															<Typography component='div' variant='body1' style={{ marginLeft: 50, color: '#ffffff' }}>
-																{step.label}
-															</Typography>
-														</Box>
-														{step.imgPath ? <img className={classes.img} src={step.imgPath} alt={step.label} /> : ''}
-													</Box>
+												<Grid item xs={12} md={2} lg={2} style={{ display: 'flex', alignItems: 'center' }}>
+													<Typography
+														component='div'
+														className='tips-title'
+														style={{
+															alignItems: 'center',
+															color: '#ffffff',
+															fontWeight: 'bold',
+															fontSize: 16,
+														}}
+													>
+														{step.title}
+													</Typography>
+												</Grid>
+												<Grid item xs={12} md={7} lg={7} style={{ display: 'flex', alignItems: 'center' }}>
+													<Typography
+														component='div'
+														variant='body1'
+														style={{ color: '#ffffff', alignItems: 'center' }}
+													>
+														{step.label}
+													</Typography>
+												</Grid>
+												<Grid item xs={12} md={3} lg={3}>
+													{step.imgPath ? <img className='img' src={step.imgPath} alt={step.label} /> : ''}
 												</Grid>
 											</Grid>
 										</Grid>
+										{/* <Box display='flex' alignItems='center' justifyContent='space-between'>
+											<Box display='flex' alignItems='center' style={{ textAlign: 'left' }}>
+												<Typography
+													component='div'
+													style={{
+														width: 'calc(100% - 350px)',
+														color: '#ffffff',
+														fontWeight: 'bold',
+														fontSize: 16,
+													}}
+												>
+													{step.title}
+												</Typography>
+												<Typography component='div' variant='body1' style={{ marginLeft: 50, color: '#ffffff' }}>
+													{step.label}
+												</Typography>
+											</Box>
+											{step.imgPath ? <img className={classes.img} src={step.imgPath} alt={step.label} /> : ''}
+										</Box> */}
 									</Fragment>
 								) : null}
 							</Box>

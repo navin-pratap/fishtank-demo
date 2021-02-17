@@ -81,7 +81,7 @@ export const ProductListing = (props) => {
 						<Typography variant='body2'>{subTitle}</Typography>
 					</Box>
 					{title === 'Select a tank' ? (
-						<Box pr={3}>
+						<Box pr={3} className='tank-filters'>
 							<TankFilter filterTankList={filterTankList} splitButtonClickType={splitButtonClickType} />
 						</Box>
 					) : (
