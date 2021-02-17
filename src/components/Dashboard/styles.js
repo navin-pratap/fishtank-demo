@@ -26,7 +26,7 @@ export const useStyles = makeStyles((theme) => ({
 		fontSize: '16px',
 	},
 	heroBanner: {
-		height: 325,
+		// height: 325,
 		// background: '#F2F2F2 0% 0% no-repeat padding-box',
 		opacity: 1,
 		display: 'flex',

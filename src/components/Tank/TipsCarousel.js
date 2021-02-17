@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Typography, MobileStepper } from '@material-ui/core';
+import { Box, Typography, MobileStepper, Grid } from '@material-ui/core';
 import { useTheme } from '@material-ui/core/styles';
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
@@ -7,6 +7,7 @@ import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 import { useStyles } from './styles';
 import { CommonButton } from '../Common/CommonButton';
+import { Fragment } from 'react';
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
@@ -48,20 +49,33 @@ export const TipsCarousel = (props) => {
 						tutorialSteps.map((step, index) => (
 							<Box key={`slider_${index}`} style={{ padding: 16 }}>
 								{Math.abs(activeSliderStep - index) <= 2 ? (
-									<Box display='flex' alignItems='center' justifyContent='space-between'>
-										<Box display='flex' alignItems='center' style={{ textAlign: 'left' }}>
-											<Typography
-												component='div'
-												style={{ width: 'calc(100% - 350px)', color: '#ffffff', fontWeight: 'bold', fontSize: 16 }}
-											>
-												{step.title}
-											</Typography>
-											<Typography component='div' variant='body1' style={{ marginLeft: 50, color: '#ffffff' }}>
-												{step.label}
-											</Typography>
-										</Box>
-										{step.imgPath ? <img className={classes.img} src={step.imgPath} alt={step.label} /> : ''}
-									</Box>
+									<Fragment>
+										<Grid item xs={12}>
+											<Grid container justify='center' spacing={2}>
+												<Grid item xs={12} md={6} lg={6}>
+													<Box display='flex' alignItems='center' justifyContent='space-between'>
+														<Box display='flex' alignItems='center' style={{ textAlign: 'left' }}>
+															<Typography
+																component='div'
+																style={{
+																	width: 'calc(100% - 350px)',
+																	color: '#ffffff',
+																	fontWeight: 'bold',
+																	fontSize: 16,
+																}}
+															>
+																{step.title}
+															</Typography>
+															<Typography component='div' variant='body1' style={{ marginLeft: 50, color: '#ffffff' }}>
+																{step.label}
+															</Typography>
+														</Box>
+														{step.imgPath ? <img className={classes.img} src={step.imgPath} alt={step.label} /> : ''}
+													</Box>
+												</Grid>
+											</Grid>
+										</Grid>
+									</Fragment>
 								) : null}
 							</Box>
 						))}

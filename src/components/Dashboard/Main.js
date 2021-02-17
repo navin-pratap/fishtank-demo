@@ -5,13 +5,14 @@ import { useStyles } from './styles';
 import { CommonButton } from '../Common/CommonButton';
 import { HeroBanner, SmallHeroBanner } from './HeroBanner';
 import { configs } from '../../config';
+import '../../styles/global.scss';
 
 export const Main = (props) => {
 	const { handleBuildTankClick } = props;
 	const classes = useStyles();
 
 	return (
-		<main>
+		<main className='main-banner'>
 			<HeroBanner
 				imagePath={configs.dashboardMainHeroBanner}
 				classes={classes}
@@ -28,7 +29,7 @@ export const Main = (props) => {
 			)}
 			<Grid item xs={12}>
 				<Grid container justify='center' spacing={2}>
-					<Grid item xs={12} md={6}>
+					<Grid item xs={12} md={6} lg={6}>
 						<Box className={classes.secondBanner}>
 							<Box>
 								<Typography
@@ -57,7 +58,7 @@ export const Main = (props) => {
 							</Box>
 						</Box>
 					</Grid>
-					<Grid item xs={12} md={6}>
+					<Grid item xs={12} md={6} lg={6}>
 						<Box className={classes.secondBannerVideoPlayer}>
 							<ReactPlayer className={classes.videoPlayer} url={configs.videoLink} />
 						</Box>
