@@ -21,8 +21,8 @@ export const Main = (props) => {
 			/>
 			{configs.isSmallBannerVisible ? (
 				<Box className={classes.bannerMain} mt={7}>
-					<SmallHeroBanner classes={classes} text={'Banner'} isVisible={true} imagePath={''} />
-					<SmallHeroBanner classes={classes} text={'Banner'} isVisible={true} imagePath={''} />
+					<SmallHeroBanner classes={classes} text={configs.banner} isVisible={true} imagePath={''} />
+					<SmallHeroBanner classes={classes} text={configs.banner} isVisible={true} imagePath={''} />
 				</Box>
 			) : (
 				<></>
@@ -38,7 +38,7 @@ export const Main = (props) => {
 										letterSpacing: 0,
 									}}
 								>
-									How to setup an aquarium
+									{configs.bannerTitle}
 								</Typography>
 								<Typography
 									style={{
@@ -46,14 +46,13 @@ export const Main = (props) => {
 										letterSpacing: 0,
 									}}
 								>
-									Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-									labore et dolore magna.
+									{configs.bannerDescription}
 								</Typography>
 								<CommonButton
 									variant='contained'
 									className={`${classes.button} ${classes.marginTop}`}
 									handleClick={handleBuildTankClick}
-									text={'Build your tank'}
+									text={configs.buildYourTank}
 								/>
 							</Box>
 						</Box>
@@ -65,38 +64,6 @@ export const Main = (props) => {
 					</Grid>
 				</Grid>
 			</Grid>
-			{/* <Box display='flex' mt={7}>
-				<Box className={classes.secondBanner}>
-					<Box>
-						<Typography
-							style={{
-								fontSize: 24,
-								letterSpacing: 0,
-							}}
-						>
-							How to setup an aquarium
-						</Typography>
-						<Typography
-							style={{
-								fontSize: 16,
-								letterSpacing: 0,
-							}}
-						>
-							Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
-							et dolore magna.
-						</Typography>
-						<CommonButton
-							variant='contained'
-							className={`${classes.button} ${classes.marginTop}`}
-							handleClick={handleBuildTankClick}
-							text={'Build your tank'}
-						/>
-					</Box>
-				</Box>
-				<Box className={classes.secondBannerVideoPlayer}>
-					<ReactPlayer className={classes.videoPlayer} url={configs.videoLink} />
-				</Box>
-			</Box> */}
 		</main>
 	);
 };

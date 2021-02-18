@@ -1,6 +1,7 @@
 import React from 'react';
 import { ButtonGroup } from '@material-ui/core';
 import { CommonButton } from '../Common/CommonButton';
+import { configs } from '../../config';
 
 export const TankFilter = (props) => {
 	const { filterTankList, splitButtonClickType } = props;
@@ -13,7 +14,7 @@ export const TankFilter = (props) => {
 					backgroundColor: splitButtonClickType === 'small' ? '#007DB4' : '#F2F2F2',
 					color: splitButtonClickType === 'small' ? '#ffffff' : 'lightgray',
 				}}
-				text={'Small'}
+				text={configs.small}
 			/>
 			<CommonButton
 				handleClick={(e) => filterTankList(e, 'medium')}
@@ -21,7 +22,7 @@ export const TankFilter = (props) => {
 					backgroundColor: splitButtonClickType === 'medium' ? '#007DB4' : '#F2F2F2',
 					color: splitButtonClickType === 'medium' ? '#ffffff' : 'lightgray',
 				}}
-				text={'Medium'}
+				text={configs.medium}
 			/>
 			<CommonButton
 				handleClick={(e) => filterTankList(e, 'large')}
@@ -29,7 +30,7 @@ export const TankFilter = (props) => {
 					backgroundColor: splitButtonClickType === 'large' ? '#007DB4' : '#F2F2F2',
 					color: splitButtonClickType === 'large' ? '#ffffff' : 'lightgray',
 				}}
-				text={'Large'}
+				text={configs.large}
 			/>
 		</ButtonGroup>
 	);

@@ -9,7 +9,93 @@ export const configs = {
 		'https://www.petsmart.com/learning-center/fish-care/?isrefinedbyspecies=true#page_name=flyout&link_section=&link_name=fish_care&template_type=services',
 	videoLink: 'https://youtu.be/0vYb9TcUo0Q',
 	tipsBackgroundImage: 'https://s7d2.scene7.com/is/image/PetSmart/WEB-730007-FEB-21_BYT_TipsBackground_1x',
+	headerTitle: 'Try Same-Day Delivery for FREE powered by DoorDash®! learn more >',
+	readMore: 'Read more',
+	featuredArticles: 'Featured articles',
+	viewAll: 'View all',
+	buildYourTank: 'BUILD YOUR TANK',
+	getStarted: 'get started',
+	banner: 'Banner',
+	bannerTitle: 'How to setup an aquarium',
+	edit: 'Edit',
+	noProductText: 'No Product Selected',
+	bannerDescription:
+		'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna.',
+	subTotal: 'Subtotal',
+	fishTitles: {
+		title: 'Select your favorite fish',
+		subTitle: 'Please select a fish you plan on building a tank for.',
+	},
+	allTankTitle: {
+		title: `Select a tank`,
+		subTitle: 'Choose from a small, medium, or large tank.',
+	},
+	accessoriesTitles: {
+		title: 'Recommended accessories',
+		subTitle: 'Add accessory item(s) to your tank.',
+	},
+	gravelDecorTitles: {
+		title: 'Recommended gravel & decor',
+		subTitle: 'Add gravel & decor item(s) to your tank.',
+	},
+	careTitles: {
+		title: 'Recommended care for your tank',
+		subTitle: 'Add care item(s) to your tank.',
+	},
+	dosDontsTitles: {
+		title: 'Do’s and don’ts with your new fish',
+		subTitle: '',
+	},
+	by: 'By',
+	item: 'Item',
+	goBack: 'Go Back',
+	continue: 'Continue',
+	small: 'Small',
+	medium: 'Medium',
+	large: 'Large',
 };
+export const finalPageContent = {
+	title: 'Your tank is ready to go',
+	subTitle: 'Add your items to cart and head to your store to pick out your new fish friend.',
+	subTitle2: 'Hero Banner',
+};
+export const getRecommendedTankTitle = (name) => {
+	return {
+		title: `For ${name}, we recommend these tanks`,
+		subTitle: 'Please select a tank.',
+	};
+};
+export const defaultProductSelection = [
+	{
+		id: 1,
+		type: 'Tank',
+		productImage: '',
+		ProductName: '',
+		ProductPrice: 0,
+		fishSelection: {},
+	},
+	{
+		id: 2,
+		type: 'Accessories',
+		productImage: '',
+		ProductName: '',
+		ProductPrice: 0,
+	},
+	{
+		id: 3,
+		type: 'Gravel & Decor',
+		productImage: '',
+		ProductName: '',
+		ProductPrice: 0,
+	},
+	{
+		id: 4,
+		type: 'Care',
+		productImage: '',
+		ProductName: '',
+		ProductPrice: 0,
+	},
+];
 export const getTankImage = (skuId, type) => {
 	return `https://s7d2.scene7.com/is/image/PetSmart/${skuId}?$sclp-prd-main_large$`;
 };
@@ -157,3 +243,329 @@ export const SKUList = [
 	5262172,
 	5278069,
 ];
+
+export const mockProductData = {
+	fishList: [
+		{
+			id: 101,
+			name: 'Not Sure',
+			imageUrl: 'https://s7d2.scene7.com/is/image/PetSmart/WEB-730007-FEB-21_BYT_Fish_Not_Sure?fmt=png-alpha',
+			description: 'Male bettas cannot live together. One betta can live in a tank with other peaceful community fish.',
+		},
+		{
+			id: 102,
+			name: 'Betta',
+			imageUrl: 'https://s7d2.scene7.com/is/image/PetSmart/WEB-730007-FEB-21_BYT_Fish_Betta?fmt=png-alpha',
+			description: 'Male bettas cannot live together. One betta can live in a tank with other peaceful community fish.',
+		},
+		{
+			id: 103,
+			name: 'Cichlid',
+			imageUrl: 'https://s7d2.scene7.com/is/image/PetSmart/WEB-730007-FEB-21_BYT_Fish_Cichlid?fmt=png-alpha',
+			description: 'Male bettas cannot live together. One betta can live in a tank with other peaceful community fish.',
+		},
+		{
+			id: 104,
+			name: 'Goldfish',
+			imageUrl: 'https://s7d2.scene7.com/is/image/PetSmart/WEB-730007-FEB-21_BYT_Fish_Glofish?fmt=png-alpha',
+			description: 'Male bettas cannot live together. One betta can live in a tank with other peaceful community fish.',
+		},
+		{
+			id: 105,
+			name: 'Golfish',
+			imageUrl: 'https://s7d2.scene7.com/is/image/PetSmart/WEB-730007-FEB-21_BYT_Fish_Goldfish?fmt=png-alpha',
+			description: 'Male bettas cannot live together. One betta can live in a tank with other peaceful community fish.',
+		},
+		{
+			id: 106,
+			name: 'Tetra',
+			imageUrl: 'https://s7d2.scene7.com/is/image/PetSmart/WEB-730007-FEB-21_BYT_Fish_Tetra?fmt=png-alpha',
+			description: 'Male bettas cannot live together. One betta can live in a tank with other peaceful community fish.',
+		},
+		{
+			id: 107,
+			name: 'Snail',
+			imageUrl: 'https://s7d2.scene7.com/is/image/PetSmart/WEB-730007-FEB-21_BYT_Fish_Snail?fmt=png-alpha',
+			description: 'Male bettas cannot live together. One betta can live in a tank with other peaceful community fish.',
+		},
+	],
+	accessories: [
+		{
+			id: '1001',
+			imageUrl: 'https://picsum.photos/200/300',
+			name: 'Recommended Accessory Name Here - 1',
+			price: 100,
+			oldPrice: 110,
+			rating: 4.5,
+			recommendedForFish: 'Betta',
+			tankSize: 'small',
+			color: 'Black',
+			size: '10 Gal',
+			owner: 'Top Fin',
+			productImages: [
+				'https://picsum.photos/200/300',
+				'https://picsum.photos/200/300',
+				'https://picsum.photos/200/300',
+			],
+			description:
+				'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
+		},
+		{
+			id: '1002',
+			imageUrl: 'https://picsum.photos/200/300',
+			name: 'Recommended Accessory Name Here - 2',
+			price: 100,
+			oldPrice: 110,
+			rating: 4.5,
+			recommendedForFish: 'Betta',
+			tankSize: 'small',
+			color: 'Black',
+			size: '10 Gal',
+			owner: 'Top Fin',
+			productImages: [
+				'https://picsum.photos/200/300',
+				'https://picsum.photos/200/300',
+				'https://picsum.photos/200/300',
+			],
+			description:
+				'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
+		},
+		{
+			id: '1003',
+			imageUrl: 'https://picsum.photos/200/300',
+			name: 'Recommended Accessory Name Here - 3',
+			price: 95,
+			oldPrice: 100,
+			rating: 3.5,
+			recommendedForFish: 'Betta',
+			tankSize: 'small',
+			color: 'Black',
+			size: '10 Gal',
+			owner: 'Top Fin',
+			productImages: [
+				'https://picsum.photos/200/300',
+				'https://picsum.photos/200/300',
+				'https://picsum.photos/200/300',
+			],
+			description:
+				'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
+		},
+	],
+	gravelDecor: [
+		{
+			id: '1001',
+			imageUrl: 'https://picsum.photos/200/300',
+			name: 'Recommended Gravel & Decor item Name Here - 1',
+			price: 100,
+			oldPrice: 110,
+			rating: 4.5,
+			recommendedForFish: 'Betta',
+			tankSize: 'small',
+			color: 'Black',
+			colorList: ['#00567C', '#06847F', '#FFFFFF', '#B45303'],
+			size: '10 Gal',
+			owner: 'Top Fin',
+			productImages: [
+				'https://picsum.photos/200/300',
+				'https://picsum.photos/200/300',
+				'https://picsum.photos/200/300',
+			],
+			description:
+				'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
+		},
+		{
+			id: '1002',
+			imageUrl: 'https://picsum.photos/200/300',
+			name: 'Recommended Gravel & Decor item Name Here - 2',
+			price: 100,
+			oldPrice: 110,
+			rating: 4.5,
+			recommendedForFish: 'Betta',
+			tankSize: 'small',
+			color: 'Black',
+			colorList: ['#00567C', '#06847F', '#FFFFFF', '#B45303'],
+			size: '10 Gal',
+			owner: 'Top Fin',
+			productImages: [
+				'https://picsum.photos/200/300',
+				'https://picsum.photos/200/300',
+				'https://picsum.photos/200/300',
+			],
+			description:
+				'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
+		},
+		{
+			id: '1003',
+			imageUrl: 'https://picsum.photos/200/300',
+			name: 'Recommended Gravel & Decor item Name Here - 3',
+			price: 95,
+			oldPrice: 100,
+			rating: 3.5,
+			recommendedForFish: 'Betta',
+			tankSize: 'small',
+			color: 'Black',
+			colorList: ['#00567C', '#06847F', '#FFFFFF', '#B45303'],
+			size: '10 Gal',
+			owner: 'Top Fin',
+			productImages: [
+				'https://picsum.photos/200/300',
+				'https://picsum.photos/200/300',
+				'https://picsum.photos/200/300',
+			],
+			description:
+				'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
+		},
+	],
+	care: [
+		{
+			id: '1001',
+			imageUrl: 'https://picsum.photos/200/300',
+			name: 'Recommended Tank Care item Name Here - 1',
+			price: 100,
+			oldPrice: 110,
+			rating: 4.5,
+			recommendedForFish: 'Betta',
+			tankSize: 'small',
+			color: 'Black',
+			size: '10 Gal',
+			owner: 'Top Fin',
+			productImages: [
+				'https://picsum.photos/200/300',
+				'https://picsum.photos/200/300',
+				'https://picsum.photos/200/300',
+			],
+			description:
+				'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
+		},
+		{
+			id: '1002',
+			imageUrl: 'https://picsum.photos/200/300',
+			name: 'Recommended Tank Care item Name Here - 2',
+			price: 100,
+			oldPrice: 110,
+			rating: 4.5,
+			recommendedForFish: 'Betta',
+			tankSize: 'small',
+			color: 'Black',
+			size: '10 Gal',
+			owner: 'Top Fin',
+			productImages: [
+				'https://picsum.photos/200/300',
+				'https://picsum.photos/200/300',
+				'https://picsum.photos/200/300',
+			],
+			description:
+				'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
+		},
+		{
+			id: '1003',
+			imageUrl: 'https://picsum.photos/200/300',
+			name: 'Recommended Tank Care item Name Here - 3',
+			price: 95,
+			oldPrice: 100,
+			rating: 3.5,
+			recommendedForFish: 'Betta',
+			tankSize: 'small',
+			color: 'Black',
+			size: '10 Gal',
+			owner: 'Top Fin',
+			productImages: [
+				'https://picsum.photos/200/300',
+				'https://picsum.photos/200/300',
+				'https://picsum.photos/200/300',
+			],
+			description:
+				'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
+		},
+	],
+	steps: ['Fish & Tank', 'Accessories', 'Gravel & Decor', 'Care'],
+	fishTipsSteps: [
+		{
+			title: 'Tips for Your Fish',
+			label: 'Provide nutrition for your fish that has similar ingredients to what they would eat in the wild.',
+			imgPath: 'https://s7d2.scene7.com/is/image/PetSmart/WEB-730007-FEB-21_BYT_step_1_1x?fmt=png-alpha',
+		},
+		{
+			title: 'Tips for Your Fish',
+			label:
+				'Ensure the proper water temperature. Some species like goldfish prefer cooler water around 65-70° F while fish likeSouth American tetras prefer 80-83° F.',
+			imgPath: 'https://s7d2.scene7.com/is/image/PetSmart/WEB-730007-FEB-21_BYT_step_1_1x?fmt=png-alpha',
+		},
+		{
+			title: 'Tips for Your Fish',
+			label:
+				'How you decorate your tank matters. For example, some cichlids like to have hiding places while most tetras prefer live or artificial plants.',
+			imgPath: 'https://s7d2.scene7.com/is/image/PetSmart/WEB-730007-FEB-21_BYT_step_1_1x?fmt=png-alpha',
+		},
+	],
+	tankTipsSteps: [
+		{
+			title: 'Choosing Your Tank',
+			label:
+				'Remember: water is heavy! Small desktop aquariums are great for countertops and sturdy tables, while bigger tanks require stands.',
+			imgPath: 'https://s7d2.scene7.com/is/image/PetSmart/WEB-730007-FEB-21_BYT_step_2_1x?fmt=png-alpha',
+		},
+		{
+			title: 'Choosing Your Tank',
+			label:
+				'Place your tank in a roomtemperature, shaded space away from direct sunlight to reduce the chances of algae growth or temperature fluctuations.',
+			imgPath: 'https://s7d2.scene7.com/is/image/PetSmart/WEB-730007-FEB-21_BYT_step_2_1x?fmt=png-alpha',
+		},
+		{
+			title: 'Choosing Your Tank',
+			label:
+				'As a general rule, you need 1 gallon of water for every 1 inch of fish. Also, keep in mind the potential growth of your fish.',
+			imgPath: 'https://s7d2.scene7.com/is/image/PetSmart/WEB-730007-FEB-21_BYT_step_2_1x?fmt=png-alpha',
+		},
+	],
+	accessoriesTipsSteps: [
+		{
+			title: 'Tips for Aquarium Accessories',
+			label:
+				'Fish also enjoy lights out when they rest. Ideal light cycles are 12 hours on, 12 hours off in order to support fish health.',
+			imgPath: 'https://s7d2.scene7.com/is/image/PetSmart/WEB-730007-FEB-21_BYT_step_3_1x?fmt=png-alpha',
+		},
+		{
+			title: 'Tips for Aquarium Accessories',
+			label: 'Replacing filter cartridges every 3-4 weeks helps your tank maintain optimal water quality.',
+			imgPath: 'https://s7d2.scene7.com/is/image/PetSmart/WEB-730007-FEB-21_BYT_step_3_1x?fmt=png-alpha',
+		},
+		{
+			title: 'Tips for Aquarium Accessories',
+			label: 'Check your thermometer daily to ensure your tank is at the optimal temperature for your fish.',
+			imgPath: 'https://s7d2.scene7.com/is/image/PetSmart/WEB-730007-FEB-21_BYT_step_3_1x?fmt=png-alpha',
+		},
+	],
+	gravelDecorTipsSteps: [
+		{
+			title: 'Gravel & Décor Tips',
+			label: 'Have fun customizing the décor in your fish’s home! We recommend having 2-3 items in each tank.',
+			imgPath: 'https://s7d2.scene7.com/is/image/PetSmart/WEB-730007-FEB-21_BYT_step_4_1x?fmt=png-alpha',
+		},
+		{
+			title: 'Gravel & Décor Tips',
+			label:
+				'Make sure the décor is compatible. For example, bettas love to hide, so add a cave or plants. Cichlids prefer rock or slate ornaments.',
+			imgPath: 'https://s7d2.scene7.com/is/image/PetSmart/WEB-730007-FEB-21_BYT_step_4_1x?fmt=png-alpha',
+		},
+		{
+			title: 'Gravel & Décor Tips',
+			label: 'Rinse off gravel and décor in water before placing in your tank.',
+			imgPath: 'https://s7d2.scene7.com/is/image/PetSmart/WEB-730007-FEB-21_BYT_step_4_1x?fmt=png-alpha',
+		},
+	],
+	careTipsSteps: [
+		{
+			title: 'Water Care Tips',
+			label:
+				'Add water conditioner to tap water 24-48 hours before adding fish to stablize temperatures. Add bacteria starter only when adding fish, not before. ',
+			imgPath: 'https://s7d2.scene7.com/is/image/PetSmart/WEB-730007-FEB-21_BYT_step_5_1x?fmt=png-alpha',
+		},
+		{
+			title: 'Water Care Tips',
+			label:
+				'Tank scrubbers clean surfaces such as the glass, while gravel vacuums can be used for organic debris and waste at the bottom of your tank.',
+			imgPath: 'https://s7d2.scene7.com/is/image/PetSmart/WEB-730007-FEB-21_BYT_step_5_1x?fmt=png-alpha',
+		},
+	],
+};

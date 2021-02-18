@@ -13,14 +13,14 @@ export const Footer = (props) => {
 			<Paper className={classes.footer}>
 				<Container fixed>
 					<Box display='flex' justifyContent='space-between' mb={2}>
-						<Typography>Featured articles</Typography>
+						<Typography>{configs.featuredArticles}</Typography>
 						<Link
 							style={{ color: '#007DB5', cursor: 'pointer' }}
 							href={configs.readAllArticleLink}
 							component='a'
 							target='_blank'
 						>
-							View all
+							{configs.viewAll}
 						</Link>
 					</Box>
 					<Grid item xs={12}>

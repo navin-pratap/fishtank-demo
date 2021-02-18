@@ -9,6 +9,7 @@ import { TankDetails } from './TankDetails';
 import { AccessoriesDetails } from './AccessoriesDetails';
 import { GravelDecorDetails } from './GravelDecorDetails';
 import { CareDetails } from './CareDetails';
+import { configs } from '../../config';
 
 export const ProductListing = (props) => {
 	const {
@@ -187,9 +188,9 @@ export const ProductListing = (props) => {
 					<Box display='flex' justifyContent='flex-end' pr={2.25} pt={2}>
 						{productType !== 'Fish' ? (
 							<CommonButton
-								style={{ color: '#007DB4', marginRight: 20 }}
+								style={{ color: '#007Dconfigs.continueB4', marginRight: 20 }}
 								handleClick={handleGoBackClick}
-								text={'Go Back'}
+								text={configs.goBack}
 							/>
 						) : (
 							<></>
@@ -198,7 +199,7 @@ export const ProductListing = (props) => {
 							<CommonButton
 								style={{ backgroundColor: '#007DB4', color: '#ffffff' }}
 								handleClick={handleProductSelectionClick}
-								text={'Continue'}
+								text={configs.continue}
 							/>
 						) : (
 							<CommonButton disabled={true} text={'Continue'} />

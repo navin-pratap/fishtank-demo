@@ -3,47 +3,21 @@ import { Box, Typography, Grid } from '@material-ui/core';
 import { useStyles } from './styles';
 import { ProductListing } from './ProductListing';
 import { TipsCarousel } from './TipsCarousel';
-import { configs, SKUList } from '../../config';
+import {
+	configs,
+	SKUList,
+	defaultProductSelection,
+	mockProductData,
+	getRecommendedTankTitle,
+	finalPageContent,
+} from '../../config';
 import { getSkuFullDetails } from '../../services/generator';
 import { ProductStepper } from './ProductStepper';
 import { CartView } from './CartView';
 import '../../styles/global.scss';
 
-const mockData = require('./ProductList.json');
-
 export const Tank = (props) => {
 	const classes = useStyles();
-	const defaultProductSelection = [
-		{
-			id: 1,
-			type: 'Tank',
-			productImage: '',
-			ProductName: '',
-			ProductPrice: 0,
-			fishSelection: {},
-		},
-		{
-			id: 2,
-			type: 'Accessories',
-			productImage: '',
-			ProductName: '',
-			ProductPrice: 0,
-		},
-		{
-			id: 3,
-			type: 'Gravel & Decor',
-			productImage: '',
-			ProductName: '',
-			ProductPrice: 0,
-		},
-		{
-			id: 4,
-			type: 'Care',
-			productImage: '',
-			ProductName: '',
-			ProductPrice: 0,
-		},
-	];
 	const {
 		fishList,
 		accessories,
@@ -55,7 +29,7 @@ export const Tank = (props) => {
 		accessoriesTipsSteps,
 		gravelDecorTipsSteps,
 		careTipsSteps,
-	} = mockData;
+	} = mockProductData;
 	const [activeStep, setActiveStep] = useState(0);
 	const [activeSliderStep, setActiveSliderStep] = useState(0);
 	const [selectedFishData, setSelectedFishData] = useState(0);
@@ -71,10 +45,7 @@ export const Tank = (props) => {
 	const [productDetailsWithSKU, setProductDetailsWithSKU] = useState([]); // skuMockData.data
 	const [currentTips, setCurrentTips] = useState(fishTipsSteps);
 	const [maxSteps, setMaxSteps] = useState(fishTipsSteps.length);
-	const [titleDetails, setTitleDetails] = useState({
-		title: 'Select your favorite fish',
-		subTitle: 'Please select a fish you plan on building a tank for.',
-	});
+	const [titleDetails, setTitleDetails] = useState(configs.fishTitles);
 
 	const getAllSkuDetails = async () => {
 		const bigList = SKUList;
@@ -207,10 +178,7 @@ export const Tank = (props) => {
 			setMaxSteps(fishTipsSteps.length);
 			setActiveSliderStep(0);
 			setSelectionType('Fish');
-			setTitleDetails({
-				title: 'Select your favorite fish',
-				subTitle: 'Please select a fish you plan on building a tank for.',
-			});
+			setTitleDetails(configs.fishTitles);
 			setSelectedProducts(defaultProductSelection);
 			setSelectedTankData(0);
 			setSelectedAccessoriesData(0);
@@ -229,16 +197,10 @@ export const Tank = (props) => {
 			setSelectionType('Tank');
 			const response = await getAllSkuDetails();
 			if (selectedProductData.name === 'Not Sure') {
-				setTitleDetails({
-					title: `Select a tank`,
-					subTitle: 'Choose from a small, medium, or large tank.',
-				});
+				setTitleDetails(configs.allTankTitle);
 				setSelectionBasedProductList(response); //(productDetailsWithSKU);
 			} else {
-				setTitleDetails({
-					title: `For ${selectedProductData.name}, we recommend these tanks`,
-					subTitle: 'Please select a tank.',
-				});
+				setTitleDetails(getRecommendedTankTitle(selectedProductData.name));
 
 				setSelectionBasedProductList(response); //(productDetailsWithSKU);
 				// setSelectionBasedProductList(
@@ -256,10 +218,7 @@ export const Tank = (props) => {
 			const selectedProductData = selectedTankData;
 			addToCart(1, selectedProductData, 'Accessories'); // Add to Cart
 			setSelectionType('Accessories');
-			setTitleDetails({
-				title: 'Recommended accessories',
-				subTitle: 'Add accessory item(s) to your tank.',
-			});
+			setTitleDetails(configs.accessoriesTitles);
 			setSelectionBasedProductList(accessories);
 
 			setSelectedGravelDecorData(0);
@@ -272,10 +231,7 @@ export const Tank = (props) => {
 			const selectedProductData = selectedAccessoriesData;
 			addToCart(2, selectedProductData, 'Gravel & Decor'); // Add to Cart
 			setSelectionType('Gravel & Decor');
-			setTitleDetails({
-				title: 'Recommended gravel & decor',
-				subTitle: 'Add gravel & decor item(s) to your tank.',
-			});
+			setTitleDetails(configs.gravelDecorTitles);
 			setSelectionBasedProductList(gravelDecor);
 
 			setSelectedCareData(0);
@@ -287,10 +243,7 @@ export const Tank = (props) => {
 			const selectedProductData = selectedGravelDecorData;
 			addToCart(3, selectedProductData, 'Care'); // Add to Cart
 			setSelectionType('Care');
-			setTitleDetails({
-				title: 'Recommended care for your tank',
-				subTitle: 'Add care item(s) to your tank.',
-			});
+			setTitleDetails(configs.careTitles);
 			setSelectionBasedProductList(care);
 		} else if (newState === 5) {
 			setCurrentTips([]);
@@ -299,10 +252,7 @@ export const Tank = (props) => {
 			const selectedProductData = selectedCareData;
 			addToCart(4, selectedProductData, 'Care'); // Add to Cart
 			setSelectionType('Final');
-			setTitleDetails({
-				title: 'Do’s and don’ts with your new fish',
-				subTitle: '',
-			});
+			setTitleDetails(configs.dosDontsTitles);
 			setSelectionBasedProductList([]);
 		}
 	};
@@ -346,14 +296,12 @@ export const Tank = (props) => {
 						) : (
 							<Box>
 								<Typography variant='h5' style={{ fontWeight: 'bold' }}>
-									Your tank is ready to go
+									{finalPageContent.title}
 								</Typography>
-								<Typography variant='body1'>
-									Add your items to cart and head to your store to pick out your new fish friend.
-								</Typography>
+								<Typography variant='body1'>{finalPageContent.subTitle}</Typography>
 								<Box className={classes.heroBanner}>
 									<Typography component='div' style={{ textAlign: 'center' }}>
-										Hero Banner
+										{finalPageContent.subTitle2}
 									</Typography>
 								</Box>
 							</Box>

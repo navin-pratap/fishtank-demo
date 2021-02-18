@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import { Box, Grid, Paper, Typography, Link } from '@material-ui/core';
+import { configs } from '../../config';
 
 export const ArticlesDetails = (props) => {
 	const { articlesData, classes } = props;
@@ -14,7 +15,7 @@ export const ArticlesDetails = (props) => {
 							<Box className={classes.articlesContent}>
 								<Typography className={classes.articlesContentText}>{item.title}</Typography>
 								<Link className={classes.articlesReadMore} href={item.url} component='a' target='_blank'>
-									Read more
+									{configs.readMore}
 								</Link>
 							</Box>
 						</Paper>

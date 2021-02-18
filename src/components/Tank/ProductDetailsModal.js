@@ -5,7 +5,7 @@ import { Avatar, Box, AppBar, Tab, Tabs, Typography, Select, MenuItem } from '@m
 import Rating from '@material-ui/lab/Rating';
 import { ProductImagesSlider } from './ProductImagesSlider';
 import { CommonButton } from '../Common/CommonButton';
-import { getTankImage } from '../../config';
+import { configs, getTankImage } from '../../config';
 
 const useStyles = makeStyles((theme) => ({
 	paper: {
@@ -112,13 +112,13 @@ export const ProductDetailsModal = (props) => {
 							{selectedProductDetails.name}
 						</Typography>
 						<Box mt={1}>
-							<Typography component='span'>By</Typography>
+							<Typography component='span'>{configs.by}</Typography>
 							<Typography component='span' color='primary' style={{ cursor: 'pointer' }}>{` ${
 								type === 'Tank' ? selectedProductDetails.brand : selectedProductDetails.owner
 							}`}</Typography>
 						</Box>
 						<Box mt={1} display='flex' alignItems='center' className={classes.ratingMain}>
-							<Typography component='span'>Item</Typography>
+							<Typography component='span'>{configs.item}</Typography>
 							<Typography component='span' style={{ marginRight: 8 }}>{` #${selectedProductDetails.id}`}</Typography>
 							<Rating
 								name='product-rating'

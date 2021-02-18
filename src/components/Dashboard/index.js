@@ -4,7 +4,7 @@ import { Main } from './Main';
 import { Footer } from './Footer';
 import { useStyles } from './styles';
 import { Tank } from '../Tank';
-import { articlesData } from '../../config';
+import { articlesData, configs } from '../../config';
 
 export const Dashboard = (props) => {
 	const classes = useStyles();
@@ -23,9 +23,7 @@ export const Dashboard = (props) => {
 				<Grid item xs={12} style={{ paddingTop: 0 }}>
 					<Container fixed>
 						<Box mb={1}>
-							<Typography className={classes.textColor}>
-								{`Try Same-Day Delivery for FREE powered by DoorDash®! learn more >`}
-							</Typography>
+							<Typography className={classes.textColor}>{configs.headerTitle}</Typography>
 						</Box>
 						{isDashboard ? <Main {...props} handleBuildTankClick={handleBuildTankClick} /> : <Tank {...props} />}
 					</Container>

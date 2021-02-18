@@ -1,6 +1,7 @@
 import React from 'react';
 import { Box, Grid, Typography } from '@material-ui/core';
 import { CommonButton } from '../Common/CommonButton';
+import { configs } from '../../config';
 
 export const HeroBanner = (props) => {
 	const { classes, handleBuildTankClick, isButtonVisible, imagePath } = props;
@@ -20,15 +21,19 @@ export const HeroBanner = (props) => {
 		>
 			<Grid item>
 				<Box style={{ textAlign: 'center' }}>
-					<Typography component='div' style={{ textAlign: 'center', color: '#ffffff', fontWeight: 'bold' }}>
-						BUILD YOUR TANK
+					<Typography
+						component='div'
+						className='header-title'
+						style={{ textAlign: 'center', color: '#ffffff', fontWeight: 'bold' }}
+					>
+						{configs.buildYourTank}
 					</Typography>
 					{isButtonVisible ? (
 						<CommonButton
 							variant='contained'
 							className={classes.button}
 							handleClick={handleBuildTankClick}
-							text={'get started'}
+							text={configs.getStarted}
 						/>
 					) : (
 						<></>

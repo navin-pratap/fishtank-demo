@@ -7,15 +7,24 @@ $large: 900px;
 		.banner-height {
 			height: 100px;
 		}
+		.header-title {
+			font-size: 16px;
+		}
 	}
 	@media screen and (min-width: $medium) {
 		.banner-height {
 			height: 155px;
 		}
+		.header-title {
+			font-size: 20px;
+		}
 	}
 	@media screen and (min-width: $large) {
 		.banner-height {
 			height: 325px;
+		}
+		.header-title {
+			font-size: 2.5em;
 		}
 	}
 }

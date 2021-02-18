@@ -1,13 +1,14 @@
 import React, { Fragment } from 'react';
 import { Box, Typography } from '@material-ui/core';
 import { CommonButton } from '../Common/CommonButton';
+import { configs } from '../../config';
 
 export const CartView = (props) => {
 	const { classes, selectedProducts, selectionType, getSubTotal } = props;
 
 	return (
 		<Box className={classes.rightPanel}>
-			<Typography className={classes.rightPanelHeading}>Build your tank</Typography>
+			<Typography className={classes.rightPanelHeading}>{configs.buildYourTank.toLocaleLowerCase()}</Typography>
 			<Box>
 				{Boolean(selectedProducts) && selectedProducts.length ? (
 					selectedProducts.map((item, index) => (
@@ -18,7 +19,7 @@ export const CartView = (props) => {
 								</Typography>
 								{item.ProductName && item.ProductPrice ? (
 									<Typography variant='body1' className={classes.linkColor}>
-										Edit
+										{configs.edit}
 									</Typography>
 								) : (
 									<></>
@@ -32,7 +33,7 @@ export const CartView = (props) => {
 									<></>
 								) : (
 									<Typography style={{ paddingBottom: 20 }} variant='body2'>
-										No Product Selected
+										{configs.noProductText}
 									</Typography>
 								)}
 								{/* <Avatar variant='square' /> */}
@@ -71,7 +72,7 @@ export const CartView = (props) => {
 					}}
 				>
 					<Typography variant='body2' style={{ fontWeight: 'bold' }}>
-						Subtotal
+						{configs.subTotal}
 					</Typography>
 					<Typography variant='body2' style={{ fontWeight: 'bold' }}>
 						{`$ ${selectionType === 'Final' ? getSubTotal() : '###.##'}`}
@@ -92,7 +93,7 @@ export const CartView = (props) => {
 							backgroundColor: selectionType === 'Final' ? '#007DB4' : '#F2F2F2',
 							color: selectionType === 'Final' ? '#ffffff' : 'lightgray',
 						}}
-						text={'Build your tank'}
+						text={configs.buildYourTank}
 						fullWidth={true}
 						disabled={selectionType !== 'Final'}
 					/>

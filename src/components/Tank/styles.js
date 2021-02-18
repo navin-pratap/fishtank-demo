@@ -31,6 +31,7 @@ export const useStyles = makeStyles((theme) => ({
 		color: '#333333',
 		paddingTop: theme.spacing(3),
 		paddingLeft: theme.spacing(3),
+		textTransform: 'capitalize',
 	},
 	productCart: {
 		display: 'flex',
