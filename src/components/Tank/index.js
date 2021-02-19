@@ -10,6 +10,7 @@ import {
 	mockProductData,
 	getRecommendedTankTitle,
 	finalPageContent,
+	getSkuList,
 } from '../../config';
 import { getSkuFullDetails } from '../../services/generator';
 import { ProductStepper } from './ProductStepper';
@@ -47,8 +48,8 @@ export const Tank = (props) => {
 	const [maxSteps, setMaxSteps] = useState(fishTipsSteps.length);
 	const [titleDetails, setTitleDetails] = useState(configs.fishTitles);
 
-	const getAllSkuDetails = async () => {
-		const bigList = SKUList;
+	const getAllSkuDetails = async (skuIds) => {
+		const bigList = skuIds;
 		let organizedList = {};
 		let n = 0;
 
@@ -68,16 +69,19 @@ export const Tank = (props) => {
 		return skuDetails;
 	};
 	const getNewState = () => {
-		if (selectionType === 'Fish') {
-			return 1;
-		} else if (selectionType === 'Tank') {
-			return 2;
-		} else if (selectionType === 'Accessories') {
-			return 3;
-		} else if (selectionType === 'Gravel & Decor') {
-			return 4;
-		} else if (selectionType === 'Care') {
-			return 5;
+		switch (selectionType) {
+			case 'Fish':
+				return 1;
+			case 'Tank':
+				return 2;
+			case 'Accessories':
+				return 3;
+			case 'Gravel & Decor':
+				return 4;
+			case 'Care':
+				return 5;
+			default:
+				return 1;
 		}
 	};
 	const handleNext = (event, callType) => {
@@ -86,8 +90,10 @@ export const Tank = (props) => {
 			newState = getNewState();
 		}
 		setActiveSliderStep(newState);
-		callType === 1 && setActiveStep(newState === 0 || newState === 1 ? 0 : activeStep + 1);
-		callType === 1 && setProductDisplayType(newState);
+		if (callType === 1) {
+			setActiveStep(newState === 0 || newState === 1 ? 0 : activeStep + 1);
+			setProductDisplayType(newState);
+		}
 	};
 	const handleBack = (event, callType) => {
 		let newState = activeSliderStep - 1;
@@ -95,8 +101,10 @@ export const Tank = (props) => {
 			newState = getNewState();
 		}
 		setActiveSliderStep(newState);
-		callType === 1 && setActiveStep(newState === 0 || newState === 1 ? 0 : activeStep - 1);
-		callType === 1 && setProductDisplayType(newState);
+		if (callType === 1) {
+			setActiveStep(newState === 0 || newState === 1 ? 0 : activeStep - 1);
+			setProductDisplayType(newState);
+		}
 	};
 	const handleStepChange = (step) => {
 		setActiveSliderStep(step);
@@ -195,17 +203,14 @@ export const Tank = (props) => {
 			//--------- For Tank
 			addToCart(0, selectedProductData, 'Tank'); // Add to Cart
 			setSelectionType('Tank');
-			const response = await getAllSkuDetails();
 			if (selectedProductData.name === 'Not Sure') {
 				setTitleDetails(configs.allTankTitle);
-				setSelectionBasedProductList(response); //(productDetailsWithSKU);
+				const response = await getAllSkuDetails(SKUList);
+				setSelectionBasedProductList(response);
 			} else {
 				setTitleDetails(getRecommendedTankTitle(selectedProductData.name));
-
-				setSelectionBasedProductList(response); //(productDetailsWithSKU);
-				// setSelectionBasedProductList(
-				// 	productsList.filter((item) => item.recommendedForFish === selectedProductData.name)
-				// );
+				const response = await getAllSkuDetails(getSkuList(selectedProductData.name));
+				setSelectionBasedProductList(response);
 			}
 			setSelectedAccessoriesData(0);
 			setSelectedGravelDecorData(0);

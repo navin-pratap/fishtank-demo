@@ -122,6 +122,91 @@ export const articlesData = [
 			'https://s7d2.scene7.com/is/image/PetSmart/WEB-20-564714-March_20_Aquatic_EXP_TheRightFood_Article?fmt=png-alpha',
 	},
 ];
+/** Start SKUIds for Fish and Tank  */
+export const SnailFishSKUList = [5271255, 5253506, 5264615, 5262075, 5282474, 5264603, 5253508, 5282473, 5295338];
+const BettaFishSKUList = [
+	5271256,
+	5271256,
+	5264944,
+	5265057,
+	5265055,
+	5265055,
+	5253372,
+	5295056,
+	5295564,
+	5253512,
+	5262074,
+	5295573,
+	5295572,
+	5154257,
+	5230342,
+	5253507,
+	5174966,
+	5253371,
+	5277169,
+	5285082,
+	5285081,
+	5295336,
+	5277167,
+	5295565,
+	5295337,
+	5282472,
+];
+const TetraFishSKUList = [
+	5271256,
+	5248474,
+	5262172,
+	5174966,
+	5262171,
+	5278070,
+	5292480,
+	5294296,
+	5262170,
+	5278069,
+	5296681,
+	5262267,
+	5154257,
+	5174966,
+	5253371,
+	5277169,
+	5277167,
+	5262267,
+	5262266,
+	5229839,
+	5282370,
+	5262265,
+	5262164,
+	5277171,
+	5277168,
+	5154532,
+	5154528,
+];
+const CichlidFishSKUList = [5262172, 5174966, 5175698];
+const GoldFishSKUList = [
+	5248474,
+	5262172,
+	5174966,
+	5262171,
+	5175698,
+	5278070,
+	5292480,
+	5294296,
+	5262170,
+	5278069,
+	5296681,
+	5262267,
+	5262267,
+	5262266,
+	5229839,
+	5282370,
+	5262265,
+	5262164,
+	5277171,
+	5277168,
+	5154532,
+	5154528,
+];
+const GloFishSKUList = [5300125, 5300979, 5295057, 5295056, 5295564, 5295573, 5295572, 5277167];
 export const SmallSKUList = [
 	5264615,
 	5264603,
@@ -243,7 +328,25 @@ export const SKUList = [
 	5262172,
 	5278069,
 ];
-
+/** End SKUIds for Fish and Tank  */
+export const getSkuList = (fishName) => {
+	switch (fishName) {
+		case 'Betta':
+			return BettaFishSKUList;
+		case 'Cichlid':
+			return CichlidFishSKUList;
+		case 'Goldfish':
+			return GoldFishSKUList;
+		case 'Glofish':
+			return GloFishSKUList;
+		case 'Tetra':
+			return TetraFishSKUList;
+		case 'Snail':
+			return SnailFishSKUList;
+		default:
+			return [];
+	}
+};
 export const mockProductData = {
 	fishList: [
 		{
@@ -272,7 +375,7 @@ export const mockProductData = {
 		},
 		{
 			id: 105,
-			name: 'Golfish',
+			name: 'Glofish',
 			imageUrl: 'https://s7d2.scene7.com/is/image/PetSmart/WEB-730007-FEB-21_BYT_Fish_Goldfish?fmt=png-alpha',
 			description: 'Male bettas cannot live together. One betta can live in a tank with other peaceful community fish.',
 		},

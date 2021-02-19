@@ -9,7 +9,7 @@ import { TankDetails } from './TankDetails';
 import { AccessoriesDetails } from './AccessoriesDetails';
 import { GravelDecorDetails } from './GravelDecorDetails';
 import { CareDetails } from './CareDetails';
-import { configs } from '../../config';
+import { configs, SmallSKUList, MediumSKUList, LargeSKUList, SKUList } from '../../config';
 
 export const ProductListing = (props) => {
 	const {
@@ -63,9 +63,17 @@ export const ProductListing = (props) => {
 		setOpenModal(false);
 	};
 	const filterTankList = (event, filterType) => {
+		let skuList = SKUList;
+		if (filterType === 'small') {
+			skuList = SmallSKUList;
+		} else if (filterType === 'medium') {
+			skuList = MediumSKUList;
+		} else if (filterType === 'large') {
+			skuList = LargeSKUList;
+		}
 		setSplitButtonClickType(filterType);
-		setProductDetails(selectionBasedProductList);
-		// setProductDetails(selectionBasedProductList.filter((item) => item.tankSize === filterType));
+		const filterData = selectionBasedProductList.filter((item) => skuList.find((skuId) => skuId === parseInt(item.id)));
+		setProductDetails(filterData);
 	};
 	const convertPrice = (price) => {
 		return price ? price.toFixed(2) : 0;
@@ -188,7 +196,7 @@ export const ProductListing = (props) => {
 					<Box display='flex' justifyContent='flex-end' pr={2.25} pt={2}>
 						{productType !== 'Fish' ? (
 							<CommonButton
-								style={{ color: '#007Dconfigs.continueB4', marginRight: 20 }}
+								style={{ color: '#007DB4', marginRight: 20 }}
 								handleClick={handleGoBackClick}
 								text={configs.goBack}
 							/>
