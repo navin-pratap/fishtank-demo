@@ -11,6 +11,9 @@ import {
 	getRecommendedTankTitle,
 	finalPageContent,
 	getSkuList,
+	TankAccessoriesSKUs,
+	WaterCareSKUs,
+	DecorSKUs,
 } from '../../config';
 import { getSkuFullDetails } from '../../services/generator';
 import { ProductStepper } from './ProductStepper';
@@ -179,6 +182,7 @@ export const Tank = (props) => {
 		setSelectedProducts(finalData);
 	};
 	const setProductDisplayType = async (newState) => {
+		setSelectionBasedProductList([]);
 		if (newState === 0) {
 			//--------- For Fish
 			const selectedProductData = selectedFishData;
@@ -220,11 +224,14 @@ export const Tank = (props) => {
 			setCurrentTips(accessoriesTipsSteps);
 			setMaxSteps(accessoriesTipsSteps.length);
 			setActiveSliderStep(0);
+			setSelectionBasedProductList([]);
 			const selectedProductData = selectedTankData;
 			addToCart(1, selectedProductData, 'Accessories'); // Add to Cart
 			setSelectionType('Accessories');
 			setTitleDetails(configs.accessoriesTitles);
-			setSelectionBasedProductList(accessories);
+			const tankId = selectedTankData.id;
+			const response = TankAccessoriesSKUs[tankId] ? await getAllSkuDetails(TankAccessoriesSKUs[tankId]) : accessories;
+			setSelectionBasedProductList(response);
 
 			setSelectedGravelDecorData(0);
 			setSelectedCareData(0);
@@ -232,24 +239,30 @@ export const Tank = (props) => {
 			setCurrentTips(gravelDecorTipsSteps);
 			setMaxSteps(gravelDecorTipsSteps.length);
 			setActiveSliderStep(0);
+			setSelectionBasedProductList([]);
 			//--------- For Gravel & Decor
 			const selectedProductData = selectedAccessoriesData;
 			addToCart(2, selectedProductData, 'Gravel & Decor'); // Add to Cart
 			setSelectionType('Gravel & Decor');
 			setTitleDetails(configs.gravelDecorTitles);
-			setSelectionBasedProductList(gravelDecor);
+			const tankId = selectedTankData.id; //selectedAccessoriesData.id;
+			const response = DecorSKUs[tankId] ? await getAllSkuDetails(DecorSKUs[tankId]) : gravelDecor;
+			setSelectionBasedProductList(response);
 
 			setSelectedCareData(0);
 		} else if (newState === 4) {
 			setCurrentTips(careTipsSteps);
 			setMaxSteps(careTipsSteps.length);
 			setActiveSliderStep(0);
+			setSelectionBasedProductList([]);
 			//--------- For Care
 			const selectedProductData = selectedGravelDecorData;
 			addToCart(3, selectedProductData, 'Care'); // Add to Cart
 			setSelectionType('Care');
 			setTitleDetails(configs.careTitles);
-			setSelectionBasedProductList(care);
+			const tankId = selectedTankData.id; //selectedGravelDecorData.id;
+			const response = WaterCareSKUs[tankId] ? await getAllSkuDetails(WaterCareSKUs[tankId]) : care;
+			setSelectionBasedProductList(response);
 		} else if (newState === 5) {
 			setCurrentTips([]);
 			setMaxSteps(0);
@@ -262,6 +275,7 @@ export const Tank = (props) => {
 		}
 	};
 	const handleProductSelectionClick = (event) => {
+		setSelectionBasedProductList([]);
 		handleNext(event, 1);
 	};
 	const handleGoBackClick = (event) => {

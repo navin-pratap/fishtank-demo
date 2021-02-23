@@ -9,7 +9,7 @@ import { TankDetails } from './TankDetails';
 import { AccessoriesDetails } from './AccessoriesDetails';
 import { GravelDecorDetails } from './GravelDecorDetails';
 import { CareDetails } from './CareDetails';
-import { configs, SmallSKUList, MediumSKUList, LargeSKUList, SKUList } from '../../config';
+import { configs, SmallSKUList, MediumSKUList, LargeSKUList, SKUList, CustomFilter } from '../../config';
 
 export const ProductListing = (props) => {
 	const {
@@ -70,6 +70,8 @@ export const ProductListing = (props) => {
 			skuList = MediumSKUList;
 		} else if (filterType === 'large') {
 			skuList = LargeSKUList;
+		} else if (filterType === 'custom') {
+			skuList = CustomFilter;
 		}
 		setSplitButtonClickType(filterType);
 		const filterData = selectionBasedProductList.filter((item) => skuList.find((skuId) => skuId === parseInt(item.id)));

@@ -32,6 +32,14 @@ export const TankFilter = (props) => {
 				}}
 				text={configs.large}
 			/>
+			<CommonButton
+				handleClick={(e) => filterTankList(e, 'custom')}
+				style={{
+					backgroundColor: splitButtonClickType === 'custom' ? '#007DB4' : '#F2F2F2',
+					color: splitButtonClickType === 'custom' ? '#ffffff' : 'lightgray',
+				}}
+				text={'Custom'}
+			/>
 		</ButtonGroup>
 	);
 };

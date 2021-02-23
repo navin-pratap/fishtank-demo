@@ -84,7 +84,12 @@ export const ProductDetailsModal = (props) => {
 				</Box>
 				<Box display='flex'>
 					<Box>
-						{type === 'Tank' ? (
+						<Avatar
+							style={{ width: 256, height: 256, marginLeft: 16 }}
+							variant='square'
+							src={getTankImage(selectedProductDetails.id, 'Modal')}
+						/>
+						{/* {type === 'Tank' ? (
 							<Avatar
 								style={{ width: 256, height: 256, marginLeft: 16 }}
 								variant='square'
@@ -102,7 +107,7 @@ export const ProductDetailsModal = (props) => {
 							<Box
 								style={{ width: 256, height: 256, marginLeft: 16, background: '#B2B2B2 0% 0% no-repeat padding-box' }}
 							></Box>
-						)}
+						)} */}
 						<Box display='flex' alignItems='center' justifyContent='center'>
 							<ProductImagesSlider selectedProductDetails={selectedProductDetails} />
 						</Box>

@@ -8,9 +8,10 @@ export const TankDetails = (props) => {
 	return (
 		<Fragment>
 			{Boolean(productDetails) && productDetails.length ? (
-				productDetails.map((item) => (
+				productDetails.map((item, index) => (
 					<Box
-						key={item.id}
+						className='custom-tank'
+						key={`custom-tank_${index}_${item.id}`}
 						style={{
 							width: 135,
 							cursor: 'pointer',

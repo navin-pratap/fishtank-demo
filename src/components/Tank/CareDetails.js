@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import { Avatar, Box, CircularProgress, Tooltip, Typography } from '@material-ui/core';
+import { getTankImage } from '../../config';
 
 export const CareDetails = (props) => {
 	const { productDetails, selectedProductDetails, handleOpenModal, classes, convertPrice } = props;
@@ -7,9 +8,10 @@ export const CareDetails = (props) => {
 	return (
 		<Fragment>
 			{Boolean(productDetails) && productDetails.length ? (
-				productDetails.map((item) => (
+				productDetails.map((item, index) => (
 					<Box
-						key={item.id}
+						className='custom-care'
+						key={`custom-care_${index}_${item.id}`}
 						style={{
 							width: 135,
 							cursor: 'pointer',
@@ -28,11 +30,12 @@ export const CareDetails = (props) => {
 								border: 'none',
 							}}
 						>
-							{item.imageUrl ? (
+							<Avatar style={{ width: 145, height: 145 }} variant='square' src={getTankImage(item.id, 'List')} />
+							{/* {item.imageUrl ? (
 								<Avatar style={{ width: 145, height: 145 }} variant='square' src={item.imageUrl} />
 							) : (
 								<Box style={{ width: 145, height: 145, background: 'grey 0% 0% no-repeat padding-box' }}></Box>
-							)}
+							)} */}
 						</Box>
 						<Tooltip title={<div dangerouslySetInnerHTML={{ __html: item.name }} />}>
 							<Typography variant='body2' className={classes.twoLine} style={{ textAlign: 'center', marginTop: 8 }}>
@@ -41,14 +44,14 @@ export const CareDetails = (props) => {
 						</Tooltip>
 						<Box mt={1} display='flex' alignItems='center' justifyContent='center'>
 							<Typography variant='body2' color='error' style={{ fontWeight: 'bold', marginRight: 8 }}>
-								{convertPrice(item.price)}
+								{item.c_pricing.formattedSale}
 							</Typography>
 							<Typography
 								variant='body2'
 								color='textSecondary'
 								style={{ fontWeight: 'bold', textDecoration: 'line-through' }}
 							>
-								{convertPrice(item.oldPrice)}
+								{item.c_pricing.formattedStandard}
 							</Typography>
 						</Box>
 					</Box>
