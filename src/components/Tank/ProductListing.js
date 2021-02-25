@@ -84,15 +84,15 @@ export const ProductListing = (props) => {
 	return (
 		<Fragment>
 			<Box>
-				<Box display='flex' justifyContent='space-between' alignItems='center'>
-					<Box>
+				<Box className='tank-filters-main'>
+					<Box className='tank-filters'>
 						<Typography className={classes.rightPanelHeading} style={{ paddingLeft: 0 }}>
 							{title}
 						</Typography>
 						<Typography variant='body2'>{subTitle}</Typography>
 					</Box>
 					{title === 'Select a tank' ? (
-						<Box pr={3} className='tank-filters'>
+						<Box pr={3}>
 							<TankFilter filterTankList={filterTankList} splitButtonClickType={splitButtonClickType} />
 						</Box>
 					) : (

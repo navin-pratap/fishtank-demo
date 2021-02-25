@@ -6,11 +6,12 @@ import Rating from '@material-ui/lab/Rating';
 import { ProductImagesSlider } from './ProductImagesSlider';
 import { CommonButton } from '../Common/CommonButton';
 import { configs, getTankImage } from '../../config';
+import '../../styles/global.scss';
 
 const useStyles = makeStyles((theme) => ({
 	paper: {
 		position: 'absolute',
-		width: 800,
+		maxWidth: 800,
 		backgroundColor: theme.palette.background.paper,
 		boxShadow: theme.shadows[5],
 		padding: theme.spacing(0, 0, 3, 2),
@@ -78,36 +79,17 @@ export const ProductDetailsModal = (props) => {
 			aria-describedby='Product details modal'
 			style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
 		>
-			<Box className={classes.paper}>
+			<Box className={`modal-main-class ${classes.paper}`}>
 				<Box display='flex' justifyContent='flex-end'>
 					<CommonButton handleClick={handleCloseModal} text={'X'} />
 				</Box>
-				<Box display='flex'>
+				<Box className='modal-main'>
 					<Box>
 						<Avatar
 							style={{ width: 256, height: 256, marginLeft: 16 }}
 							variant='square'
 							src={getTankImage(selectedProductDetails.id, 'Modal')}
 						/>
-						{/* {type === 'Tank' ? (
-							<Avatar
-								style={{ width: 256, height: 256, marginLeft: 16 }}
-								variant='square'
-								src={
-									type === 'Tank' ? getTankImage(selectedProductDetails.id, 'Modal') : selectedProductDetails.imageUrl
-								}
-							/>
-						) : selectedProductDetails.imageUrl ? (
-							<Avatar
-								style={{ width: 256, height: 256, marginLeft: 16 }}
-								variant='square'
-								src={selectedProductDetails.imageUrl}
-							/>
-						) : (
-							<Box
-								style={{ width: 256, height: 256, marginLeft: 16, background: '#B2B2B2 0% 0% no-repeat padding-box' }}
-							></Box>
-						)} */}
 						<Box display='flex' alignItems='center' justifyContent='center'>
 							<ProductImagesSlider selectedProductDetails={selectedProductDetails} />
 						</Box>

@@ -42,7 +42,12 @@ $large: 900px;
 			margin-top: 0px;
 		}
 		.tank-filters {
-			display: none;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		.tank-filters-main {
+			margin-top: 10px;
+			margin-bottom: 10px;
 		}
 	}
 	@media screen and (min-width: $medium) {
@@ -60,6 +65,11 @@ $large: 900px;
 		.tank-filters {
 			display: block;
 		}
+		.tank-filters-main {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
 	}
 	@media screen and (min-width: $large) {
 		.tips-title {
@@ -75,6 +85,29 @@ $large: 900px;
 		}
 		.tank-filters {
 			display: block;
+		}
+		.tank-filters-main {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+	}
+}
+
+.modal-main-class {
+	@media screen and (max-width: $small) {
+		.modal-main {
+			display: block;
+		}
+	}
+	@media screen and (min-width: $medium) {
+		.modal-main {
+			display: flex;
+		}
+	}
+	@media screen and (min-width: $large) {
+		.modal-main {
+			display: flex;
 		}
 	}
 }
