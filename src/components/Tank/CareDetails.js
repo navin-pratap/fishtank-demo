@@ -3,7 +3,7 @@ import { Avatar, Box, CircularProgress, Tooltip, Typography } from '@material-ui
 import { getTankImage } from '../../config';
 
 export const CareDetails = (props) => {
-	const { productDetails, selectedProductDetails, handleOpenModal, classes, convertPrice } = props;
+	const { productDetails, selectedProductDetails, handleOpenModal, classes } = props;
 
 	return (
 		<Fragment>
@@ -44,14 +44,14 @@ export const CareDetails = (props) => {
 						</Tooltip>
 						<Box mt={1} display='flex' alignItems='center' justifyContent='center'>
 							<Typography variant='body2' color='error' style={{ fontWeight: 'bold', marginRight: 8 }}>
-								{item.c_pricing.formattedSale}
+								{item?.c_pricing?.formattedSale}
 							</Typography>
 							<Typography
 								variant='body2'
 								color='textSecondary'
 								style={{ fontWeight: 'bold', textDecoration: 'line-through' }}
 							>
-								{item.c_pricing.formattedStandard}
+								{item?.c_pricing?.formattedStandard}
 							</Typography>
 						</Box>
 					</Box>

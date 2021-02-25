@@ -161,9 +161,9 @@ export const ProductDetailsModal = (props) => {
 						overflow: 'auto',
 					}}
 				>
-					{type === 'Tank' ? (
-						<div dangerouslySetInnerHTML={{ __html: selectedProductDetails.long_description }} />
-					) : (
+					{/* {type === 'Tank' ? ( */}
+					<div dangerouslySetInnerHTML={{ __html: selectedProductDetails?.long_description }} />
+					{/* ) : (
 						<Fragment>
 							<AppBar position='static' color='default'>
 								<Tabs
@@ -182,7 +182,7 @@ export const ProductDetailsModal = (props) => {
 								{selectedProductDetails.description}
 							</TabPanel>
 						</Fragment>
-					)}
+					)} */}
 				</Box>
 			</Box>
 		</Modal>
