@@ -13,11 +13,7 @@ export const TankDetails = (props) => {
 						className='custom-tank'
 						key={`custom-tank_${index}_${item.id}`}
 						style={{
-							width: 135,
 							cursor: 'pointer',
-							marginTop: 10,
-							marginRight: 30,
-							padding: 16,
 							border: `1px solid ${selectedProductDetails.id === item.id ? '#007DB4' : '#DDDDDD'}`,
 						}}
 						onClick={(e) => handleOpenModal(e, item)}
@@ -30,7 +26,7 @@ export const TankDetails = (props) => {
 								border: 'none',
 							}}
 						>
-							<Avatar style={{ width: 145, height: 145 }} variant='square' src={getTankImage(item.id, 'List')} />
+							<Avatar className='product-icon' variant='square' src={getTankImage(item.id, 'List')} />
 						</Box>
 						<Tooltip title={<div dangerouslySetInnerHTML={{ __html: item.name }} />}>
 							<Typography variant='body2' className={classes.twoLine} style={{ textAlign: 'center', marginTop: 8 }}>

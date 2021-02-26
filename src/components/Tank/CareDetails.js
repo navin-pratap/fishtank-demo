@@ -13,11 +13,7 @@ export const CareDetails = (props) => {
 						className='custom-care'
 						key={`custom-care_${index}_${item.id}`}
 						style={{
-							width: 135,
 							cursor: 'pointer',
-							marginTop: 10,
-							marginRight: 30,
-							padding: 16,
 							border: `1px solid ${selectedProductDetails.id === item.id ? '#007DB4' : '#DDDDDD'}`,
 						}}
 						onClick={(e) => handleOpenModal(e, item)}
@@ -30,12 +26,7 @@ export const CareDetails = (props) => {
 								border: 'none',
 							}}
 						>
-							<Avatar style={{ width: 145, height: 145 }} variant='square' src={getTankImage(item.id, 'List')} />
-							{/* {item.imageUrl ? (
-								<Avatar style={{ width: 145, height: 145 }} variant='square' src={item.imageUrl} />
-							) : (
-								<Box style={{ width: 145, height: 145, background: 'grey 0% 0% no-repeat padding-box' }}></Box>
-							)} */}
+							<Avatar className='product-icon' variant='square' src={getTankImage(item.id, 'List')} />
 						</Box>
 						<Tooltip title={<div dangerouslySetInnerHTML={{ __html: item.name }} />}>
 							<Typography variant='body2' className={classes.twoLine} style={{ textAlign: 'center', marginTop: 8 }}>

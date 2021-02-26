@@ -101,11 +101,11 @@ export const ProductListing = (props) => {
 				</Box>
 				{/* Selected Product List */}
 				<Box
+					className='product-listing-main'
 					style={{
 						display: 'flex',
 						justifyContent: productType === 'Fish' ? 'space-between' : 'flex-start',
 						alignItems: 'center',
-						paddingRight: 24,
 						flexWrap: 'wrap',
 					}}
 				>
