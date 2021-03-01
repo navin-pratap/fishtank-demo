@@ -10,6 +10,7 @@ export const FishDetails = (props) => {
 				productDetails.map((item) => (
 					<Box
 						key={item.id}
+						className='fish-details'
 						style={{
 							width: 100,
 							cursor: 'pointer',
