@@ -162,3 +162,36 @@ $large: 900px;
 		}
 	}
 }
+
+.cart-main {
+	@media screen and (max-width: $small) {
+		.cart-style {
+			margin-top: 16px;
+		}
+		.cart-icon {
+			display: block;
+		}
+	}
+	@media screen and (min-width: $medium) {
+		.cart-icon {
+			display: block;
+		}
+	}
+	@media screen and (min-width: $large) {
+		.cart-icon {
+			display: block;
+		}
+	}
+}
+
+.mobile-view {
+	@media screen and (max-width: $small) {
+		display: none !important;
+	}
+	@media screen and (min-width: $medium) {
+		display: flex !important;
+	}
+	@media screen and (min-width: $large) {
+		display: flex !important;
+	}
+}
