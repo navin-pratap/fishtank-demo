@@ -195,3 +195,55 @@ $large: 900px;
 		display: flex !important;
 	}
 }
+.fish-care-main {
+	@media screen and (max-width: $small) {
+		display: block;
+	}
+	@media screen and (min-width: $medium) {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-right: 16px;
+	}
+	@media screen and (min-width: $large) {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-right: 16px;
+	}
+}
+.congrats-main {
+	@media screen and (max-width: $small) {
+		.banner-content {
+			width: 100%;
+		}
+		.banner-title {
+			font-size: 1.5rem;
+		}
+		.banner-sub-title {
+			font-size: 1rem;
+		}
+	}
+	@media screen and (min-width: $medium) {
+		.banner-content {
+			width: 50%;
+		}
+		.banner-title {
+			font-size: 3rem;
+		}
+		.banner-sub-title {
+			font-size: 1.5rem;
+		}
+	}
+	@media screen and (min-width: $large) {
+		.banner-content {
+			width: 50%;
+		}
+		.banner-title {
+			font-size: 3rem;
+		}
+		.banner-sub-title {
+			font-size: 1.5rem;
+		}
+	}
+}

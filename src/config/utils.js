@@ -32,3 +32,7 @@ export const getRecommendedTankTitle = (name) => {
 		subTitle: 'Please select a tank.',
 	};
 };
+
+export const getFishCareOption = (name) => {
+	return `https://s7d2.scene7.com/is/image/PetSmart/${name}?fmt=png-alpha`;
+};

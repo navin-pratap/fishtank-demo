@@ -9,6 +9,8 @@ export const configs = {
 		'https://www.petsmart.com/learning-center/fish-care/?isrefinedbyspecies=true#page_name=flyout&link_section=&link_name=fish_care&template_type=services',
 	videoLink: 'https://youtu.be/0vYb9TcUo0Q',
 	tipsBackgroundImage: 'https://s7d2.scene7.com/is/image/PetSmart/WEB-730007-FEB-21_BYT_TipsBackground_1x',
+	congratsBackgroundImage:
+		'https://s7d2.scene7.com/is/image/PetSmart/WEB-730007-FEB-21_BYT_Congrats_Banner?fmt=png-alpha',
 	headerTitle: 'Try Same-Day Delivery for FREE powered by DoorDash®! learn more >',
 	readMore: 'Read more',
 	featuredArticles: 'Featured articles',
@@ -58,6 +60,11 @@ export const finalPageContent = {
 	title: 'Your tank is ready to go',
 	subTitle: 'Add your items to cart and head to your store to pick out your new fish friend.',
 	subTitle2: 'Hero Banner',
+	bannerTitle: `Congrats, you've build your tank!`,
+	bannerSubTitle: 'Add your items to cart & select in-store pickup. Your tank & new fish selections will be waiting! ',
+};
+export const getFishCareOption = (name) => {
+	return `https://s7d2.scene7.com/is/image/PetSmart/${name}?fmt=png-alpha`;
 };
 export const getRecommendedTankTitle = (name) => {
 	return {

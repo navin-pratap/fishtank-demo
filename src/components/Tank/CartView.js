@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect } from 'react';
-import { Box, Card, CardActions, IconButton, Typography } from '@material-ui/core';
+import { Avatar, Box, Card, CardActions, IconButton, Typography } from '@material-ui/core';
 import Collapse from '@material-ui/core/Collapse';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import clsx from 'clsx';
@@ -62,9 +62,9 @@ export const CartView = (props) => {
 											</Typography>
 										)}
 										{item.productImage ? (
-											<Box style={{ width: 50, height: 50, background: '#F2F2F2 0% 0% no-repeat padding-box' }}></Box>
+											<Avatar style={{ width: 50, height: 50 }} variant='square' src={item.productImage} />
 										) : (
-											<></>
+											<Box style={{ width: 50, height: 50, background: '#F2F2F2 0% 0% no-repeat padding-box' }}></Box>
 										)}
 										{item.ProductName ? (
 											<Typography variant='body1' component='div'>

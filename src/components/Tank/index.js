@@ -14,11 +14,13 @@ import {
 	TankAccessoriesSKUs,
 	WaterCareSKUs,
 	DecorSKUs,
+	getTankImage,
 } from '../../config';
 import { getSkuFullDetails } from '../../services/generator';
 import { ProductStepper } from './ProductStepper';
 import { CartView } from './CartView';
 import '../../styles/global.scss';
+import { Congrats } from './Congrats';
 
 export const Tank = (props) => {
 	const classes = useStyles();
@@ -142,37 +144,37 @@ export const Tank = (props) => {
 		}
 	};
 	const addToCart = (newState, selectedProductData, type) => {
-		const cartIndex = newState; // === 1 || newState === 2 ? 1 : newState - 1;
+		const cartIndex = newState === 0 ? 1 : newState; // === 1 || newState === 2 ? 1 : newState - 1;
 		const detailsIndex = selectedProducts.findIndex((item) => item.id === cartIndex);
 		let details = detailsIndex > -1 ? selectedProducts[detailsIndex] : [];
 		if (type === 'Tank') {
 			details = {
 				...details,
-				productImage: selectedProductData.imageUrl,
-				ProductName: selectedProductData.name,
-				ProductPrice: selectedProductData.price,
+				productImage: newState !== 0 ? getTankImage(selectedProductData?.id) : '',
+				ProductName: newState !== 0 ? selectedProductData.name : '',
+				ProductPrice: newState !== 0 ? selectedProductData?.c_pricing?.sale : '',
 				fishSelection: selectedProductData,
 			};
 		} else if (type === 'Accessories') {
 			details = {
 				...details,
-				productImage: selectedProductData.imageUrl,
+				productImage: getTankImage(selectedProductData?.id),
 				ProductName: selectedProductData.name,
-				ProductPrice: selectedProductData.price,
+				ProductPrice: selectedProductData?.c_pricing?.sale,
 			};
 		} else if (type === 'Gravel & Decor') {
 			details = {
 				...details,
-				productImage: selectedProductData.imageUrl,
+				productImage: getTankImage(selectedProductData?.id),
 				ProductName: selectedProductData.name,
-				ProductPrice: selectedProductData.price,
+				ProductPrice: selectedProductData?.c_pricing?.sale,
 			};
 		} else if (type === 'Care') {
 			details = {
 				...details,
-				productImage: selectedProductData.imageUrl,
+				productImage: getTankImage(selectedProductData?.id),
 				ProductName: selectedProductData.name,
-				ProductPrice: selectedProductData.price,
+				ProductPrice: selectedProductData?.c_pricing?.sale,
 			};
 		}
 		const finalData = selectedProducts.map((item, index) => {
@@ -313,17 +315,7 @@ export const Tank = (props) => {
 								handleChangeTips={handleChangeTips}
 							/>
 						) : (
-							<Box>
-								<Typography variant='h5' style={{ fontWeight: 'bold' }}>
-									{finalPageContent.title}
-								</Typography>
-								<Typography variant='body1'>{finalPageContent.subTitle}</Typography>
-								<Box className={classes.heroBanner}>
-									<Typography component='div' style={{ textAlign: 'center' }}>
-										{finalPageContent.subTitle2}
-									</Typography>
-								</Box>
-							</Box>
+							<Congrats classes={classes} />
 						)}
 						<ProductListing
 							selectionBasedProductList={selectionBasedProductList}

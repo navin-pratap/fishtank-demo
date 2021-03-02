@@ -46,7 +46,10 @@ export const useStyles = makeStyles((theme) => ({
 	},
 	heroBanner: {
 		height: 200,
-		background: '#F2F2F2 0% 0% no-repeat padding-box',
+		// background: '#F2F2F2 0% 0% no-repeat padding-box',
+		backgroundImage: `url(${configs.congratsBackgroundImage})`,
+		backgroundRepeat: 'no-repeat',
+		backgroundPosition: 'top',
 		margin: theme.spacing(2, 2, 2, 0),
 		opacity: 1,
 		display: 'flex',
@@ -105,5 +108,18 @@ export const useStyles = makeStyles((theme) => ({
 	},
 	expandOpen: {
 		transform: 'rotate(180deg)',
+	},
+	fishCare: {
+		height: 180,
+		width: 180,
+		borderRadius: 100,
+		backgroundColor: 'red',
+		display: 'flex',
+		justifyContent: 'center',
+		alignItems: 'center',
+	},
+	fishCareIcon: {
+		height: 180,
+		width: 180,
 	},
 }));

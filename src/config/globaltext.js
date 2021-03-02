@@ -3,6 +3,9 @@ export const globalText = {
 		title: 'Your tank is ready to go',
 		subTitle: 'Add your items to cart and head to your store to pick out your new fish friend.',
 		subTitle2: 'Hero Banner',
+		bannerTitle: `Congrats, you've build your tank!`,
+		bannerSubTitle:
+			'Add your items to cart & select in-store pickup. Your tank & new fish selections will be waiting! ',
 	},
 	headerTitle: 'Try Same-Day Delivery for FREE powered by DoorDash®! learn more >',
 	readMore: 'Read more',

@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useState } from 'react';
-import { Box, Typography } from '@material-ui/core';
+import { Box, Typography, Avatar } from '@material-ui/core';
 import { useStyles } from './styles';
 import { ProductDetailsModal } from './ProductDetailsModal';
 import { CommonButton } from '../Common/CommonButton';
@@ -9,7 +9,15 @@ import { TankDetails } from './TankDetails';
 import { AccessoriesDetails } from './AccessoriesDetails';
 import { GravelDecorDetails } from './GravelDecorDetails';
 import { CareDetails } from './CareDetails';
-import { configs, SmallSKUList, MediumSKUList, LargeSKUList, SKUList, CustomFilter } from '../../config';
+import {
+	configs,
+	SmallSKUList,
+	MediumSKUList,
+	LargeSKUList,
+	SKUList,
+	CustomFilter,
+	getFishCareOption,
+} from '../../config';
 
 export const ProductListing = (props) => {
 	const {
@@ -160,7 +168,7 @@ export const ProductListing = (props) => {
 							convertPrice={convertPrice}
 						/>
 					) : (
-						''
+						<></>
 					)}
 				</Box>
 				{Boolean(selectedProductDetails) && productType === 'Fish' && selectedProductDetails.name !== 'Not Sure' ? (
@@ -194,7 +202,7 @@ export const ProductListing = (props) => {
 				) : (
 					<></>
 				)}
-				{productType !== 'Final' && (
+				{productType !== 'Final' ? (
 					<Box display='flex' justifyContent='flex-end' pr={2.25} pt={2}>
 						{productType !== 'Fish' ? (
 							<CommonButton
@@ -214,6 +222,39 @@ export const ProductListing = (props) => {
 						) : (
 							<CommonButton disabled={true} text={'Continue'} />
 						)}
+					</Box>
+				) : (
+					<Box className='fish-care-main'>
+						<Box className={classes.fishCare}>
+							<Avatar
+								className={classes.fishCareIcon}
+								variant='circle'
+								src={getFishCareOption('WEB-730007-FEB-21_BYT_test-your-water-regularly_1x')}
+							/>
+						</Box>
+						<Box className={classes.fishCare}>
+							<Avatar
+								className={classes.fishCareIcon}
+								variant='circle'
+								src={getFishCareOption('WEB-730007-FEB-21_BYT_remember-to-cycle-your-aquarium_1x')}
+							/>
+						</Box>
+						<Box className={classes.fishCare}>
+							<Avatar
+								className={classes.fishCareIcon}
+								variant='circle'
+								src={getFishCareOption('WEB-730007-FEB-21_BYT_rinse-off-decor-before-placing-in-tank_1x')}
+							/>
+						</Box>
+						<Box className={classes.fishCare}>
+							<Avatar
+								className={classes.fishCareIcon}
+								variant='circle'
+								src={getFishCareOption(
+									'WEB-730007-FEB-21_BYT_do-not-add-bacteria-starter-until-you-start-adding-fish_1x'
+								)}
+							/>
+						</Box>
 					</Box>
 				)}
 			</Box>
