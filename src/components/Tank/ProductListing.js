@@ -17,6 +17,7 @@ import {
 	SKUList,
 	CustomFilter,
 	getFishCareOption,
+	finalPageContent,
 } from '../../config';
 
 export const ProductListing = (props) => {
@@ -206,7 +207,7 @@ export const ProductListing = (props) => {
 					<Box display='flex' justifyContent='flex-end' pr={2.25} pt={2}>
 						{productType !== 'Fish' ? (
 							<CommonButton
-								style={{ color: '#007DB4', marginRight: 20 }}
+								style={{ color: '#007DB4', marginRight: 20, textTransform: 'none' }}
 								handleClick={handleGoBackClick}
 								text={configs.goBack}
 							/>
@@ -215,45 +216,65 @@ export const ProductListing = (props) => {
 						)}
 						{Boolean(selectedProductDetails) ? (
 							<CommonButton
-								style={{ backgroundColor: '#007DB4', color: '#ffffff' }}
+								style={{ backgroundColor: '#007DB4', color: '#ffffff', textTransform: 'none' }}
 								handleClick={handleProductSelectionClick}
 								text={configs.continue}
 							/>
 						) : (
-							<CommonButton disabled={true} text={'Continue'} />
+							<CommonButton style={{ textTransform: 'none' }} disabled={true} text={'Continue'} />
 						)}
 					</Box>
 				) : (
 					<Box className='fish-care-main'>
-						<Box className={classes.fishCare}>
-							<Avatar
-								className={classes.fishCareIcon}
-								variant='circle'
-								src={getFishCareOption('WEB-730007-FEB-21_BYT_test-your-water-regularly_1x')}
-							/>
+						<Box style={{ marginRight: 20 }}>
+							<Box className={classes.fishCare}>
+								<Avatar
+									className={classes.fishCareIcon}
+									variant='circle'
+									src={getFishCareOption('WEB-730007-FEB-21_BYT_test-your-water-regularly_1x')}
+								/>
+							</Box>
+							<Typography style={{ color: 'red', textAlign: 'center', width: '100%' }}>
+								{finalPageContent.fishCare1}
+							</Typography>
 						</Box>
-						<Box className={classes.fishCare}>
-							<Avatar
-								className={classes.fishCareIcon}
-								variant='circle'
-								src={getFishCareOption('WEB-730007-FEB-21_BYT_remember-to-cycle-your-aquarium_1x')}
-							/>
+						<Box style={{ marginRight: 20 }}>
+							<Box className={classes.fishCare}>
+								<Avatar
+									className={classes.fishCareIcon}
+									variant='circle'
+									src={getFishCareOption('WEB-730007-FEB-21_BYT_remember-to-cycle-your-aquarium_1x')}
+								/>
+							</Box>
+							<Typography style={{ color: 'red', textAlign: 'center', width: '100%' }}>
+								{finalPageContent.fishCare2}
+							</Typography>
 						</Box>
-						<Box className={classes.fishCare}>
-							<Avatar
-								className={classes.fishCareIcon}
-								variant='circle'
-								src={getFishCareOption('WEB-730007-FEB-21_BYT_rinse-off-decor-before-placing-in-tank_1x')}
-							/>
+						<Box style={{ marginRight: 20 }}>
+							<Box className={classes.fishCare}>
+								<Avatar
+									className={classes.fishCareIcon}
+									variant='circle'
+									src={getFishCareOption('WEB-730007-FEB-21_BYT_rinse-off-decor-before-placing-in-tank_1x')}
+								/>
+							</Box>
+							<Typography style={{ color: 'red', textAlign: 'center', width: '100%' }}>
+								{finalPageContent.fishCare3}
+							</Typography>
 						</Box>
-						<Box className={classes.fishCare}>
-							<Avatar
-								className={classes.fishCareIcon}
-								variant='circle'
-								src={getFishCareOption(
-									'WEB-730007-FEB-21_BYT_do-not-add-bacteria-starter-until-you-start-adding-fish_1x'
-								)}
-							/>
+						<Box>
+							<Box className={classes.fishCare}>
+								<Avatar
+									className={classes.fishCareIcon}
+									variant='circle'
+									src={getFishCareOption(
+										'WEB-730007-FEB-21_BYT_do-not-add-bacteria-starter-until-you-start-adding-fish_1x'
+									)}
+								/>
+							</Box>
+							<Typography style={{ color: 'red', textAlign: 'center', width: '65%' }}>
+								{finalPageContent.fishCare4}
+							</Typography>
 						</Box>
 					</Box>
 				)}

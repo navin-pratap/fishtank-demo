@@ -67,14 +67,24 @@ export const CartView = (props) => {
 											<Box style={{ width: 50, height: 50, background: '#F2F2F2 0% 0% no-repeat padding-box' }}></Box>
 										)}
 										{item.ProductName ? (
-											<Typography variant='body1' component='div'>
+											<Typography variant='body1' component='div' style={{ paddingLeft: 8 }}>
 												{item.ProductName}
 											</Typography>
 										) : (
 											<></>
 										)}
 										{item.ProductPrice ? (
-											<Typography variant='body2' style={{ fontWeight: 'bold' }} component='div'>
+											<Typography
+												variant='body2'
+												style={{
+													fontWeight: 'bold',
+													width: '30%',
+													display: 'flex',
+													alignItems: 'center',
+													justifyContent: 'center',
+												}}
+												component='div'
+											>
 												{`$ ${item.ProductPrice}`}
 											</Typography>
 										) : (
@@ -116,8 +126,9 @@ export const CartView = (props) => {
 								style={{
 									backgroundColor: selectionType === 'Final' ? '#007DB4' : '#F2F2F2',
 									color: selectionType === 'Final' ? '#ffffff' : 'lightgray',
+									textTransform: 'none',
 								}}
-								text={configs.buildYourTank}
+								text={configs.addToCart}
 								fullWidth={true}
 								disabled={selectionType !== 'Final'}
 							/>

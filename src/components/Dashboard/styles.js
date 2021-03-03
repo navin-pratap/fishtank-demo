@@ -48,9 +48,10 @@ export const useStyles = makeStyles((theme) => ({
 	button: {
 		marginTop: theme.spacing(2),
 		background: '#ffffff 0% 0% no-repeat padding-box',
-		color: '#00000',
+		color: '#000000',
 		borderRadius: theme.spacing(0.5),
 		opacity: 1,
+		textTransform: 'none',
 	},
 	secondBanner: {
 		// width: 700,

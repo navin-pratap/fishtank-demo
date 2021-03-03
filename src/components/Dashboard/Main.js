@@ -52,7 +52,7 @@ export const Main = (props) => {
 									variant='contained'
 									className={`${classes.button} ${classes.marginTop}`}
 									handleClick={handleBuildTankClick}
-									text={configs.buildYourTank}
+									text={configs.buildYourTankMain}
 								/>
 							</Box>
 						</Box>

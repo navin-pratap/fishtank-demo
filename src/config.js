@@ -16,6 +16,7 @@ export const configs = {
 	featuredArticles: 'Featured articles',
 	viewAll: 'View all',
 	buildYourTank: 'BUILD YOUR TANK',
+	buildYourTankMain: 'Build your tank',
 	getStarted: 'get started',
 	banner: 'Banner',
 	bannerTitle: 'How to setup an aquarium',
@@ -50,18 +51,24 @@ export const configs = {
 	},
 	by: 'By',
 	item: 'Item',
-	goBack: 'Go Back',
+	goBack: 'Go back',
 	continue: 'Continue',
 	small: 'Small',
 	medium: 'Medium',
 	large: 'Large',
+	addToCart: 'Add to cart',
 };
 export const finalPageContent = {
-	title: 'Your tank is ready to go',
+	title: 'Last Step - Congrats',
 	subTitle: 'Add your items to cart and head to your store to pick out your new fish friend.',
 	subTitle2: 'Hero Banner',
-	bannerTitle: `Congrats, you've build your tank!`,
+	bannerTitle: `Congrats,`,
+	bannerTitle2: `you've build your tank!`,
 	bannerSubTitle: 'Add your items to cart & select in-store pickup. Your tank & new fish selections will be waiting! ',
+	fishCare1: 'Test your water regularly',
+	fishCare2: 'Remember to “cycle” your aquarium',
+	fishCare3: 'Rinse off décor before placing in tank',
+	fishCare4: 'Don’t add bacteria starter until you start adding fish',
 };
 export const getFishCareOption = (name) => {
 	return `https://s7d2.scene7.com/is/image/PetSmart/${name}?fmt=png-alpha`;

@@ -13,6 +13,7 @@ export const TankFilter = (props) => {
 				style={{
 					backgroundColor: splitButtonClickType === 'small' ? '#007DB4' : '#F2F2F2',
 					color: splitButtonClickType === 'small' ? '#ffffff' : 'lightgray',
+					textTransform: 'none',
 				}}
 				text={configs.small}
 			/>
@@ -21,6 +22,7 @@ export const TankFilter = (props) => {
 				style={{
 					backgroundColor: splitButtonClickType === 'medium' ? '#007DB4' : '#F2F2F2',
 					color: splitButtonClickType === 'medium' ? '#ffffff' : 'lightgray',
+					textTransform: 'none',
 				}}
 				text={configs.medium}
 			/>
@@ -29,6 +31,7 @@ export const TankFilter = (props) => {
 				style={{
 					backgroundColor: splitButtonClickType === 'large' ? '#007DB4' : '#F2F2F2',
 					color: splitButtonClickType === 'large' ? '#ffffff' : 'lightgray',
+					textTransform: 'none',
 				}}
 				text={configs.large}
 			/>
@@ -37,6 +40,7 @@ export const TankFilter = (props) => {
 				style={{
 					backgroundColor: splitButtonClickType === 'custom' ? '#007DB4' : '#F2F2F2',
 					color: splitButtonClickType === 'custom' ? '#ffffff' : 'lightgray',
+					textTransform: 'none',
 				}}
 				text={'Custom'}
 			/>

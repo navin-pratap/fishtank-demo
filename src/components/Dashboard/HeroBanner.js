@@ -33,7 +33,7 @@ export const HeroBanner = (props) => {
 							variant='contained'
 							className={classes.button}
 							handleClick={handleBuildTankClick}
-							text={configs.getStarted}
+							text={configs.getStarted?.toLowerCase()}
 						/>
 					) : (
 						<></>

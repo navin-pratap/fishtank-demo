@@ -138,7 +138,7 @@ export const ProductDetailsModal = (props) => {
 								<Box mt={3}>
 									<CommonButton
 										handleClick={handleCloseModal}
-										style={{ backgroundColor: '#007DB4', color: '#ffffff', padding: '6px 22px' }}
+										style={{ backgroundColor: '#007DB4', color: '#ffffff', padding: '6px 22px', textTransform: 'none' }}
 										text={'Select'}
 									/>
 								</Box>
@@ -235,7 +235,7 @@ export const ProductDetailsModal = (props) => {
 							<Box mt={3}>
 								<CommonButton
 									handleClick={handleCloseModal}
-									style={{ backgroundColor: '#007DB4', color: '#ffffff', padding: '6px 22px' }}
+									style={{ backgroundColor: '#007DB4', color: '#ffffff', padding: '6px 22px', textTransform: 'none' }}
 									text={'Select'}
 								/>
 							</Box>
