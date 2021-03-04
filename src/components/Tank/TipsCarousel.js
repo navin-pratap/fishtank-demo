@@ -26,7 +26,7 @@ export const TipsCarousel = (props) => {
 
 	return (
 		<Box>
-			<Box className={classes.tipsContainer}>
+			<Box className={`carousel-main ${classes.tipsContainer}`}>
 				<Box>
 					<CommonButton
 						size='small'
@@ -75,30 +75,11 @@ export const TipsCarousel = (props) => {
 														{step.label}
 													</Typography>
 												</Grid>
-												<Grid item xs={12} md={3} lg={3}>
+												<Grid item xs={12} md={3} lg={3} style={{ textAlign: 'center' }}>
 													{step.imgPath ? <img className='img' src={step.imgPath} alt={step.label} /> : ''}
 												</Grid>
 											</Grid>
 										</Grid>
-										{/* <Box display='flex' alignItems='center' justifyContent='space-between'>
-											<Box display='flex' alignItems='center' style={{ textAlign: 'left' }}>
-												<Typography
-													component='div'
-													style={{
-														width: 'calc(100% - 350px)',
-														color: '#ffffff',
-														fontWeight: 'bold',
-														fontSize: 16,
-													}}
-												>
-													{step.title}
-												</Typography>
-												<Typography component='div' variant='body1' style={{ marginLeft: 50, color: '#ffffff' }}>
-													{step.label}
-												</Typography>
-											</Box>
-											{step.imgPath ? <img className={classes.img} src={step.imgPath} alt={step.label} /> : ''}
-										</Box> */}
 									</Fragment>
 								) : null}
 							</Box>

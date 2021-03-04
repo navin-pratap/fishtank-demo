@@ -60,8 +60,6 @@ export const useStyles = makeStyles((theme) => ({
 		display: 'flex',
 		alignItems: 'center',
 		justifyContent: 'center',
-		backgroundImage: `url(${configs.tipsBackgroundImage})`,
-		backgroundRepeat: 'no-repeat',
 		marginRight: theme.spacing(3.75),
 		paddingLeft: theme.spacing(1),
 		paddingRight: theme.spacing(1),

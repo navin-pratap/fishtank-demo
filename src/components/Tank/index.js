@@ -38,6 +38,7 @@ export const Tank = (props) => {
 	} = mockProductData;
 	const [activeStep, setActiveStep] = useState(0);
 	const [activeSliderStep, setActiveSliderStep] = useState(0);
+	const [activeSliderMainStep, setActiveSliderMainStep] = useState(0);
 	const [selectedFishData, setSelectedFishData] = useState(0);
 	const [selectedTankData, setSelectedTankData] = useState(0);
 	const [selectedAccessoriesData, setSelectedAccessoriesData] = useState(0);
@@ -90,24 +91,26 @@ export const Tank = (props) => {
 		}
 	};
 	const handleNext = (event, callType) => {
-		let newState = activeSliderStep + 1;
+		let newState = activeSliderMainStep + 1;
 		if (callType === 1) {
 			newState = getNewState();
 		}
 		setActiveSliderStep(newState);
+		setActiveSliderMainStep(newState);
 		if (callType === 1) {
 			setActiveStep(newState === 0 || newState === 1 ? 0 : activeStep + 1);
 			setProductDisplayType(newState);
 		}
 	};
 	const handleBack = (event, callType) => {
-		let newState = activeSliderStep - 1;
-		if (callType === 1) {
-			newState = getNewState();
-		}
+		let newState = activeSliderMainStep ? activeSliderMainStep - 1 : 0;
+		// if (callType === 1) {
+		// 	newState = getNewState();
+		// }
 		setActiveSliderStep(newState);
+		setActiveSliderMainStep(newState);
 		if (callType === 1) {
-			setActiveStep(newState === 0 || newState === 1 ? 0 : activeStep - 1);
+			setActiveStep(newState === 0 || newState === 1 ? 0 : activeStep ? activeStep - 1 : 0);
 			setProductDisplayType(newState);
 		}
 	};

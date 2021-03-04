@@ -37,8 +37,8 @@ $large: 900px;
 			margin-left: 0px;
 		}
 		.img {
-			width: 80px;
-			height: 80px;
+			width: 150px;
+			height: 150px;
 			margin-top: 0px;
 		}
 		.tank-filters {
@@ -245,5 +245,20 @@ $large: 900px;
 		.banner-sub-title {
 			font-size: 1.5rem;
 		}
+	}
+}
+.carousel-main {
+	@media screen and (max-width: $small) {
+		background-image: url('https://s7d2.scene7.com/is/image/PetSmart/WEB-20-730007-FEB-21_BYT_Steps_Mobile_BG_2x');
+		background-repeat: no-repeat;
+		background-position: top;
+	}
+	@media screen and (min-width: $medium) {
+		background-image: url('https://s7d2.scene7.com/is/image/PetSmart/WEB-730007-FEB-21_BYT_TipsBackground_1x');
+		background-repeat: no-repeat;
+	}
+	@media screen and (min-width: $large) {
+		background-image: url('https://s7d2.scene7.com/is/image/PetSmart/WEB-730007-FEB-21_BYT_TipsBackground_1x');
+		background-repeat: no-repeat;
 	}
 }
