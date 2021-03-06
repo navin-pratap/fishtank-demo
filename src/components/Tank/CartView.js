@@ -7,7 +7,18 @@ import { CommonButton } from '../Common/CommonButton';
 import { configs } from '../../config';
 
 export const CartView = (props) => {
-	const { classes, selectedProducts, selectionType, getSubTotal } = props;
+	const {
+		classes,
+		selectedProducts,
+		selectionType,
+		getSubTotal,
+		getNewState,
+		selectedTankData,
+		selectedAccessoriesData,
+		selectedGravelDecorData,
+		selectedCareData,
+		gotToSelectedPage,
+	} = props;
 	const [expanded, setExpanded] = React.useState(false);
 	useEffect(() => {
 		setExpanded(true);
@@ -15,6 +26,25 @@ export const CartView = (props) => {
 
 	const handleExpandClick = () => {
 		setExpanded(!expanded);
+	};
+	const getProductDetails = (type) => {
+		switch (type) {
+			case 'Tank':
+				return selectedTankData;
+			case 'Accessories':
+				return selectedAccessoriesData;
+			case 'Gravel & Decor':
+				return selectedGravelDecorData;
+			case 'Care':
+				return selectedCareData;
+			default:
+				return selectedTankData;
+		}
+	};
+	const handleEdit = (item) => {
+		const selectedProduct = getProductDetails(item.type);
+		const pageState = getNewState(item.type);
+		gotToSelectedPage(item, pageState, selectedProduct);
 	};
 
 	return (
@@ -43,7 +73,7 @@ export const CartView = (props) => {
 											{item.type}
 										</Typography>
 										{item.ProductName && item.ProductPrice ? (
-											<Typography variant='body1' className={classes.linkColor}>
+											<Typography variant='body1' className={classes.linkColor} onClick={() => handleEdit(item)}>
 												{configs.edit}
 											</Typography>
 										) : (

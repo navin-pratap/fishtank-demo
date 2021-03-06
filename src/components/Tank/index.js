@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Typography, Grid } from '@material-ui/core';
+import { Box, Grid } from '@material-ui/core';
 import { useStyles } from './styles';
 import { ProductListing } from './ProductListing';
 import { TipsCarousel } from './TipsCarousel';
@@ -9,7 +9,6 @@ import {
 	defaultProductSelection,
 	mockProductData,
 	getRecommendedTankTitle,
-	finalPageContent,
 	getSkuList,
 	TankAccessoriesSKUs,
 	WaterCareSKUs,
@@ -74,8 +73,8 @@ export const Tank = (props) => {
 		setProductDetailsWithSKU([...skuDetails]);
 		return skuDetails;
 	};
-	const getNewState = () => {
-		switch (selectionType) {
+	const getNewState = (type) => {
+		switch (type) {
 			case 'Fish':
 				return 1;
 			case 'Tank':
@@ -93,7 +92,7 @@ export const Tank = (props) => {
 	const handleNext = (event, callType) => {
 		let newState = activeSliderMainStep + 1;
 		if (callType === 1) {
-			newState = getNewState();
+			newState = getNewState(selectionType);
 		}
 		setActiveSliderStep(newState);
 		setActiveSliderMainStep(newState);
@@ -105,7 +104,7 @@ export const Tank = (props) => {
 	const handleBack = (event, callType) => {
 		let newState = activeSliderMainStep ? activeSliderMainStep - 1 : 0;
 		// if (callType === 1) {
-		// 	newState = getNewState();
+		// 	newState = getNewState(selectionType);
 		// }
 		setActiveSliderStep(newState);
 		setActiveSliderMainStep(newState);
@@ -283,6 +282,79 @@ export const Tank = (props) => {
 		setSelectionBasedProductList([]);
 		handleNext(event, 1);
 	};
+	const resetTankData = (type) => {
+		if (type === 'Tank') {
+			const updatedData = selectedProducts.map((item) => {
+				item.productImage = '';
+				item.ProductName = '';
+				item.ProductPrice = '';
+				return item;
+			});
+			setSelectedProducts(updatedData);
+		} else if (type === 'Accessories') {
+			const updatedData = selectedProducts.map((item) => {
+				if (item.type !== 'Tank') {
+					item.productImage = '';
+					item.ProductName = '';
+					item.ProductPrice = '';
+				}
+				return item;
+			});
+			setSelectedProducts(updatedData);
+		} else if (type === 'Gravel & Decor') {
+			const updatedData = selectedProducts.map((item) => {
+				if (item.type === 'Care' || item.type === 'Gravel & Decor') {
+					item.productImage = '';
+					item.ProductName = '';
+					item.ProductPrice = '';
+				}
+				return item;
+			});
+			setSelectedProducts(updatedData);
+		} else if (type === 'Care') {
+			const updatedData = selectedProducts.map((item) => {
+				if (item.type === 'Care') {
+					item.productImage = '';
+					item.ProductName = '';
+					item.ProductPrice = '';
+				}
+				return item;
+			});
+			setSelectedProducts(updatedData);
+		}
+	};
+	const gotToSelectedPage = (item, pageStateVal, selectedProductDetails) => {
+		const pageState = pageStateVal === 0 || pageStateVal === 1 ? 0 : pageStateVal - 1;
+		setSelectionType(item.type);
+
+		setActiveSliderStep(pageState);
+		setActiveSliderMainStep(pageState);
+		setActiveStep(pageState);
+		setProductDisplayType(pageState);
+
+		setSelectedProduct(selectedProductDetails);
+		if (item.type === 'Fish') {
+			setSelectedFishData(selectedProductDetails?.fishSelection);
+		} else if (item.type === 'Tank') {
+			setSelectedTankData(selectedProductDetails);
+			setSelectedAccessoriesData(0);
+			setSelectedGravelDecorData(0);
+			setSelectedCareData(0);
+			resetTankData(item.type);
+		} else if (item.type === 'Accessories') {
+			setSelectedAccessoriesData(selectedProductDetails);
+			setSelectedGravelDecorData(0);
+			setSelectedCareData(0);
+			resetTankData(item.type);
+		} else if (item.type === 'Gravel & Decor') {
+			setSelectedGravelDecorData(selectedProductDetails);
+			setSelectedCareData(0);
+			resetTankData(item.type);
+		} else if (item.type === 'Care') {
+			setSelectedCareData(selectedProductDetails);
+			resetTankData(item.type);
+		}
+	};
 	const handleGoBackClick = (event) => {
 		handleBack(event, 1);
 	};
@@ -343,6 +415,12 @@ export const Tank = (props) => {
 						selectedProducts={selectedProducts}
 						selectionType={selectionType}
 						getSubTotal={getSubTotal}
+						getNewState={getNewState}
+						gotToSelectedPage={gotToSelectedPage}
+						selectedTankData={selectedTankData}
+						selectedAccessoriesData={selectedAccessoriesData}
+						selectedGravelDecorData={selectedGravelDecorData}
+						selectedCareData={selectedCareData}
 					/>
 				</Grid>
 			</Grid>

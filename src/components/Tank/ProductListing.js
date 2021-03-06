@@ -60,7 +60,25 @@ export const ProductListing = (props) => {
 		type && setProductType(type);
 	}, [type, selectedFishData, selectedTankData, selectedAccessoriesData, selectedGravelDecorData, selectedCareData]);
 	useEffect(() => {
-		setProductDetails(selectionBasedProductList);
+		if (type === 'Tank') {
+			let skuList = SKUList;
+			if (splitButtonClickType === 'small') {
+				skuList = SmallSKUList;
+			} else if (splitButtonClickType === 'medium') {
+				skuList = MediumSKUList;
+			} else if (splitButtonClickType === 'large') {
+				skuList = LargeSKUList;
+			} else if (splitButtonClickType === 'custom') {
+				skuList = CustomFilter;
+			}
+			const filterData = selectionBasedProductList.filter((item) =>
+				skuList.find((skuId) => skuId === parseInt(item.id))
+			);
+			setProductDetails(filterData);
+		} else {
+			setProductDetails(selectionBasedProductList);
+		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [selectionBasedProductList]);
 
 	const handleOpenModal = (event, product) => {
