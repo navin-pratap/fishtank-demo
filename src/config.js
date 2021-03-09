@@ -1084,3 +1084,37 @@ export const mockProductData = {
 		},
 	],
 };
+
+export const defaultProductMultiSelection = [
+	{
+		tankDetails: [
+			{
+				id: 1,
+				type: 'Tank',
+				data: [],
+				fishSelection: {},
+			},
+		],
+		accessoriesDetails: [
+			{
+				id: 2,
+				type: 'Accessories',
+				data: [],
+			},
+		],
+		gravelDecorDetails: [
+			{
+				id: 3,
+				type: 'Gravel & Decor',
+				data: [],
+			},
+		],
+		careDetails: [
+			{
+				id: 4,
+				type: 'Care',
+				data: [],
+			},
+		],
+	},
+];

@@ -1,9 +1,14 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import { Avatar, Box, CircularProgress, Tooltip, Typography } from '@material-ui/core';
 
 export const FishDetails = (props) => {
 	const { productDetails, selectedProductDetails, handleProductSelection, classes } = props;
-
+	const [ids, setIds] = useState([
+		...new Set(selectedProductDetails && selectedProductDetails.length ? selectedProductDetails : []),
+	]);
+	useEffect(() => {
+		setIds([...new Set(selectedProductDetails && selectedProductDetails.length ? selectedProductDetails : [])]);
+	}, [selectedProductDetails]);
 	return (
 		<Fragment>
 			{Boolean(productDetails) && productDetails.length ? (
@@ -28,7 +33,7 @@ export const FishDetails = (props) => {
 								justifyContent: 'center',
 								backgroundColor: 'lightblue',
 								borderRadius: 16,
-								border: `1px solid ${selectedProductDetails.id === item.id ? '#007DB4' : '#DDDDDD'}`,
+								border: `1px solid ${ids.includes(item.id) ? '#007DB4' : '#DDDDDD'}`,
 							}}
 						>
 							{item.imageUrl ? (

@@ -1,9 +1,15 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import { Avatar, Box, CircularProgress, Tooltip, Typography } from '@material-ui/core';
 import { getTankImage } from '../../config';
 
 export const GravelDecorDetails = (props) => {
 	const { productDetails, selectedProductDetails, handleOpenModal, classes } = props;
+	const [ids, setIds] = useState([
+		...new Set(selectedProductDetails && selectedProductDetails.length ? selectedProductDetails : []),
+	]);
+	useEffect(() => {
+		setIds([...new Set(selectedProductDetails && selectedProductDetails.length ? selectedProductDetails : [])]);
+	}, [selectedProductDetails]);
 
 	return (
 		<Fragment>
@@ -14,7 +20,7 @@ export const GravelDecorDetails = (props) => {
 						key={`custom-gravel-decor_${index}_${item.id}`}
 						style={{
 							cursor: 'pointer',
-							border: `1px solid ${selectedProductDetails.id === item.id ? '#007DB4' : '#DDDDDD'}`,
+							border: `1px solid ${ids.includes(item.id) ? '#007DB4' : '#DDDDDD'}`,
 						}}
 						onClick={(e) => handleOpenModal(e, item)}
 					>

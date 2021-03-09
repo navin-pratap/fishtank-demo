@@ -5,6 +5,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import clsx from 'clsx';
 import { CommonButton } from '../Common/CommonButton';
 import { configs } from '../../config';
+import { CartProducts } from './CartProducts';
 
 export const CartView = (props) => {
 	const {
@@ -18,8 +19,10 @@ export const CartView = (props) => {
 		selectedGravelDecorData,
 		selectedCareData,
 		gotToSelectedPage,
+		selectedMultiProducts,
 	} = props;
 	const [expanded, setExpanded] = React.useState(false);
+	// console.log(selectedMultiProducts);
 	useEffect(() => {
 		setExpanded(true);
 	}, []);
@@ -46,6 +49,37 @@ export const CartView = (props) => {
 		const pageState = getNewState(item.type);
 		gotToSelectedPage(item, pageState, selectedProduct);
 	};
+	const RenderProductData = ({ details }) => {
+		const { id, type, data } = details[0];
+
+		return (
+			<Fragment>
+				{Boolean(data) && data.length ? (
+					<Fragment>
+						<CartProducts type={type} productData={data[0]} handleEdit={handleEdit} />
+						{data.length >= 2 ? `+${data.length - 1} more items` : <></>}
+					</Fragment>
+				) : (
+					<Fragment>
+						<Box className={classes.productCart}>
+							<Typography variant='body2' style={{ fontWeight: 'bold' }}>
+								{type}
+							</Typography>
+						</Box>
+						<Box
+							className={classes.productCart}
+							style={{ paddingBottom: selectedProducts.length - 1 === id - 1 ? 10 : 0 }}
+						>
+							<Typography style={{ paddingBottom: 20 }} variant='body2'>
+								{configs.noProductText}
+							</Typography>
+							<Box style={{ width: 50, height: 50, background: '#F2F2F2 0% 0% no-repeat padding-box' }}></Box>
+						</Box>
+					</Fragment>
+				)}
+			</Fragment>
+		);
+	};
 
 	return (
 		<Card className={classes.rootCart}>
@@ -65,7 +99,18 @@ export const CartView = (props) => {
 			<Collapse in={expanded} timeout='auto' unmountOnExit>
 				<Box className={`cart-style ${classes.rightPanel}`}>
 					<Box>
-						{Boolean(selectedProducts) && selectedProducts.length ? (
+						{Boolean(selectedMultiProducts) && selectedMultiProducts.length ? (
+							<Fragment>
+								<RenderProductData details={selectedMultiProducts[0].tankDetails} />
+								<RenderProductData details={selectedMultiProducts[0].accessoriesDetails} />
+								<RenderProductData details={selectedMultiProducts[0].gravelDecorDetails} />
+								<RenderProductData details={selectedMultiProducts[0].careDetails} />
+							</Fragment>
+						) : (
+							<></>
+						)}
+						{/* <hr /> */}
+						{/* {Boolean(selectedProducts) && selectedProducts.length ? (
 							selectedProducts.map((item, index) => (
 								<Fragment key={`productType_${item.ProductName}_${index}`}>
 									<Box className={classes.productCart}>
@@ -125,7 +170,7 @@ export const CartView = (props) => {
 							))
 						) : (
 							<></>
-						)}
+						)} */}
 						<Box
 							display='flex'
 							justifyContent='space-between'

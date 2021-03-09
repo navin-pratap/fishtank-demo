@@ -39,25 +39,38 @@ export const ProductListing = (props) => {
 	const classes = useStyles();
 	const [openModal, setOpenModal] = useState(false);
 	const [selectedProductDetails, setSelectedProductDetails] = useState(selectedProduct);
+	const [selectedProductIds, setSelectedProductIds] = useState([selectedProduct?.id]);
 	const [productDetails, setProductDetails] = useState([]);
 	const [splitButtonClickType, setSplitButtonClickType] = useState(null);
 	const [productType, setProductType] = useState(type);
 	useEffect(() => {
 		setSelectedProductDetails(selectedProduct);
+		const data = selectedProductIds.filter((element) => element !== undefined);
+		const finalData = [...new Set(data && data.length ? data : [])];
+		setSelectedProductIds([...finalData, selectedProduct?.id]);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [selectedProduct]);
 	useEffect(() => {
+		const data = selectedProductIds.filter((element) => element !== undefined);
+		const finalData = [...new Set(data && data.length ? data : [])];
 		if (type === 'Fish') {
 			setSelectedProductDetails(selectedFishData);
+			setSelectedProductIds([selectedProduct?.id]);
 		} else if (type === 'Tank') {
 			setSelectedProductDetails(selectedTankData);
+			setSelectedProductIds([...finalData, selectedTankData?.id]);
 		} else if (type === 'Accessories') {
 			setSelectedProductDetails(selectedAccessoriesData);
+			setSelectedProductIds([...finalData, selectedAccessoriesData?.id]);
 		} else if (type === 'Gravel & Decor') {
 			setSelectedProductDetails(selectedGravelDecorData);
+			setSelectedProductIds([...finalData, selectedGravelDecorData?.id]);
 		} else if (type === 'Care') {
 			setSelectedProductDetails(selectedCareData);
+			setSelectedProductIds([...finalData, selectedCareData?.id]);
 		}
 		type && setProductType(type);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [type, selectedFishData, selectedTankData, selectedAccessoriesData, selectedGravelDecorData, selectedCareData]);
 	useEffect(() => {
 		if (type === 'Tank') {
@@ -82,9 +95,17 @@ export const ProductListing = (props) => {
 	}, [selectionBasedProductList]);
 
 	const handleOpenModal = (event, product) => {
-		setSelectedProductDetails(product);
-		setOpenModal(true);
-		handleProductSelection(event, product);
+		const data = selectedProductIds.filter((element) => element !== undefined);
+		const finalData = [...new Set(data && data.length ? data : [])];
+		const matchedId = finalData.findIndex((item) => item === product?.id);
+		if (matchedId && matchedId > 0) {
+			finalData.splice(matchedId, 1);
+			setSelectedProductIds([...finalData]);
+		} else {
+			setSelectedProductDetails(product);
+			setOpenModal(true);
+			handleProductSelection(event, product);
+		}
 	};
 	const handleCloseModal = () => {
 		setOpenModal(false);
@@ -139,7 +160,7 @@ export const ProductListing = (props) => {
 					{productType === 'Fish' ? (
 						<FishDetails
 							productDetails={productDetails}
-							selectedProductDetails={selectedProductDetails}
+							selectedProductDetails={selectedProductIds.filter((element) => element !== undefined)}
 							handleProductSelection={handleProductSelection}
 							classes={classes}
 						/>
@@ -149,7 +170,7 @@ export const ProductListing = (props) => {
 					{productType === 'Tank' ? (
 						<TankDetails
 							productDetails={productDetails}
-							selectedProductDetails={selectedProductDetails}
+							selectedProductDetails={selectedProductIds.filter((element) => element !== undefined)}
 							classes={classes}
 							handleOpenModal={handleOpenModal}
 						/>
@@ -159,7 +180,7 @@ export const ProductListing = (props) => {
 					{productType === 'Accessories' ? (
 						<AccessoriesDetails
 							productDetails={productDetails}
-							selectedProductDetails={selectedProductDetails}
+							selectedProductDetails={selectedProductIds.filter((element) => element !== undefined)}
 							handleOpenModal={handleOpenModal}
 							classes={classes}
 							convertPrice={convertPrice}
@@ -170,7 +191,7 @@ export const ProductListing = (props) => {
 					{productType === 'Gravel & Decor' ? (
 						<GravelDecorDetails
 							productDetails={productDetails}
-							selectedProductDetails={selectedProductDetails}
+							selectedProductDetails={selectedProductIds.filter((element) => element !== undefined)}
 							handleOpenModal={handleOpenModal}
 							classes={classes}
 							convertPrice={convertPrice}
@@ -181,7 +202,7 @@ export const ProductListing = (props) => {
 					{productType === 'Care' ? (
 						<CareDetails
 							productDetails={productDetails}
-							selectedProductDetails={selectedProductDetails}
+							selectedProductDetails={selectedProductIds.filter((element) => element !== undefined)}
 							handleOpenModal={handleOpenModal}
 							classes={classes}
 							convertPrice={convertPrice}

@@ -14,6 +14,7 @@ import {
 	WaterCareSKUs,
 	DecorSKUs,
 	getTankImage,
+	defaultProductMultiSelection,
 } from '../../config';
 import { getSkuFullDetails } from '../../services/generator';
 import { ProductStepper } from './ProductStepper';
@@ -45,6 +46,7 @@ export const Tank = (props) => {
 	const [selectedCareData, setSelectedCareData] = useState(0);
 	const [selectedProduct, setSelectedProduct] = useState(0);
 	const [selectedProducts, setSelectedProducts] = useState(defaultProductSelection);
+	const [selectedMultiProducts, setSelectedMultiProducts] = useState(defaultProductMultiSelection);
 	const [selectionType, setSelectionType] = useState('Fish');
 	const [selectionBasedProductList, setSelectionBasedProductList] = useState(fishList);
 	// eslint-disable-next-line no-unused-vars
@@ -145,10 +147,66 @@ export const Tank = (props) => {
 			}
 		}
 	};
-	const addToCart = (newState, selectedProductData, type) => {
+	const addToCart = (newState, selectedProductData, type, multiSelect) => {
 		const cartIndex = newState === 0 ? 1 : newState; // === 1 || newState === 2 ? 1 : newState - 1;
 		const detailsIndex = selectedProducts.findIndex((item) => item.id === cartIndex);
 		let details = detailsIndex > -1 ? selectedProducts[detailsIndex] : [];
+		if (multiSelect === 0) {
+			const { tankDetails } = selectedMultiProducts && selectedMultiProducts.length ? selectedMultiProducts[0] : {};
+			tankDetails[0].fishSelection = selectedProductData;
+		} else if (multiSelect === 1) {
+			const { tankDetails } = selectedMultiProducts && selectedMultiProducts.length ? selectedMultiProducts[0] : {};
+			const { data } = tankDetails && tankDetails[0];
+			const detail = data && data.length ? data.find((item) => item.id === selectedProductData?.id) : null;
+			if (!detail) {
+				data.push({
+					...selectedProductData,
+					productImage: getTankImage(selectedProductData?.id),
+					ProductName: selectedProductData.name,
+					ProductPrice: selectedProductData?.c_pricing?.sale,
+				});
+			}
+		} else if (multiSelect === 2) {
+			const { accessoriesDetails } =
+				selectedMultiProducts && selectedMultiProducts.length ? selectedMultiProducts[0] : {};
+			const { data } = accessoriesDetails && accessoriesDetails[0];
+			const detail = data && data.length ? data.find((item) => item.id === selectedProductData?.id) : null;
+			if (!detail) {
+				data.push({
+					...selectedProductData,
+					productImage: getTankImage(selectedProductData?.id),
+					ProductName: selectedProductData.name,
+					ProductPrice: selectedProductData?.c_pricing?.sale,
+				});
+			}
+		} else if (multiSelect === 3) {
+			const { gravelDecorDetails } =
+				selectedMultiProducts && selectedMultiProducts.length ? selectedMultiProducts[0] : {};
+			const { data } = gravelDecorDetails && gravelDecorDetails[0];
+			const detail = data && data.length ? data.find((item) => item.id === selectedProductData?.id) : null;
+			if (!detail) {
+				data.push({
+					...selectedProductData,
+					productImage: getTankImage(selectedProductData?.id),
+					ProductName: selectedProductData.name,
+					ProductPrice: selectedProductData?.c_pricing?.sale,
+				});
+			}
+		} else if (multiSelect === 4) {
+			const { careDetails } = selectedMultiProducts && selectedMultiProducts.length ? selectedMultiProducts[0] : {};
+			const { data } = careDetails && careDetails[0];
+			const detail = data && data.length ? data.find((item) => item.id === selectedProductData?.id) : null;
+			if (!detail) {
+				data.push({
+					...selectedProductData,
+					productImage: getTankImage(selectedProductData?.id),
+					ProductName: selectedProductData.name,
+					ProductPrice: selectedProductData?.c_pricing?.sale,
+				});
+			}
+		}
+		// =====================================================================
+		// =====================================================================
 		if (type === 'Tank') {
 			details = {
 				...details,
@@ -183,6 +241,7 @@ export const Tank = (props) => {
 			if (index === detailsIndex) return details;
 			else return item;
 		});
+		// console.log(selectedMultiProducts);
 		setSelectedProducts(finalData);
 	};
 	const setProductDisplayType = async (newState) => {
@@ -196,12 +255,13 @@ export const Tank = (props) => {
 			setSelectionType('Fish');
 			setTitleDetails(configs.fishTitles);
 			setSelectedProducts(defaultProductSelection);
+			setSelectedMultiProducts(defaultProductMultiSelection);
 			setSelectedTankData(0);
 			setSelectedAccessoriesData(0);
 			setSelectedGravelDecorData(0);
 			setSelectedCareData(0);
 			setSelectionBasedProductList(fishList);
-			addToCart(0, selectedProductData, 'Tank'); // Add to Cart
+			addToCart(0, selectedProductData, 'Tank', 0); // Add to Cart
 		} else if (newState === 1) {
 			setCurrentTips(tankTipsSteps);
 			setMaxSteps(tankTipsSteps.length);
@@ -209,7 +269,7 @@ export const Tank = (props) => {
 			setSelectionBasedProductList([]);
 			const selectedProductData = selectedFishData;
 			//--------- For Tank
-			addToCart(0, selectedProductData, 'Tank'); // Add to Cart
+			addToCart(0, selectedProductData, 'Tank', 0); // Add to Cart
 			setSelectionType('Tank');
 			if (selectedProductData.name === 'Not Sure') {
 				setTitleDetails(configs.allTankTitle);
@@ -230,7 +290,7 @@ export const Tank = (props) => {
 			setActiveSliderStep(0);
 			setSelectionBasedProductList([]);
 			const selectedProductData = selectedTankData;
-			addToCart(1, selectedProductData, 'Accessories'); // Add to Cart
+			addToCart(1, selectedProductData, 'Accessories', 1); // Add to Cart
 			setSelectionType('Accessories');
 			setTitleDetails(configs.accessoriesTitles);
 			const tankId = selectedTankData.id;
@@ -246,7 +306,7 @@ export const Tank = (props) => {
 			setSelectionBasedProductList([]);
 			//--------- For Gravel & Decor
 			const selectedProductData = selectedAccessoriesData;
-			addToCart(2, selectedProductData, 'Gravel & Decor'); // Add to Cart
+			addToCart(2, selectedProductData, 'Gravel & Decor', 2); // Add to Cart
 			setSelectionType('Gravel & Decor');
 			setTitleDetails(configs.gravelDecorTitles);
 			const tankId = selectedTankData.id; //selectedAccessoriesData.id;
@@ -261,7 +321,7 @@ export const Tank = (props) => {
 			setSelectionBasedProductList([]);
 			//--------- For Care
 			const selectedProductData = selectedGravelDecorData;
-			addToCart(3, selectedProductData, 'Care'); // Add to Cart
+			addToCart(3, selectedProductData, 'Care', 3); // Add to Cart
 			setSelectionType('Care');
 			setTitleDetails(configs.careTitles);
 			const tankId = selectedTankData.id; //selectedGravelDecorData.id;
@@ -272,7 +332,7 @@ export const Tank = (props) => {
 			setMaxSteps(0);
 			setActiveSliderStep(0);
 			const selectedProductData = selectedCareData;
-			addToCart(4, selectedProductData, 'Care'); // Add to Cart
+			addToCart(4, selectedProductData, 'Care', 4); // Add to Cart
 			setSelectionType('Final');
 			setTitleDetails(configs.dosDontsTitles);
 			setSelectionBasedProductList([]);
@@ -413,6 +473,7 @@ export const Tank = (props) => {
 					<CartView
 						classes={classes}
 						selectedProducts={selectedProducts}
+						selectedMultiProducts={selectedMultiProducts}
 						selectionType={selectionType}
 						getSubTotal={getSubTotal}
 						getNewState={getNewState}
